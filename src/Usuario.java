@@ -2,11 +2,11 @@
 public class Usuario {
 	
 	
-	String userName;
-	String email;
-	String password;
-	String userDni;
-	String userCel;
+	protected String userName;
+	protected String email;
+	protected String password;
+	protected String userDni;
+	protected String userCel;
 	
 	public Usuario(String userName, String email, String password, String userDni, String userCel) {	
 		this.userName = userName;
@@ -15,7 +15,5 @@ public class Usuario {
 		this.userDni = userDni;
 		this.userCel = userCel;
 	}
-
-	//aadads
 	
 }

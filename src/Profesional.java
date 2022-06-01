@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Profesional extends Usuario implements CrearPlan, Menu{
 	
-	List<Paciente> pacientes = new ArrayList<>();
+	private List<Paciente> pacientes = new ArrayList<>();
 	
 	public Profesional(String userName ,String email, String password, String userDni, String userCel) {
 		super(userName,email,password,userDni,userCel);
@@ -23,6 +23,14 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 	public void finalizacionPlanesDeControl()
 	{
 		
+	}
+	
+	public List<Paciente> getPacientes() {
+		return pacientes;
+	}
+
+	public void setPacientes(List<Paciente> pacientes) {
+		this.pacientes = pacientes;
 	}
 
 	@Override
