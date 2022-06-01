@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Paciente extends Usuario{
+public class Paciente extends Usuario implements Menu{
 	
 	List<Tratamiento> tratamientos = new ArrayList<>();
 
@@ -13,6 +13,12 @@ public class Paciente extends Usuario{
 	
 	public void ingresoDatosDeControl()
 	{
+		
+	}
+
+	@Override
+	public void menu() {
+		// TODO Auto-generated method stub
 		
 	}
 	

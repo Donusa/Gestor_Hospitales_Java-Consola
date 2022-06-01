@@ -1,13 +1,12 @@
 
-public class Administrador extends Usuario implements CrearPlan{
+public class Administrador extends Usuario implements CrearPlan, Menu{
 	
-	//comentario
+
 	
 	public Administrador(String userName ,String email, String password, String userDni, String userCel) {
 		super(userName,email,password,userDni,userCel);
 		
 	}
-	
 
 	
 	public void ingresoPacientes()
@@ -34,6 +33,13 @@ public class Administrador extends Usuario implements CrearPlan{
 
 	@Override
 	public void crearNuevoPlan() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void menu() {
 		// TODO Auto-generated method stub
 		
 	}

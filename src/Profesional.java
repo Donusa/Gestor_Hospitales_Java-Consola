@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Profesional extends Usuario implements CrearPlan{
+public class Profesional extends Usuario implements CrearPlan, Menu{
 	
 	List<Paciente> pacientes = new ArrayList<>();
 	
@@ -27,6 +27,12 @@ public class Profesional extends Usuario implements CrearPlan{
 
 	@Override
 	public void crearNuevoPlan() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void menu() {
 		// TODO Auto-generated method stub
 		
 	}
