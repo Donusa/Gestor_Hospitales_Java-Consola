@@ -27,15 +27,13 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 								 + "3. Finalizacion de Planes de Control.\n"
 								 + "0. Salir.\n");
 				choice = scan.nextInt();
-				switch (choice){
-					case 1:
-							System.out.println("Ingrese el DNI del paciente a asignar el Plan.\n");
-							asignacionPlanesDeControl(scan.nextLine());
-							break;
-					case 2:	controlRegistrosDePacientes();
-							break;
-					case 3:	finalizacionPlanesDeControl();
-							break;
+				switch (choice) {
+					case 1 -> {
+						System.out.println("Ingrese el DNI del paciente a asignar el Plan.\n");
+						asignacionPlanesDeControl(scan.nextLine());
+					}
+					case 2 -> controlRegistrosDePacientes();
+					case 3 -> finalizacionPlanesDeControl();
 				}
 			}
 			catch(InputMismatchException e){
@@ -49,7 +47,9 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 	public void asignacionPlanesDeControl(String dniPaciente) {
 		Paciente p =  buscarPaciente(dniPaciente);
 		if (p!=null){
-			List<Tratamiento> tratamientosPaciente = buscarTratamientosPaciente(p);
+			List<Tratamiento> tratamientosPaciente = listarTratamientosPaciente(p);
+			mostrarTratamientosPaciente(tratamientosPaciente);
+			System.out.println("Seleccione el numero del tratamiento a asignar/modificar.\n");
 
 		}
 		else{
@@ -79,7 +79,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		return null;
 	}
 
-	public List<Tratamiento> buscarTratamientosPaciente(Paciente p){
+	public List<Tratamiento> listarTratamientosPaciente(Paciente p){
 		List<Tratamiento> tratamientosPaciente = new ArrayList<>();
 		if(p!=null){
 			if(!p.getTratamientos().isEmpty()){
@@ -92,7 +92,19 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		}
 		return tratamientosPaciente;
 	}
-	
+
+	public void mostrarTratamientosPaciente(List<Tratamiento> tratamientosPaciente){
+		if(!tratamientosPaciente.isEmpty()){
+			System.out.println("Lista de Tratamientos con este paciente:\n");
+			for(int i=0; i<tratamientosPaciente.size(); i++){
+				System.out.println(tratamientosPaciente.get(i));
+			}
+		}
+		else{
+			System.out.println("No tiene tratamientos en curso con este paciente.\n");
+		}
+	}
+
 	public List<Paciente> getPacientes() {
 		return pacientes;
 	}
