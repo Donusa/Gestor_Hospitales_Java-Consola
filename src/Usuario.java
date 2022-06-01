@@ -18,5 +18,44 @@ public class Usuario {
 		this.userDni = userDni;
 		this.userCel = userCel;
 	}
-	
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getUserDni() {
+		return userDni;
+	}
+
+	public void setUserDni(String userDni) {
+		this.userDni = userDni;
+	}
+
+	public String getUserCel() {
+		return userCel;
+	}
+
+	public void setUserCel(String userCel) {
+		this.userCel = userCel;
+	}
 }
