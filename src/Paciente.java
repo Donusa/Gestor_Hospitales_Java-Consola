@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Paciente extends Usuario implements Menu{
 	
-	List<Tratamiento> tratamientos = new ArrayList<>();
+	private List<Tratamiento> tratamientos = new ArrayList<>();
 
 	public Paciente(Enfermedad e, Profesional p, String userName,
 			String email, String password, String userDni, String userCel) {
@@ -37,4 +37,5 @@ public class Paciente extends Usuario implements Menu{
 			}
 		}while (choice !=0);
 	}
+	
 }
