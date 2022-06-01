@@ -1,6 +1,8 @@
 
 public class Administrador extends Usuario implements CrearPlan{
 	
+	//comentario
+	
 	public Administrador(String userName ,String email, String password, String userDni, String userCel) {
 		super(userName,email,password,userDni,userCel);
 		
