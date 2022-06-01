@@ -11,6 +11,11 @@ public class Paciente extends Usuario implements Menu{
 		tratamientos.add(new Tratamiento(p, e));
 	}
 	
+	public Paciente()
+	{
+		
+	}
+	
 	public void ingresoDatosDeControl()
 	{
 		

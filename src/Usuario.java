@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Usuario {
 	
@@ -17,6 +18,22 @@ public class Usuario {
 		this.password = password;
 		this.userDni = userDni;
 		this.userCel = userCel;
+	}
+	
+	public static void crearUser(Usuario u)
+	{
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Ingrese e-mail del nuevo usuario");
+		u.setEmail(scan.nextLine());
+		System.out.println("Ingrese nombre del nuevo usuario");
+		u.setUserName(scan.nextLine());
+		System.out.println("Ingrese contraseña del nuevo usuario");
+		u.setPassword(scan.nextLine());
+		System.out.println("Ingrese celular del nuevo usuario");
+		u.setUserCel(scan.nextLine());
+		System.out.println("Ingrese DNI del nuevo usuario");
+		u.setUserDni(scan.nextLine());
+		scan.close();
 	}
 
 	public String getUserName() {
