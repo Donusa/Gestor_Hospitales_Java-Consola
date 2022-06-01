@@ -37,5 +37,12 @@ public class Paciente extends Usuario implements Menu{
 			}
 		}while (choice !=0);
 	}
-	
+
+	public List<Tratamiento> getTratamientos() {
+		return tratamientos;
+	}
+
+	public void setTratamientos(List<Tratamiento> tratamientos) {
+		this.tratamientos = tratamientos;
+	}
 }
