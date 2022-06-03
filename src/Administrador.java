@@ -62,6 +62,11 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		scan.close();
 	}
 	
+	public void verListaTareas()
+	{
+		//abre el archivo e imprime todas las tareas del mismo
+	}
+	
 	public void eliminarTarea()
 	{
 		//buscar archivo
@@ -129,7 +134,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 
 	@Override
 	public void crearNuevoPlan() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
