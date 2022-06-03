@@ -23,15 +23,15 @@ public class Usuario {
 	public static void crearUser(Usuario u)
 	{
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Ingrese e-mail del nuevo usuario");
+		System.out.println("Ingrese el e-mail:");
 		u.setEmail(scan.nextLine());
-		System.out.println("Ingrese nombre del nuevo usuario");
+		System.out.println("Ingrese el nombre:");
 		u.setUserName(scan.nextLine());
-		System.out.println("Ingrese contraseña del nuevo usuario");
+		System.out.println("Ingrese la contraseña:");
 		u.setPassword(scan.nextLine());
-		System.out.println("Ingrese celular del nuevo usuario");
+		System.out.println("Ingrese el celular:");
 		u.setUserCel(scan.nextLine());
-		System.out.println("Ingrese DNI del nuevo usuario");
+		System.out.println("Ingrese el DNI:");
 		u.setUserDni(scan.nextLine());
 		scan.close();
 	}
