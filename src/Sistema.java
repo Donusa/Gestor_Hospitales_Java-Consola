@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sistema {
-	List<Usuario> users = new ArrayList<>();
+	static List<Usuario> users = new ArrayList<>();
 	LocalDate date;
 	//Map<Date, Paciente>; -- Definir archivos o implementacion en mapas
 	
