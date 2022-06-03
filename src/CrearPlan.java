@@ -1,4 +1,5 @@
 
 public interface CrearPlan {
-	void crearNuevoPlan();
+	void crearNuevoPlan(Enfermedad e);
+	Plan modificarPlan(Plan p);
 }

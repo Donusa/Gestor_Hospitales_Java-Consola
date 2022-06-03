@@ -114,9 +114,61 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 	}
 
 	@Override
-	public void crearNuevoPlan() {
-		// TODO Auto-generated method stub
-		
+	public void crearNuevoPlan(Enfermedad e) {
+		Scanner scan= new Scanner(System.in);
+		Plan p= new Plan(e);
+		System.out.println("Ingrese la duracion del Plan:");
+		p.setDuracion(scan.nextInt());
+		int rta =2;
+		do {
+			try {
+				p.agregarTarea();
+				System.out.println("Desea agregar otra tarea?\n"+
+								"1. Si\n"+
+								"2. No");
+				rta=scan.nextInt();
+
+			}catch (InputMismatchException exception){
+				System.out.println("Ingrese una opcion valida.\n");
+			}
+		}while (rta == 1);
+		scan.close();
 	}
-	
+
+	@Override
+	public Plan modificarPlan(Plan p){
+		int choice = 0;
+		Scanner scan =  new Scanner(System.in);
+
+		do{
+			try{
+				System.out.println("1. Modificar duracion.\n"
+						+ "2. Agregar tarea.\n"
+						+ "3. Borrar tarea.\n"
+						+ "0. Salir.\n");
+				choice = scan.nextInt();
+				switch (choice) {
+					case 1 :
+						System.out.println("Ingrese la nueva duracion:");
+						p.setDuracion(scan.nextInt());
+						break;
+					case 2 :
+						p.agregarTarea();
+						break;
+					case 3 :
+						p.mostrarTareas();
+						System.out.println("Ingrese el numero de tarea que quieras eliminar");
+						p.tasks.remove(scan.nextInt()-1);
+						break;
+				}
+			}
+			catch(InputMismatchException e){
+				System.out.println("Ingrese una opcion valida.\n");
+			}
+		} while (choice!=0);
+
+		scan.close();
+		return p;
+	}
+
 }
