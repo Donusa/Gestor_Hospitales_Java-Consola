@@ -5,5 +5,6 @@ public class Main {
     	SerializacionGuardado saves = new SerializacionGuardado();
     	Usuario user = new Usuario();
     	List<Usuario> lista = saves.deserializacion("test", user);
+    	System.out.println(lista);
     }
 }

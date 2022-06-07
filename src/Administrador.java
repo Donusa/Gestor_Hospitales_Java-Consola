@@ -47,7 +47,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 				switch (choice){
 					case 1:	tarea = nuevaTarea();
 							break;
-					case 2:	tarea = modificarTarea();
+					case 2:	tarea = modificarTarea(tarea);
 							break;
 					case 3:	eliminarTarea();
 							break;
@@ -75,9 +75,8 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		//Pasar por parametro el usuario? o solo dni?
 	}
 	
-	public Tarea modificarTarea()
+	public Tarea modificarTarea(Tarea tareaAModificar)
 	{
-		Tarea tareaAModificar = null; //cambiar null y agregar la apertura del archivo
 		System.out.println("Nombre : "+tareaAModificar.getTaskName());
 		if(tareaAModificar instanceof TareaAlfanumerica)
 		{
