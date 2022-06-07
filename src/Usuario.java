@@ -75,4 +75,13 @@ public class Usuario {
 	public void setUserCel(String userCel) {
 		this.userCel = userCel;
 	}
+
+	@Override
+	public String toString() {
+		return "userName=" + userName + ", email=" + email + ", password=" + password + ", userDni=" + userDni
+				+ ", userCel=" + userCel + "";
+	}
+	
+	
+	
 }

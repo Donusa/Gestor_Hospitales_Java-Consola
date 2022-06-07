@@ -1,13 +1,12 @@
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Reader;
 import java.io.Serializable;
-import java.io.Writer;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.lang.reflect.Type;
+import com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
 
 public class SerializacionGuardado implements Serializable{
@@ -20,10 +19,10 @@ public class SerializacionGuardado implements Serializable{
 	{
 		try {
 			
-			Writer myWriter = Files.newBufferedWriter(Paths.get("src/"+saveName+".json"));
+			//Writer myWriter = Files.newBufferedWriter(Paths.get("src/"+saveName+".json"));
 			
 			Gson gson = new Gson();
-			gson.toJson(dataSave, myWriter);
+			gson.toJson(dataSave, new FileWriter("src/"+saveName+".json"));
 			
 			
 		}
@@ -33,17 +32,12 @@ public class SerializacionGuardado implements Serializable{
 		}
 	}
 	
-	@SuppressWarnings("unchecked")
 	public <T> List<T> deserializacion(String saveName, T dataType)
 	{
 		List<T> data = new ArrayList<T>();
 		try {
-			
-			Reader myReader = Files.newBufferedReader(Paths.get("src/"+saveName+".json"));
-			Gson gson = new Gson();
-			
-			data.add((T)gson.fromJson(myReader,Object.class));
-			
+			Type listType = TypeToken.getParameterized(ArrayList.class, dataType.getClass()).getType();	
+			data = new Gson().fromJson(new FileReader("src/"+saveName+".json"), listType);
 		}
 		catch(FileNotFoundException e)
 		{
@@ -53,11 +47,6 @@ public class SerializacionGuardado implements Serializable{
 		{
 			e.getMessage();
 		}
-		catch(IOException e)
-		{
-			e.getMessage();
-		}
 		return data;
 	}
-	
 }
