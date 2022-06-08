@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -64,17 +63,16 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		scan.close();
 	}
 	
-	public void verListaTareas()
+	public List<Tarea> verListaTareas()
 	{
-		List<Tarea> l = new ArrayList<>();
-		l =SerializacionGuardado.deserializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), new TareaAlfanumerica(null));
-		System.out.println(l);
-		l =SerializacionGuardado.deserializacion(nombreArchivos.TAREASBASICAS.getName(), new Tarea(null));
+		//llamar merge de lista de sistema para unir las listas y printear la salida
+		return null;
 	}
 	
 	public void eliminarTarea()
 	{
-		//buscar archivo
+		//llamar lista de tareas de sistema
+		
 		//borrar del archivo
 		Sistema.users.remove(0);//El 0 deberia ser cambiado por la forma de busqueda del usuario . 
 		//Pasar por parametro el usuario? o solo dni?
