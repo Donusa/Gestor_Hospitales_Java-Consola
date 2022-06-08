@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -56,10 +57,14 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			System.out.println("Seleccione el numero del tratamiento a asignar/modificar.\n");
 			Tratamiento auxT = tratamientosPaciente.get(scan.nextInt());
 			if (auxT.estado.equals(EstadoDelTratamiento.SIN_ASIGNAR)){
+				//Preguntar si quiere cargar el Plan preestablecido (buscar la lista de planes y mostrarle el de la enfermedad e) o si quiere crear uno nuevo (hago lo que sigue)
 				auxT.setPlan(crearNuevoPlan(auxT.plan.getEnfermedad()));
+				auxT.setInicio(LocalDate.now());
+				auxT.setFin();
 			}
 			else{
 				auxT.setPlan(modificarPlan(auxT.plan));
+				auxT.setFin();
 			}
 		}
 		else{
@@ -68,9 +73,8 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		scan.close();
 	}
 	
-	public void controlRegistrosDePacientes()
-	{
-		
+	public void controlRegistrosDePacientes() {
+		// falta ver que va aca
 	}
 	
 	public void finalizacionPlanesDeControl(String dniPaciente) {

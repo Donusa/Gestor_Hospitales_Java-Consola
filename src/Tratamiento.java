@@ -24,8 +24,8 @@ public class Tratamiento {
 		return fin;
 	}
 
-	public void setFin(LocalDate fin) {
-		this.fin = fin;
+	public void setFin() {
+		this.fin = this.inicio.plusDays(plan.getDuracion());
 	}
 
 	public Profesional getProfesionalEncargado() {
