@@ -7,6 +7,9 @@ public class Plan {
 	List<Tarea> tasks = new ArrayList<>();
 	int duracion=0;
 
+	public Plan() {
+	}
+
 	public Plan(Enfermedad enfermedad) {
 		this.enfermedad = enfermedad;
 	}

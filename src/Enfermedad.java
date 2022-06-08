@@ -4,7 +4,10 @@ import java.util.List;
 public class Enfermedad {
 	private List<String> sintomas = new ArrayList<>();
 	private String name;
-	
+
+	public Enfermedad() {
+	}
+
 	public Enfermedad(List<String> sintomas, String name) {
 		this.sintomas = sintomas;
 		this.name = name;

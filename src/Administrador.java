@@ -4,10 +4,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Administrador extends Usuario implements CrearPlan, Menu{
-	
 
-	
-	public Administrador(String userName ,String email, String password, String userDni, String userCel) {
+	public Administrador() {
+	}
+
+	public Administrador(String userName , String email, String password, String userDni, String userCel) {
 		super(userName,email,password,userDni,userCel);
 		
 	}

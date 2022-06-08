@@ -2,7 +2,10 @@
 public class TareaNumerica extends Tarea{
 	
 	private int numero;
-	
+
+	public TareaNumerica() {
+	}
+
 	public TareaNumerica(String taskName) {
 		super(taskName);
 		// TODO Auto-generated constructor stub

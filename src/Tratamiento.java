@@ -7,6 +7,9 @@ public class Tratamiento {
 	Plan plan;
 	EstadoDelTratamiento estado = EstadoDelTratamiento.SIN_ASIGNAR;
 
+	public Tratamiento() {
+	}
+
 	public Tratamiento(Profesional profesionalEncargado, Enfermedad e) {
 		this.profesionalEncargado = profesionalEncargado;
 		this.plan = new Plan(e);

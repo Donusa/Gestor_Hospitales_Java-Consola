@@ -2,7 +2,10 @@
 public class Tarea {
 	protected String taskName;
 	protected boolean taskDone = false;
-	
+
+	public Tarea() {
+	}
+
 	public Tarea(String taskName) {
 		this.taskName = taskName;
 	}

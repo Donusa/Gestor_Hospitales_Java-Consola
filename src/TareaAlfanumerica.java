@@ -2,7 +2,10 @@
 public class TareaAlfanumerica extends Tarea{
 	
 	private String info = "";
-	
+
+	public TareaAlfanumerica() {
+	}
+
 	public TareaAlfanumerica(String taskName) {
 		super(taskName);
 	}

@@ -23,7 +23,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 
 		do{
 			try{
-				System.out.println("1. Asignacion de Planes de Control.\n"
+				System.out.println("1. Asignacion o Modificacion de Planes de Control.\n"
 								 + "2. Control de los Registros de los Pacientes.\n"
 								 + "3. Finalizacion de Planes de Control.\n"
 								 + "0. Salir.\n");
@@ -31,7 +31,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 				switch (choice) {
 					case 1 -> {
 						System.out.println("Ingrese el DNI del paciente a asignar el Plan.\n");
-						asignacionPlanesDeControl(scan.nextLine());
+						gestionPlanesDeControl(scan.nextLine());
 					}
 					case 2 -> controlRegistrosDePacientes();
 					case 3 -> {
@@ -48,7 +48,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		scan.close();
 	}
 
-	public void asignacionPlanesDeControl(String dniPaciente) {
+	public void gestionPlanesDeControl(String dniPaciente) {
 		Paciente p =  buscarPaciente(dniPaciente);
 		Scanner scan =  new Scanner(System.in);
 		if (p!=null){
@@ -57,14 +57,10 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			System.out.println("Seleccione el numero del tratamiento a asignar/modificar.\n");
 			Tratamiento auxT = tratamientosPaciente.get(scan.nextInt());
 			if (auxT.estado.equals(EstadoDelTratamiento.SIN_ASIGNAR)){
-				//Preguntar si quiere cargar el Plan preestablecido (buscar la lista de planes y mostrarle el de la enfermedad e) o si quiere crear uno nuevo (hago lo que sigue)
-				auxT.setPlan(crearNuevoPlan(auxT.plan.getEnfermedad()));
-				auxT.setInicio(LocalDate.now());
-				auxT.setFin();
+				asignacionTratamientos(auxT);
 			}
 			else{
-				auxT.setPlan(modificarPlan(auxT.plan));
-				auxT.setFin();
+				modificacionTratamientos(auxT);
 			}
 		}
 		else{
@@ -72,7 +68,44 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		}
 		scan.close();
 	}
-	
+
+	public void asignacionTratamientos(Tratamiento t) {
+		Scanner scan = new Scanner(System.in);
+		int choice = 0;
+
+		do {
+			try {
+				System.out.println("Ingrese una opcion.\n"
+						+ "1. Asignar Plan preestablecido para la enfermedad \"" + t.plan.getEnfermedad() + "\".\n"
+						+ "2. Crear nuevo Plan.\n");
+				choice = scan.nextInt();
+				switch (choice) {
+					case 1:
+						//buscar la lista de planes y mostrarle el preestablecido de la enfermedad e
+						break;
+					case 2:
+						t.setPlan(crearNuevoPlan(t.plan.getEnfermedad()));
+						break;
+					default:
+						System.out.println("Ingrese una opcion valida.\n");
+				}
+				t.setInicio(LocalDate.now());
+				t.setFin();
+				t.setEstado(EstadoDelTratamiento.EN_CURSO);
+			} catch (InputMismatchException e) {
+				System.out.println("Ingrese una opcion valida.\n");
+			}
+		}while (choice!=1 && choice!=2);
+
+		scan.close();
+	}
+
+	public void modificacionTratamientos(Tratamiento t){
+		t.setPlan(modificarPlan(t.getPlan()));
+		t.setPlan(modificarPlan(t.plan));
+		t.setFin();
+	}
+
 	public void controlRegistrosDePacientes() {
 		// falta ver que va aca
 	}
