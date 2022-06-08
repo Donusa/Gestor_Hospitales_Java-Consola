@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Administrador extends Usuario implements CrearPlan, Menu{
@@ -64,7 +66,10 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 	
 	public void verListaTareas()
 	{
-		//abre el archivo e imprime todas las tareas del mismo
+		List<Tarea> l = new ArrayList<>();
+		l =SerializacionGuardado.deserializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), new TareaAlfanumerica(null));
+		System.out.println(l);
+		l =SerializacionGuardado.deserializacion(nombreArchivos.TAREASBASICAS.getName(), new Tarea(null));
 	}
 	
 	public void eliminarTarea()

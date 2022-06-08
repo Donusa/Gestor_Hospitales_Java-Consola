@@ -20,7 +20,7 @@ public class SerializacionGuardado implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	
-	public <T> void serializacion(String saveName, List<T> dataSave)
+	public static <T> void serializacion(String saveName, List<T> dataSave)
 	{
 		try {
 			File file = new File("src/"+saveName+".json");
@@ -48,7 +48,7 @@ public class SerializacionGuardado implements Serializable{
 		}
 	}
 	
-	public <T> List<T> deserializacion(String saveName, T dataType)
+	public static <T> List<T> deserializacion(String saveName, T dataType)
 	{
 		List<T> data = new ArrayList<T>();
 		try {
