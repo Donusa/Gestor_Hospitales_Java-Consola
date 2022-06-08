@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Plan {
 	Enfermedad enfermedad;
 	List<Tarea> tasks = new ArrayList<>();
-	int duracion;
+	int duracion=0;
 
 	public Plan(Enfermedad enfermedad) {
 		this.enfermedad = enfermedad;
