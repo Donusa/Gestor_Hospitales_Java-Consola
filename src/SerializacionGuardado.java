@@ -1,3 +1,5 @@
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -8,6 +10,9 @@ import java.util.List;
 import java.lang.reflect.Type;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
 public class SerializacionGuardado implements Serializable{
 
@@ -18,17 +23,28 @@ public class SerializacionGuardado implements Serializable{
 	public <T> void serializacion(String saveName, List<T> dataSave)
 	{
 		try {
-			
-			//Writer myWriter = Files.newBufferedWriter(Paths.get("src/"+saveName+".json"));
-			
-			Gson gson = new Gson();
-			gson.toJson(dataSave, new FileWriter("src/"+saveName+".json"));
-			
-			
+			File file = new File("src/"+saveName+".json");
+			if(!file.exists())
+			{
+				try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))){}
+				catch(IOException e)
+				{
+					e.getMessage();
+				}
+			}
+			JsonParser parser = new JsonParser();
+			Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+			String json = gson.toJson(dataSave);;
+			JsonElement el = parser.parse(json);
+			json = gson.toJson(el);
+			FileWriter f = new FileWriter(file);
+			f.write(json);
+			f.close();
 		}
-		catch(IOException e)
+		catch(Exception e)
 		{
-			e.getMessage();
+			System.out.println("Error");
 		}
 	}
 	
