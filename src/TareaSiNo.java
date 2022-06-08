@@ -2,7 +2,10 @@
 public class TareaSiNo extends Tarea{
 	
 	private String decision;
-	
+
+	public TareaSiNo() {
+	}
+
 	public TareaSiNo(String taskName) {
 		super(taskName);
 		// TODO Auto-generated constructor stub

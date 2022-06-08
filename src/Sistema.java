@@ -19,6 +19,14 @@ public class Sistema {
 	
 	public void dayChangeReset()
 	{
-		
+
+	}
+
+
+
+	public List<Plan> listarPlanes(){
+		List<Plan> listaPlanes = new ArrayList<>();
+		listaPlanes = SerializacionGuardado.deserializacion(nombreArchivos.PLANES.getName(), new Plan());
+		return listaPlanes;
 	}
 }
