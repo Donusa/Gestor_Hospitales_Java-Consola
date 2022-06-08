@@ -132,7 +132,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 
 
 	@Override
-	public void crearNuevoPlan(Enfermedad e) {          /// Falta que agregue el nuevo plan al archivo de planes
+	public Plan crearNuevoPlan(Enfermedad e) {          /// Falta que agregue el nuevo plan al archivo de planes
 		Scanner scan= new Scanner(System.in);
 		Plan p= new Plan(e);
 		System.out.println("Ingrese la duracion del Plan:");
@@ -151,6 +151,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			}
 		}while (rta == 1);
 		scan.close();
+		return p;
 	}
 
 	@Override

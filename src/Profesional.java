@@ -33,7 +33,10 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 						asignacionPlanesDeControl(scan.nextLine());
 					}
 					case 2 -> controlRegistrosDePacientes();
-					case 3 -> finalizacionPlanesDeControl();
+					case 3 -> {
+						System.out.println("Ingrese el DNI del paciente a asignar el Plan.\n");
+						finalizacionPlanesDeControl(scan.nextLine());
+					}
 				}
 			}
 			catch(InputMismatchException e){
@@ -46,15 +49,23 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 
 	public void asignacionPlanesDeControl(String dniPaciente) {
 		Paciente p =  buscarPaciente(dniPaciente);
+		Scanner scan =  new Scanner(System.in);
 		if (p!=null){
 			List<Tratamiento> tratamientosPaciente = listarTratamientosPaciente(p);
 			mostrarTratamientosPaciente(tratamientosPaciente);
 			System.out.println("Seleccione el numero del tratamiento a asignar/modificar.\n");
-
+			Tratamiento auxT = tratamientosPaciente.get(scan.nextInt());
+			if (auxT.estado.equals(EstadoDelTratamiento.SIN_ASIGNAR)){
+				auxT.setPlan(crearNuevoPlan(auxT.plan.getEnfermedad()));
+			}
+			else{
+				auxT.setPlan(modificarPlan(auxT.plan));
+			}
 		}
 		else{
-			//exception??
+			System.out.println("No se encuentra al paciente DNI: " + dniPaciente + " en la lista de pacientes asignados.\n");
 		}
+		scan.close();
 	}
 	
 	public void controlRegistrosDePacientes()
@@ -62,9 +73,19 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		
 	}
 	
-	public void finalizacionPlanesDeControl()
-	{
-		
+	public void finalizacionPlanesDeControl(String dniPaciente) {
+		Paciente p = buscarPaciente(dniPaciente);
+		Scanner scan = new Scanner(System.in);
+		if (p!=null){
+			List<Tratamiento> tratamientosPaciente = listarTratamientosPaciente(p);
+			mostrarTratamientosPaciente(tratamientosPaciente);
+			System.out.println("Seleccione el numero del tratamiento a finalizar.\n");
+			tratamientosPaciente.get(scan.nextInt()).setEstado(EstadoDelTratamiento.FINALIZADO);
+		}
+		else{
+			System.out.println("No se encuentra al paciente DNI: " + dniPaciente + " en la lista de pacientes asignados.\n");
+		}
+		scan.close();
 	}
 
 	public Paciente buscarPaciente(String dniPaciente){
@@ -85,7 +106,9 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			if(!p.getTratamientos().isEmpty()){
 				for(int i=0; i<p.getTratamientos().size(); i++){
 					if(p.getTratamientos().get(i).profesionalEncargado.equals(this)){
-						tratamientosPaciente.add(p.getTratamientos().get(i));
+						if(!(p.getTratamientos().get(i).estado.equals(EstadoDelTratamiento.FINALIZADO))) {
+							tratamientosPaciente.add(p.getTratamientos().get(i));
+						}
 					}
 				}
 			}
@@ -114,7 +137,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 	}
 
 	@Override
-	public void crearNuevoPlan(Enfermedad e) {
+	public Plan crearNuevoPlan(Enfermedad e) {
 		Scanner scan= new Scanner(System.in);
 		Plan p= new Plan(e);
 		System.out.println("Ingrese la duracion del Plan:");
@@ -133,6 +156,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			}
 		}while (rta == 1);
 		scan.close();
+		return p;
 	}
 
 	@Override
