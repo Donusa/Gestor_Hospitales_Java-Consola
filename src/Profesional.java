@@ -82,7 +82,28 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 				switch (choice) {
 					case 1:
 						List<Plan> listaPlanesDefault = Sistema.listarPlanes();
-						for(int i=0; i<)
+						Plan p = null;
+						for(int i=0; i<listaPlanesDefault.size(); i++){
+							if(listaPlanesDefault.get(i).getEnfermedad().equals(t.getPlan().getEnfermedad())){
+								p = listaPlanesDefault.get(i);
+								break;
+							}
+						}
+						if(p!=null) {
+							System.out.println(p);
+							System.out.println("Desea asignar este plan preestablecido?" +
+									"\n1. Si" +
+									"\n2. No");
+							if (scan.nextInt() == 1) {
+								t.setPlan(p);
+							} else {
+								t.setPlan(crearNuevoPlan(t.getPlan().getEnfermedad()));
+							}
+						}
+						else{
+							System.out.println("No hay planes preestablecidos para esta enfermedad.\n");
+							t.setPlan(crearNuevoPlan(t.getPlan().getEnfermedad()));
+						}
 						break;
 					case 2:
 						t.setPlan(crearNuevoPlan(t.getPlan().getEnfermedad()));
