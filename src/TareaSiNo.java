@@ -8,7 +8,6 @@ public class TareaSiNo extends Tarea{
 
 	public TareaSiNo(String taskName) {
 		super(taskName);
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getDecision() {
@@ -27,8 +26,8 @@ public class TareaSiNo extends Tarea{
 
 	@Override
 	public String toString() {
-		return super.toString()+"TareaSiNo [decision=" + decision + "]";
+		return super.toString() +
+				"Respuesta: " + decision;
 	}
-	
-	
+
 }

@@ -3,9 +3,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Plan {
-	Enfermedad enfermedad;
-	List<Tarea> tasks = new ArrayList<>();
-	int duracion=0;
+	private Enfermedad enfermedad;
+	private List<Tarea> tasks = new ArrayList<>();
+	private int duracion=0;
 
 	public Plan() {
 	}
@@ -93,4 +93,11 @@ public class Plan {
 		scan.close();
 	}
 
+	@Override
+	public String toString() {
+		return "Plan de Control:\n"
+				+ enfermedad +
+				"Tareas a realizar:\n" + tasks +
+				"Duracion: " + duracion + " dias.\n";
+	}
 }

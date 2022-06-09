@@ -21,8 +21,8 @@ public class TareaNumerica extends Tarea{
 
 	@Override
 	public String toString() {
-		return super.toString()+"TareaNumerica [numero=" + numero + "]";
+		return super.toString() +
+				"Numero: " + numero;
 	}
-	
 	
 }

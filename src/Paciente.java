@@ -21,7 +21,7 @@ public class Paciente extends Usuario implements Menu{
 		Scanner scan= new Scanner(System.in);
 		crearUser(this);
 		System.out.println("Ingrese la enfermedad:");
-		this.tratamientos.get(0).plan.enfermedad.setName(scan.nextLine());    //en el get el "0" habría que cambiarlo
+		this.tratamientos.get(0).getPlan().getEnfermedad().setName(scan.nextLine());    //en el get el "0" habría que cambiarlo
 		scan.close();
 	}
 
@@ -53,5 +53,11 @@ public class Paciente extends Usuario implements Menu{
 	public void setTratamientos(List<Tratamiento> tratamientos) {
 		this.tratamientos = tratamientos;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "PACIENTE | " + super.toString() +
+				"\nTratamientos del Paciente:\n" + tratamientos +
+				'}';
+	}
 }
