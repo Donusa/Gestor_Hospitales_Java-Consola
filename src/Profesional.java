@@ -232,4 +232,9 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		return p;
 	}
 
+	@Override
+	public String toString() {
+		return "PROFESIONAL | " + super.toString() +
+				"\nLista de Pacientes asignados:\n" + pacientes;
+	}
 }
