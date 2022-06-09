@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Paciente con menu y cambio en los souts de Usuario para que lo use el paciente y no quede raro">
+    <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Carga JSON File de Enfermedades">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearPlan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Plan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profesional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profesional.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +13,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -31,33 +28,64 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="29u7fg9aO64LJsZFpp4EOyuV6Pa" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/gson-2.8.2.jar" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\belen\Documents\UTN\Programacion 3\IntelliJ IDEA\TPFinalProg3Grupo3" />
     </key>
   </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="TPFinalProg3Grupo3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gson-2.8.2.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/gson-2.8.2.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.gson-2.8.2.jar" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a76553c3-37ec-4978-a3a3-ea5d9c20a0d5" name="Changes" comment="" />
+      <changelist id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Constructores vacios en todas las Clases" />
       <created>1653951224033</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -84,7 +112,49 @@
       <option name="project" value="LOCAL" />
       <updated>1653953132721</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="CrearNuevoPlan ahora retorna Plan | Enum EstadoDelTratamiento | Avance funciones del Profesional">
+      <created>1654719145676</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654719145676</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Seteo de inicio y fin de Tratamiento">
+      <created>1654720227503</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654720227503</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Constructores vacios en todas las Clases">
+      <created>1654723379552</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1654723379552</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Asignacion de tratamientos">
+      <created>1654800071579</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1654800071579</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Creacion de toStrings">
+      <created>1654802775775</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1654802775775</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Carga JSON File de Enfermedades">
+      <created>1654806334534</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1654806334534</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -111,8 +181,15 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Creacion del Proyecto en IntelliJ" />
     <MESSAGE value="Creacion del Proyecto en IntelliJ - add Main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creacion del Proyecto en IntelliJ - add Main" />
+    <MESSAGE value="CrearNuevoPlan ahora retorna Plan | Enum EstadoDelTratamiento | Avance funciones del Profesional" />
+    <MESSAGE value="Seteo de inicio y fin de Tratamiento" />
+    <MESSAGE value="Constructores vacios en todas las Clases" />
+    <MESSAGE value="Asignacion de tratamientos" />
+    <MESSAGE value="Creacion de toStrings" />
+    <MESSAGE value="Carga JSON File de Enfermedades" />
+    <option name="LAST_COMMIT_MESSAGE" value="Carga JSON File de Enfermedades" />
   </component>
 </project>
