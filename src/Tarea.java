@@ -25,5 +25,11 @@ public class Tarea {
 	public void setTaskDone(boolean taskDone) {
 		this.taskDone = taskDone;
 	}
+
+	@Override
+	public String toString() {
+		return "Tarea [taskName=" + taskName + ", taskDone=" + taskDone + "]\n";
+	}
+	
 	
 }

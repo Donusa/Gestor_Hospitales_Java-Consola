@@ -22,7 +22,11 @@ public class Sistema {
 
 	}
 
-
+	public static <T> List<T> mergeListas(List<T> lista, List<T> listaAgregada)
+	{
+		lista.addAll(listaAgregada);
+		return lista;
+	}
 
 	public List<Plan> listarPlanes(){
 		List<Plan> listaPlanes = new ArrayList<>();

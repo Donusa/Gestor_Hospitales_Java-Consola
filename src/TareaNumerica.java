@@ -18,6 +18,11 @@ public class TareaNumerica extends Tarea{
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString()+"TareaNumerica [numero=" + numero + "]";
+	}
 	
 	
 }

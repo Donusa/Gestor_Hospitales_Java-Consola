@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -53,7 +54,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 							break;
 					case 3:	eliminarTarea();
 							break;
-					case 4: 
+					case 4: verListaTareas();
 							break;
 				}
 			}
@@ -66,7 +67,12 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 	
 	public List<Tarea> verListaTareas()
 	{
-		//llamar merge de lista de sistema para unir las listas y printear la salida
+		List<Tarea> l = new ArrayList<>();
+		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASBASICAS.getName(), new Tarea()), l);
+		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), new Tarea()), l);
+		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASNUMERICAS.getName(), new Tarea()), l);
+		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASSINO.getName(), new Tarea()), l);
+		System.out.println(l);
 		return null;
 	}
 	

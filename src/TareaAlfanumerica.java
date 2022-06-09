@@ -18,5 +18,10 @@ public class TareaAlfanumerica extends Tarea{
 		this.info = info;
 	}
 
+	@Override
+	public String toString() {
+		return super.toString()+" TareaAlfanumerica [info=" + info + "]\n";
+	}
+
 	
 }

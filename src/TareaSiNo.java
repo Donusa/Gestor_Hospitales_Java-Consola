@@ -24,5 +24,11 @@ public class TareaSiNo extends Tarea{
 			this.decision = "No";
 		}
 	}
+
+	@Override
+	public String toString() {
+		return super.toString()+"TareaSiNo [decision=" + decision + "]";
+	}
+	
 	
 }

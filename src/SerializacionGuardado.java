@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.reflect.InaccessibleObjectException;
 import java.lang.reflect.Type;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
@@ -42,9 +43,13 @@ public class SerializacionGuardado implements Serializable{
 			f.write(json);
 			f.close();
 		}
-		catch(Exception e)
+		catch(IOException e)
 		{
-			System.out.println("Error");
+			System.out.println(e.toString());
+		}
+		catch(InaccessibleObjectException e)
+		{
+			System.out.println(e.toString());
 		}
 	}
 	

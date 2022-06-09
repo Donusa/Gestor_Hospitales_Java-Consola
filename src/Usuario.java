@@ -79,7 +79,7 @@ public class Usuario {
 	@Override
 	public String toString() {
 		return "userName=" + userName + ", email=" + email + ", password=" + password + ", userDni=" + userDni
-				+ ", userCel=" + userCel + "";
+				+ ", userCel=" + userCel + "\n";
 	}
 	
 	
