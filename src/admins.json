@@ -1,0 +1,23 @@
+[
+  {
+    "userName": "Luca Donofrio",
+    "email": "luca@gmail.com",
+    "password": "1234pass",
+    "userDni": "41149495",
+    "userCel": "22366666"
+  },
+  {
+    "userName": "Pedro Fernandez",
+    "email": "Pedro@gmail.com",
+    "password": "Pedropassword",
+    "userDni": "45555555",
+    "userCel": "22388888"
+  },
+  {
+    "userName": "Belen Robledo",
+    "email": "Belen@gmail.com",
+    "password": "Belenpassword",
+    "userDni": "40000000",
+    "userCel": "22377777"
+  }
+]
