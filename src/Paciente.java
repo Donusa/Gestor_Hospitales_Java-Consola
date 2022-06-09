@@ -5,9 +5,10 @@ import java.util.Scanner;
 
 public class Paciente extends Usuario implements Menu{
 
-	private List<Tratamiento> tratamientos = new ArrayList<>();
+	private List<Tratamiento> tratamientos;
 
 	public Paciente() {
+		tratamientos = new ArrayList<>();
 	}
 
 	public Paciente(Enfermedad e, Profesional p, String userName,
@@ -21,7 +22,7 @@ public class Paciente extends Usuario implements Menu{
 		Scanner scan= new Scanner(System.in);
 		crearUser(this);
 		System.out.println("Ingrese la enfermedad:");
-		this.tratamientos.get(0).plan.enfermedad.setName(scan.nextLine());    //en el get el "0" habría que cambiarlo
+		this.tratamientos.get(0).plan.enfermedad.setName(scan.nextLine());    //en el get el "0" habria que cambiarlo
 		scan.close();
 	}
 

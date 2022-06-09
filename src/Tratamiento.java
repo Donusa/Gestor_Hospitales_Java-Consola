@@ -1,10 +1,10 @@
 import java.time.LocalDate;
 
 public class Tratamiento {
-	LocalDate inicio;
-	LocalDate fin;
-	Profesional profesionalEncargado;
-	Plan plan;
+	protected LocalDate inicio;
+	protected LocalDate fin;
+	protected Profesional profesionalEncargado;
+	protected Plan plan;
 	EstadoDelTratamiento estado = EstadoDelTratamiento.SIN_ASIGNAR;
 
 	public Tratamiento() {

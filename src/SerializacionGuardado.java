@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.lang.reflect.InaccessibleObjectException;
 import java.lang.reflect.Type;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
@@ -23,6 +22,7 @@ public class SerializacionGuardado implements Serializable{
 	
 	public static <T> void serializacion(String saveName, List<T> dataSave)
 	{
+		Type listType = TypeToken.getParameterized(ArrayList.class, dataSave.getClass()).getType();	
 		try {
 			File file = new File("src/"+saveName+".json");
 			if(!file.exists())
@@ -36,7 +36,7 @@ public class SerializacionGuardado implements Serializable{
 			JsonParser parser = new JsonParser();
 			Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-			String json = gson.toJson(dataSave);;
+			String json = gson.toJson(dataSave, listType);
 			JsonElement el = parser.parse(json);
 			json = gson.toJson(el);
 			FileWriter f = new FileWriter(file);
@@ -44,10 +44,6 @@ public class SerializacionGuardado implements Serializable{
 			f.close();
 		}
 		catch(IOException e)
-		{
-			System.out.println(e.toString());
-		}
-		catch(InaccessibleObjectException e)
 		{
 			System.out.println(e.toString());
 		}

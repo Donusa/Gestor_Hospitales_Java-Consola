@@ -54,7 +54,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 							break;
 					case 3:	eliminarTarea();
 							break;
-					case 4: verListaTareas();
+					case 4: System.out.println(verListaTareas());
 							break;
 				}
 			}
@@ -72,17 +72,48 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), new Tarea()), l);
 		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASNUMERICAS.getName(), new Tarea()), l);
 		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASSINO.getName(), new Tarea()), l);
-		System.out.println(l);
-		return null;
+		return l;
 	}
 	
 	public void eliminarTarea()
 	{
-		//llamar lista de tareas de sistema
-		
-		//borrar del archivo
-		Sistema.users.remove(0);//El 0 deberia ser cambiado por la forma de busqueda del usuario . 
-		//Pasar por parametro el usuario? o solo dni?
+		List<Tarea> l = verListaTareas();
+		Tarea aux = new Tarea();
+		Scanner scan = new Scanner(System.in);
+		int choice = -1;
+		for(int i = 0 ; i < l.size() ; i++)
+		{
+			System.out.println((i+1)+"."+l.get(i).getTaskName());
+		}
+		do
+		{
+			try
+			{
+				choice = scan.nextInt();
+				
+			}
+			catch (InputMismatchException e) {
+				System.out.println("Solo valores numericos");
+			}	
+		}while(choice>= l.size() && choice>=0);
+		aux = l.get(choice);
+		if(aux instanceof TareaSiNo)
+		{
+			
+		}
+		else if(aux instanceof TareaNumerica)
+		{
+			
+		}
+		else if(aux instanceof TareaAlfanumerica)
+		{
+			
+		}
+		else
+		{
+			
+		}
+		scan.close();
 	}
 	
 	public Tarea modificarTarea(Tarea tareaAModificar)
