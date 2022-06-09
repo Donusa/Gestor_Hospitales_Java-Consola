@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Paciente extends Usuario implements Menu{
 
-	private List<Tratamiento> tratamientos;
+	private List<Tratamiento> tratamientos = new ArrayList<>();
 
 	public Paciente() {
 		tratamientos = new ArrayList<>();

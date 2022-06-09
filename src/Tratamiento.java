@@ -1,4 +1,4 @@
-
+import java.time.LocalDate;
 
 public class Tratamiento {
 	private String inicio;
@@ -28,7 +28,9 @@ public class Tratamiento {
 	}
 
 	public void setFin() {
-		this.fin = this.inicio.plusDays(plan.getDuracion());
+		LocalDate localDate= LocalDate.parse(this.inicio);
+		localDate.plusDays(plan.getDuracion());
+		this.fin = localDate.toString();
 	}
 
 	public String getProfesionalEncargado() {
@@ -58,7 +60,7 @@ public class Tratamiento {
 	@Override
 	public String toString() {
 		return "Tratamiento de Enfermedad: \"" + plan.getEnfermedad() + "\"" +
-				"\nProfesional encargado: " + profesionalEncargado.getUserName() +
+				"\nProfesional encargado: " + profesionalEncargado +
 				"\nInicio: " + inicio +
 				" | Fin: " + fin +
 				"\n" + plan +

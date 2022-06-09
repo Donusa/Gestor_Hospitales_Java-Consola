@@ -55,7 +55,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			List<Tratamiento> tratamientosPaciente = listarTratamientosPaciente(p);
 			mostrarTratamientosPaciente(tratamientosPaciente);
 			System.out.println("Seleccione el numero del tratamiento a asignar/modificar.\n");
-			Tratamiento auxT = tratamientosPaciente.get(scan.nextInt());
+			Tratamiento auxT = tratamientosPaciente.get(scan.nextInt() - 1);
 			if (auxT.getEstado().equals(EstadoDelTratamiento.SIN_ASIGNAR)){
 				asignacionTratamientos(auxT);
 			}
@@ -81,13 +81,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 				choice = scan.nextInt();
 				switch (choice) {
 					case 1:
-						List<Plan> listaPlanes = Sistema.listarPlanes();
-						for(int i=0; i<listaPlanes.size(); i++){
-							if(listaPlanes.get(i).getEnfermedad().equals(t.getPlan().getEnfermedad())) {
-								System.out.println(listaPlanes.get(i));
-								break;
-							}
-						}
+						//buscar la lista de planes y mostrarle el preestablecido de la enfermedad e
 						break;
 					case 2:
 						t.setPlan(crearNuevoPlan(t.getPlan().getEnfermedad()));
@@ -95,7 +89,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 					default:
 						System.out.println("Ingrese una opcion valida.\n");
 				}
-				t.setInicio(LocalDate.now());
+				t.setInicio(LocalDate.now().toString());
 				t.setFin();
 				t.setEstado(EstadoDelTratamiento.EN_CURSO);
 			} catch (InputMismatchException e) {
