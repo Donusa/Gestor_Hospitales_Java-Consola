@@ -28,7 +28,7 @@ public class Sistema {
 		return lista;
 	}
 
-	public List<Plan> listarPlanes(){
+	public static List<Plan> listarPlanes(){
 		List<Plan> listaPlanes = new ArrayList<>();
 		listaPlanes = SerializacionGuardado.deserializacion(nombreArchivos.PLANES.getName(), new Plan());
 		return listaPlanes;

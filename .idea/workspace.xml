@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Paciente con menu y cambio en los souts de Usuario para que lo use el paciente y no quede raro">
+    <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Aplicacion de interface CrearPlan">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearPlan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Plan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Profesional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profesional.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sistema.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +55,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a76553c3-37ec-4978-a3a3-ea5d9c20a0d5" name="Changes" comment="" />
+      <changelist id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Aplicacion de interface CrearPlan" />
       <created>1653951224033</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

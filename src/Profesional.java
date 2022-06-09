@@ -55,7 +55,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			List<Tratamiento> tratamientosPaciente = listarTratamientosPaciente(p);
 			mostrarTratamientosPaciente(tratamientosPaciente);
 			System.out.println("Seleccione el numero del tratamiento a asignar/modificar.\n");
-			Tratamiento auxT = tratamientosPaciente.get(scan.nextInt());
+			Tratamiento auxT = tratamientosPaciente.get(scan.nextInt() - 1);
 			if (auxT.estado.equals(EstadoDelTratamiento.SIN_ASIGNAR)){
 				asignacionTratamientos(auxT);
 			}
@@ -81,7 +81,13 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 				choice = scan.nextInt();
 				switch (choice) {
 					case 1:
-						//buscar la lista de planes y mostrarle el preestablecido de la enfermedad e
+						List<Plan> listaPlanes = Sistema.listarPlanes();
+						for(int i=0; i<listaPlanes.size(); i++){
+							if(listaPlanes.get(i).getEnfermedad().equals(t.plan.getEnfermedad())) {
+								System.out.println(listaPlanes.get(i));
+								break;
+							}
+						}
 						break;
 					case 2:
 						t.setPlan(crearNuevoPlan(t.plan.getEnfermedad()));
@@ -157,7 +163,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		if(!tratamientosPaciente.isEmpty()){
 			System.out.println("Lista de Tratamientos con este paciente:\n");
 			for(int i=0; i<tratamientosPaciente.size(); i++){
-				System.out.println(tratamientosPaciente.get(i));
+				System.out.println("N°"+(i+1)+": "+tratamientosPaciente.get(i));
 			}
 		}
 		else{
