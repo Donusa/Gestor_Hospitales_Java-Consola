@@ -41,7 +41,7 @@ public class Plan {
 	public void mostrarTareas(){
 		for(int i=0; i<tasks.size(); i++){
 			System.out.println("Tarea N°"+(i+1)+":\n"+
-					"   Nombre: "+ tasks.get(i).taskName);
+					"   Nombre: "+ tasks.get(i).getTaskName());
 		}
 	}
 

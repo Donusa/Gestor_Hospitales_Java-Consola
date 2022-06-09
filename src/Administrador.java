@@ -78,12 +78,10 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 	public void eliminarTarea()
 	{
 		List<Tarea> l = verListaTareas();
-		List<TareaSiNo> saveSiNo = new ArrayList<>();
-		List<TareaAlfanumerica> saveAlfanumerica = new ArrayList<>();
-		List<TareaNumerica> saveNumerica = new ArrayList<>();
+		List<Tarea> save = new ArrayList<>();
 		Tarea aux = new Tarea();
 		Scanner scan = new Scanner(System.in);
-		int choice = -1, remover;
+		int choice = -1;
 		for(int i = 0 ; i < l.size() ; i++)
 		{
 			System.out.println((i+1)+"."+l.get(i).getTaskName());
@@ -101,34 +99,54 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		}while(choice>= l.size() && choice>0);
 		aux = l.get(choice-1);
 		l.remove(choice-1);
+		
 		for(Tarea t: l)
 		{
-			remover = l.indexOf(t);
-			if(t instanceof TareaSiNo)
+			if(aux instanceof TareaNumerica && t instanceof TareaNumerica)
 			{
-				saveSiNo.add((TareaSiNo) t);
-				l.remove(remover);
+				save.add(t);
 			}
-			else if(t instanceof TareaAlfanumerica)
+			else if(aux instanceof TareaSiNo && t instanceof TareaSiNo)
 			{
-				saveAlfanumerica.add((TareaAlfanumerica) t);
-				l.remove(remover);
+				save.add(t);
 			}
-			else if(t instanceof TareaNumerica)
+			else if(aux instanceof TareaAlfanumerica && t instanceof TareaAlfanumerica)
 			{
-				saveNumerica.add((TareaNumerica) t);
-				l.remove(remover);
+				save.add(t);
+			}
+			else
+			{
+				if(!(t instanceof TareaNumerica || t instanceof TareaSiNo || t instanceof TareaAlfanumerica))
+				{
+					save.add(t);
+				}
 			}
 		}
-		SerializacionGuardado.serializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), saveAlfanumerica);
-		SerializacionGuardado.serializacion(nombreArchivos.TAREASNUMERICAS.getName(), saveNumerica);
-		SerializacionGuardado.serializacion(nombreArchivos.TAREASSINO.getName(), saveSiNo);
-		SerializacionGuardado.serializacion(nombreArchivos.TAREASBASICAS.getName(), l);
+		if(aux instanceof TareaNumerica)
+		{
+			SerializacionGuardado.serializacion(nombreArchivos.TAREASNUMERICAS.getName(), save);
+		}
+		else if(aux instanceof TareaSiNo)
+		{
+			SerializacionGuardado.serializacion(nombreArchivos.TAREASSINO.getName(), save);
+		}
+		else if(aux instanceof TareaAlfanumerica)
+		{
+			SerializacionGuardado.serializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), save);
+		}
+		else
+		{
+			SerializacionGuardado.serializacion(nombreArchivos.TAREASBASICAS.getName(), save);
+		}
+		
+		
 		scan.close();
 	}
 	
 	public Tarea modificarTarea(Tarea tareaAModificar)
 	{
+		List<Tarea> l = verListaTareas();
+		System.out.println("Lista de tareas : \n"+l);
 		System.out.println("Nombre : "+tareaAModificar.getTaskName());
 		if(tareaAModificar instanceof TareaAlfanumerica)
 		{
