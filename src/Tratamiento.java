@@ -1,29 +1,29 @@
-import java.time.LocalDate;
+
 
 public class Tratamiento {
-	protected LocalDate inicio;
-	protected LocalDate fin;
-	protected Profesional profesionalEncargado;
+	protected String inicio;
+	protected String fin;
+	protected String profesionalEncargado;
 	protected Plan plan;
 	EstadoDelTratamiento estado = EstadoDelTratamiento.SIN_ASIGNAR;
 
 	public Tratamiento() {
 	}
 
-	public Tratamiento(Profesional profesionalEncargado, Enfermedad e) {
+	public Tratamiento(String profesionalEncargado, Enfermedad e) {
 		this.profesionalEncargado = profesionalEncargado;
 		this.plan = new Plan(e);
 	}
 
-	public LocalDate getInicio() {
+	public String getInicio() {
 		return inicio;
 	}
 
-	public void setInicio(LocalDate inicio) {
+	public void setInicio(String inicio) {
 		this.inicio = inicio;
 	}
 
-	public LocalDate getFin() {
+	public String getFin() {
 		return fin;
 	}
 
@@ -31,11 +31,11 @@ public class Tratamiento {
 		this.fin = this.inicio.plusDays(plan.getDuracion());
 	}
 
-	public Profesional getProfesionalEncargado() {
+	public String getProfesionalEncargado() {
 		return profesionalEncargado;
 	}
 
-	public void setProfesionalEncargado(Profesional profesionalEncargado) {
+	public void setProfesionalEncargado(String profesionalEncargado) {
 		this.profesionalEncargado = profesionalEncargado;
 	}
 

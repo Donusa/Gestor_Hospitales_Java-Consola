@@ -90,7 +90,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 						System.out.println("Ingrese una opcion valida.\n");
 				}
 				t.setInicio(LocalDate.now());
-				//t.setFin();
+				t.setFin();
 				t.setEstado(EstadoDelTratamiento.EN_CURSO);
 			} catch (InputMismatchException e) {
 				System.out.println("Ingrese una opcion valida.\n");
@@ -103,7 +103,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 	public void modificacionTratamientos(Tratamiento t){
 		t.setPlan(modificarPlan(t.getPlan()));
 		t.setPlan(modificarPlan(t.plan));
-		//t.setFin();
+		t.setFin();
 	}
 
 	public void controlRegistrosDePacientes() {

@@ -77,43 +77,11 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 	
 	public void eliminarTarea()
 	{
-		List<Tarea> l = verListaTareas();
-		Tarea aux = new Tarea();
-		Scanner scan = new Scanner(System.in);
-		int choice = -1;
-		for(int i = 0 ; i < l.size() ; i++)
-		{
-			System.out.println((i+1)+"."+l.get(i).getTaskName());
-		}
+		int exit = 0;
 		do
 		{
-			try
-			{
-				choice = scan.nextInt();
-				
-			}
-			catch (InputMismatchException e) {
-				System.out.println("Solo valores numericos");
-			}	
-		}while(choice>= l.size() && choice>=0);
-		aux = l.get(choice);
-		if(aux instanceof TareaSiNo)
-		{
-			
-		}
-		else if(aux instanceof TareaNumerica)
-		{
-			
-		}
-		else if(aux instanceof TareaAlfanumerica)
-		{
-			
-		}
-		else
-		{
-			
-		}
-		scan.close();
+			System.out.println("");
+		}while(exit == 0);
 	}
 	
 	public Tarea modificarTarea(Tarea tareaAModificar)
