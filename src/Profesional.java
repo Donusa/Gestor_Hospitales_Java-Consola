@@ -89,7 +89,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 					default:
 						System.out.println("Ingrese una opcion valida.\n");
 				}
-				t.setInicio(LocalDate.now());
+				t.setInicio(LocalDate.now().toString());
 				t.setFin();
 				t.setEstado(EstadoDelTratamiento.EN_CURSO);
 			} catch (InputMismatchException e) {
