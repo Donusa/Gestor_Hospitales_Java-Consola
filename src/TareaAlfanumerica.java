@@ -20,7 +20,8 @@ public class TareaAlfanumerica extends Tarea{
 
 	@Override
 	public String toString() {
-		return super.toString()+" TareaAlfanumerica [info=" + info + "]\n";
+		return super.toString() +
+				"\nInfo: " + info;
 	}
 
 	

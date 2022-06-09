@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Paciente con menu y cambio en los souts de Usuario para que lo use el paciente y no quede raro">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearPlan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Plan.java" afterDir="false" />
+    <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Arreglos en gestion planes de control+ privates de belen">
       <change beforePath="$PROJECT_DIR$/src/Profesional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profesional.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +53,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a76553c3-37ec-4978-a3a3-ea5d9c20a0d5" name="Changes" comment="" />
+      <changelist id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Aplicacion de interface CrearPlan" />
       <created>1653951224033</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -84,7 +80,28 @@
       <option name="project" value="LOCAL" />
       <updated>1653953132721</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Arreglos en gestion planes de control">
+      <created>1654802734899</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654802734899</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Arreglos en gestion planes de control+ privates de belen">
+      <created>1654803462238</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654803462238</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Arreglos en gestion planes de control+ privates de belen">
+      <created>1654804700792</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1654804700792</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,6 +130,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creacion del Proyecto en IntelliJ" />
     <MESSAGE value="Creacion del Proyecto en IntelliJ - add Main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creacion del Proyecto en IntelliJ - add Main" />
+    <MESSAGE value="Arreglos en gestion planes de control" />
+    <MESSAGE value="Arreglos en gestion planes de control+ privates de belen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arreglos en gestion planes de control+ privates de belen" />
   </component>
 </project>

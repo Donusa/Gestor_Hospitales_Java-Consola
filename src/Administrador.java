@@ -229,7 +229,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 					case 3 :
 						p.mostrarTareas();
 						System.out.println("Ingrese el numero de tarea que quieras eliminar");
-						p.tasks.remove(scan.nextInt()-1);
+						p.getTasks().remove(scan.nextInt()-1);
 						break;
 				}
 			}
@@ -271,5 +271,10 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			}
 		} while (choice!=0);
 		scan.close();
+	}
+
+	@Override
+	public String toString() {
+		return "ADMINISTRADOR | " + super.toString();
 	}
 }

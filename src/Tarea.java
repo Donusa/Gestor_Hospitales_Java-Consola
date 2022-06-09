@@ -1,7 +1,7 @@
 
 public class Tarea {
-	protected String taskName;
-	protected boolean taskDone = false;
+	private String taskName;
+	private boolean taskDone = false;
 
 	public Tarea() {
 	}
@@ -28,8 +28,16 @@ public class Tarea {
 
 	@Override
 	public String toString() {
-		return "Tarea [taskName=" + taskName + ", taskDone=" + taskDone + "]\n";
+		StringBuilder sb = new StringBuilder();
+		sb.append("Tarea: " + taskName +
+				" | Realizada: ");
+		if(taskDone){
+			sb.append("Si");
+		}
+		else{
+			sb.append("No");
+		}
+		return sb.toString();
 	}
-	
 	
 }

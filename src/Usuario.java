@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
 public class Usuario {
-	
-	
 	protected String userName;
 	protected String email;
 	protected String password;
@@ -78,10 +76,10 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "userName=" + userName + ", email=" + email + ", password=" + password + ", userDni=" + userDni
-				+ ", userCel=" + userCel + "\n";
+		return "Nombre: " + userName + " | DNI: " + userDni +
+				"\nEmail: " + email +
+				"\nCelular: " + userCel +
+				"\nContraseña: " + password;
 	}
-	
-	
 	
 }

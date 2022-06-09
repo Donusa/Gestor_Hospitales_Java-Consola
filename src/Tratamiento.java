@@ -1,11 +1,11 @@
-
+import java.time.LocalDate;
 
 public class Tratamiento {
-	protected String inicio;
-	protected String fin;
-	protected String profesionalEncargado;
-	protected Plan plan;
-	EstadoDelTratamiento estado = EstadoDelTratamiento.SIN_ASIGNAR;
+	private String inicio;
+	private String fin;
+	private String profesionalEncargado;
+	private Plan plan;
+	private EstadoDelTratamiento estado = EstadoDelTratamiento.SIN_ASIGNAR;
 
 	public Tratamiento() {
 	}
@@ -28,7 +28,9 @@ public class Tratamiento {
 	}
 
 	public void setFin() {
-		this.fin = this.inicio.plusDays(plan.getDuracion());
+		LocalDate localDate= LocalDate.parse(this.inicio);
+		localDate.plusDays(plan.getDuracion());
+		this.fin = localDate.toString();
 	}
 
 	public String getProfesionalEncargado() {
@@ -53,5 +55,15 @@ public class Tratamiento {
 
 	public void setEstado(EstadoDelTratamiento estado) {
 		this.estado = estado;
+	}
+
+	@Override
+	public String toString() {
+		return "Tratamiento de Enfermedad: \"" + plan.getEnfermedad() + "\"" +
+				"\nProfesional encargado: " + profesionalEncargado +
+				"\nInicio: " + inicio +
+				" | Fin: " + fin +
+				"\n" + plan +
+				"\nEstado del Tratamiento: " + estado.getName();
 	}
 }
