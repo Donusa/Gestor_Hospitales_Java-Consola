@@ -22,7 +22,6 @@ public class SerializacionGuardado implements Serializable{
 	
 	public static <T> void serializacion(String saveName, List<T> dataSave)
 	{
-		Type listType = TypeToken.getParameterized(ArrayList.class, dataSave.getClass()).getType();	
 		try {
 			File file = new File("src/"+saveName+".json");
 			if(!file.exists())
@@ -36,7 +35,7 @@ public class SerializacionGuardado implements Serializable{
 			JsonParser parser = new JsonParser();
 			Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-			String json = gson.toJson(dataSave, listType);
+			String json = gson.toJson(dataSave);
 			JsonElement el = parser.parse(json);
 			json = gson.toJson(el);
 			FileWriter f = new FileWriter(file);

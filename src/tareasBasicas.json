@@ -1,0 +1,18 @@
+[
+  {
+    "taskName": "Tomar agua",
+    "taskDone": false
+  },
+  {
+    "taskName": "Hacer nebulizacion",
+    "taskDone": false
+  },
+  {
+    "taskName": "Tomar ibuprofeno cada 8hs",
+    "taskDone": false
+  },
+  {
+    "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+    "taskDone": false
+  }
+]
