@@ -8,12 +8,13 @@ public class Paciente extends Usuario implements Menu{
 	private List<Tratamiento> tratamientos = new ArrayList<>();
 
 	public Paciente() {
+		tratamientos = new ArrayList<>();
 	}
 
 	public Paciente(Enfermedad e, Profesional p, String userName,
 			String email, String password, String userDni, String userCel) {
 		super(userName,email,password,userDni,userCel);
-		tratamientos.add(new Tratamiento(p, e));
+		tratamientos.add(new Tratamiento(p.getUserName(), e));
 	}
 
 	public void ingresoDatosDeControl()
