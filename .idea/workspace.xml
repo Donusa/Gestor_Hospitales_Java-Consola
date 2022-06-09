@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Arreglos en gestion planes de control+ privates de belen">
-      <change beforePath="$PROJECT_DIR$/src/Profesional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profesional.java" afterDir="false" />
+    <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Setfin de Tratamiento">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654804700792</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Setfin de Tratamiento">
+      <created>1654805501189</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1654805501189</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,19 +116,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="belen" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -132,6 +127,7 @@
     <MESSAGE value="Creacion del Proyecto en IntelliJ - add Main" />
     <MESSAGE value="Arreglos en gestion planes de control" />
     <MESSAGE value="Arreglos en gestion planes de control+ privates de belen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arreglos en gestion planes de control+ privates de belen" />
+    <MESSAGE value="Setfin de Tratamiento" />
+    <option name="LAST_COMMIT_MESSAGE" value="Setfin de Tratamiento" />
   </component>
 </project>
