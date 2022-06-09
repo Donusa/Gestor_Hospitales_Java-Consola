@@ -56,7 +56,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			mostrarTratamientosPaciente(tratamientosPaciente);
 			System.out.println("Seleccione el numero del tratamiento a asignar/modificar.\n");
 			Tratamiento auxT = tratamientosPaciente.get(scan.nextInt());
-			if (auxT.estado.equals(EstadoDelTratamiento.SIN_ASIGNAR)){
+			if (auxT.getEstado().equals(EstadoDelTratamiento.SIN_ASIGNAR)){
 				asignacionTratamientos(auxT);
 			}
 			else{
@@ -76,21 +76,21 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		do {
 			try {
 				System.out.println("Ingrese una opcion.\n"
-						+ "1. Asignar Plan preestablecido para la enfermedad \"" + t.plan.getEnfermedad() + "\".\n"
+						+ "1. Asignar Plan preestablecido para la enfermedad \"" + t.getPlan().getEnfermedad() + "\".\n"
 						+ "2. Crear nuevo Plan.\n");
 				choice = scan.nextInt();
 				switch (choice) {
 					case 1:
 						List<Plan> listaPlanes = Sistema.listarPlanes();
 						for(int i=0; i<listaPlanes.size(); i++){
-							if(listaPlanes.get(i).getEnfermedad().equals(t.plan.getEnfermedad())) {
+							if(listaPlanes.get(i).getEnfermedad().equals(t.getPlan().getEnfermedad())) {
 								System.out.println(listaPlanes.get(i));
 								break;
 							}
 						}
 						break;
 					case 2:
-						t.setPlan(crearNuevoPlan(t.plan.getEnfermedad()));
+						t.setPlan(crearNuevoPlan(t.getPlan().getEnfermedad()));
 						break;
 					default:
 						System.out.println("Ingrese una opcion valida.\n");
@@ -108,7 +108,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 
 	public void modificacionTratamientos(Tratamiento t){
 		t.setPlan(modificarPlan(t.getPlan()));
-		t.setPlan(modificarPlan(t.plan));
+		t.setPlan(modificarPlan(t.getPlan()));
 		t.setFin();
 	}
 
@@ -148,8 +148,8 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		if(p!=null){
 			if(!p.getTratamientos().isEmpty()){
 				for(int i=0; i<p.getTratamientos().size(); i++){
-					if(p.getTratamientos().get(i).profesionalEncargado.equals(this)){
-						if(!(p.getTratamientos().get(i).estado.equals(EstadoDelTratamiento.FINALIZADO))) {
+					if(p.getTratamientos().get(i).getProfesionalEncargado().equals(this)){
+						if(!(p.getTratamientos().get(i).getEstado().equals(EstadoDelTratamiento.FINALIZADO))) {
 							tratamientosPaciente.add(p.getTratamientos().get(i));
 						}
 					}
@@ -225,7 +225,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 					case 3 :
 						p.mostrarTareas();
 						System.out.println("Ingrese el numero de tarea que quieras eliminar");
-						p.tasks.remove(scan.nextInt()-1);
+						p.getTasks().remove(scan.nextInt()-1);
 						break;
 				}
 			}
@@ -238,4 +238,9 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		return p;
 	}
 
+	@Override
+	public String toString() {
+		return "PROFESIONAL | " + super.toString() +
+				"\nLista de Pacientes asignados:\n" + pacientes;
+	}
 }
