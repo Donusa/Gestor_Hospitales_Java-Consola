@@ -45,4 +45,10 @@ public class Sistema {
 		return l;
 	}
 
+	public static List<Enfermedad> verListaEnfermedades(){
+		List<Enfermedad> listaEnfermedades = new ArrayList<>();
+		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.ENFERMEDADES.getName(), new Enfermedad()), listaEnfermedades);
+		return listaEnfermedades;
+	}
+
 }
