@@ -57,17 +57,6 @@
   },
   {
     "sintomas": [
-      "Desmayos",
-      "Mareos",
-      "Vision borrosa",
-      "Nauseas",
-      "Fatiga",
-      "Falta de concentracion"
-    ],
-    "name": "Hipotension"
-  },
-  {
-    "sintomas": [
       "Dolor de cabeza",
       "Sangrado nasal",
       "Dificultad para respirar"
@@ -90,5 +79,14 @@
       "Inflamacion"
     ],
     "name": "Tendinitis"
+  },
+  {
+    "sintomas": [
+      "Dolor abdominal",
+      "Diarrea",
+      "Nauseas",
+      "Vomitos"
+    ],
+    "name": "Gastroenteritis"
   }
 ]

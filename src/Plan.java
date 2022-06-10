@@ -53,19 +53,12 @@ public class Plan {
 		do {
 
 			System.out.println("Escribe el tipo de tarea que desea agregar:\n" +
-					"-SINO\n" +
-					"-NUMERICA\n" +
-					"-ALFANUMERICA\n" +
-					"-SOLOMARCAR");
+								"-NUMERICA\n" +
+								"-ALFANUMERICA\n" +
+								"-SOLOMARCAR");
 			tipo = Enum.valueOf(TipoDeTarea.class, scan.nextLine().toUpperCase());
 
 			switch (tipo) {
-				case SINO:
-					System.out.println("Ingrese el nombre de la tarea:");
-					nombre = scan.nextLine();
-					TareaSiNo tareaSiNo = new TareaSiNo(nombre);
-					this.tasks.add(tareaSiNo);
-					break;
 				case NUMERICA:
 					System.out.println("Ingrese el nombre de la tarea:");
 					nombre = scan.nextLine();
