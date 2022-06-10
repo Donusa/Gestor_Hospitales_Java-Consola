@@ -77,15 +77,76 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 	
 	public void eliminarTarea()
 	{
-		int exit = 0;
+		List<Tarea> l = verListaTareas();
+		List<Tarea> save = new ArrayList<>();
+		Tarea aux = new Tarea();
+		Scanner scan = new Scanner(System.in);
+		int choice = -1;
+		for(int i = 0 ; i < l.size() ; i++)
+		{
+			System.out.println((i+1)+"."+l.get(i).getTaskName());
+		}
 		do
 		{
-			System.out.println("");
-		}while(exit == 0);
+			try
+			{
+				choice = scan.nextInt();
+				
+			}
+			catch (InputMismatchException e) {
+				System.out.println("Solo valores numericos");
+			}	
+		}while(choice>= l.size() && choice>0);
+		aux = l.get(choice-1);
+		l.remove(choice-1);
+		
+		for(Tarea t: l)
+		{
+			if(aux instanceof TareaNumerica && t instanceof TareaNumerica)
+			{
+				save.add(t);
+			}
+			else if(aux instanceof TareaSiNo && t instanceof TareaSiNo)
+			{
+				save.add(t);
+			}
+			else if(aux instanceof TareaAlfanumerica && t instanceof TareaAlfanumerica)
+			{
+				save.add(t);
+			}
+			else
+			{
+				if(!(t instanceof TareaNumerica || t instanceof TareaSiNo || t instanceof TareaAlfanumerica))
+				{
+					save.add(t);
+				}
+			}
+		}
+		if(aux instanceof TareaNumerica)
+		{
+			SerializacionGuardado.serializacion(nombreArchivos.TAREASNUMERICAS.getName(), save);
+		}
+		else if(aux instanceof TareaSiNo)
+		{
+			SerializacionGuardado.serializacion(nombreArchivos.TAREASSINO.getName(), save);
+		}
+		else if(aux instanceof TareaAlfanumerica)
+		{
+			SerializacionGuardado.serializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), save);
+		}
+		else
+		{
+			SerializacionGuardado.serializacion(nombreArchivos.TAREASBASICAS.getName(), save);
+		}
+		
+		
+		scan.close();
 	}
 	
 	public Tarea modificarTarea(Tarea tareaAModificar)
 	{
+		List<Tarea> l = verListaTareas();
+		System.out.println("Lista de tareas : \n"+l);
 		System.out.println("Nombre : "+tareaAModificar.getTaskName());
 		if(tareaAModificar instanceof TareaAlfanumerica)
 		{
