@@ -1,0 +1,48 @@
+[
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-10",
+        "fin": "2022-06-10",
+        "profesionalEncargado": "Diego Acosta",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Dolores corporales"
+            ],
+            "name": "Gripe"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "SIN_ASIGNAR"
+      }
+    ],
+    "userName": "Ana Paz",
+    "email": "anapaz@gmail.com",
+    "password": "1234",
+    "userDni": "38487299",
+    "userCel": "2234756570"
+  }
+]

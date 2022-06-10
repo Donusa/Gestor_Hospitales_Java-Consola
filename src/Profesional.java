@@ -13,7 +13,6 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 
 	public Profesional(String userName , String email, String password, String userDni, String userCel) {
 		super(userName,email,password,userDni,userCel);
-		
 	}
 
 	@Override
@@ -231,9 +230,9 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		do{
 			try{
 				System.out.println("1. Modificar duracion.\n"
-						+ "2. Agregar tarea.\n"
-						+ "3. Borrar tarea.\n"
-						+ "0. Salir.\n");
+								+ "2. Agregar tarea.\n"
+								+ "3. Borrar tarea.\n"
+								+ "0. Salir.\n");
 				choice = scan.nextInt();
 				switch (choice) {
 					case 1 :
