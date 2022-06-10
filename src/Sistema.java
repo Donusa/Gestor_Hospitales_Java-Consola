@@ -9,18 +9,52 @@ public class Sistema extends Thread{
 	
 	
 	
-	public List<Usuario> filtradoLista(String tipoDeUsuario)
-	{
-		return new ArrayList<Usuario>();
-		
-	}
-	
 	@Override
 	public void run() {
-		
+		Usuario currentUser = verificacionIdentidad();
+		if(currentUser instanceof Administrador)
+		{
+			((Administrador) currentUser).menu();
+		}
+		else if(currentUser instanceof Paciente)
+		{
+			((Paciente) currentUser).menu();
+		}
+		else if(currentUser instanceof Profesional)
+		{
+			((Profesional) currentUser).menu();
+		}
+		TimeControl.setLoop(false);
+		separacionGuardadoListas();
 	}
-
-	public void verificacionIdentidad(Usuario logUser)
+	
+	
+	private void separacionGuardadoListas()
+	{
+		List<Paciente> savesPacientes = new ArrayList<>();
+		List<Administrador> savesAdmins = new ArrayList<>();
+		List<Profesional> savesProfesionales = new ArrayList<>();
+		for(Usuario u: users)
+		{
+			if(u instanceof Paciente)
+			{
+				savesPacientes.add((Paciente) u);
+			}
+			else if(u instanceof Administrador)
+			{
+				savesAdmins.add((Administrador) u);
+			}
+			else if(u instanceof Profesional)
+			{
+				savesProfesionales.add((Profesional) u);
+			}
+		}
+		SerializacionGuardado.serializacion(nombreArchivos.PACIENTES.getName(), savesPacientes);
+		SerializacionGuardado.serializacion(nombreArchivos.ADMINISTRADORES.getName(), savesAdmins);
+		SerializacionGuardado.serializacion(nombreArchivos.PROFESIONALES.getName(), savesProfesionales);
+	}
+	
+	private Usuario verificacionIdentidad()
 	{
 		Scanner scan = new Scanner(System.in);
 		Boolean flag = false, nameChecker = false, passChecker = false;
@@ -62,6 +96,7 @@ public class Sistema extends Thread{
 		}while(flag == false);
 		
 		scan.close();
+		return currentLog;
 	}
 
 	public static <T> List<T> mergeListas(List<T> lista, List<T> listaAgregada)
