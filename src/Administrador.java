@@ -27,8 +27,93 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		Usuario.crearUser(p);
 		return p;
 	}
-	
-	public void administracionEnfermedades() {
+
+	public void administracionEnfermedades()
+	{
+		int choice = 0;
+		Scanner scan =  new Scanner(System.in);
+
+		do{
+			try{
+				System.out.println("1. Agregar enfermedad.\n"
+						+ "2. Eliminar enfermedad.\n"
+						+ "3. Ver lista de enfermedades.\n"
+						+ "0. Salir.\n");
+				choice = scan.nextInt();
+				switch (choice){
+					case 1:	nuevaEnfermedad();
+						break;
+					case 2: eliminarEnfermedad();
+						break;
+					case 3: System.out.println(Sistema.verListaEnfermedades());
+						break;
+				}
+			}
+			catch(InputMismatchException e){
+				System.out.println("Ingrese una opcion valida.\n");
+			}
+		} while (choice!=0);
+		scan.close();
+	}
+
+	public void eliminarEnfermedad()
+	{
+		List<Enfermedad> listaEnfermedades = Sistema.verListaEnfermedades();
+		Scanner scan = new Scanner(System.in);
+		int choice = -1;
+		for(int i = 0 ; i < listaEnfermedades.size() ; i++)
+		{
+			System.out.println((i+1)+"."+listaEnfermedades.get(i).getName());
+		}
+		do
+		{
+			try
+			{
+				System.out.println("Ingrese el numero de la enfermedad a eliminar: ");
+				choice = scan.nextInt();
+
+			}
+			catch (InputMismatchException e) {
+				System.out.println("Solo valores numericos");
+			}
+		}while(choice < 0 || choice >= listaEnfermedades.size());
+		listaEnfermedades.remove(choice-1);
+		SerializacionGuardado.serializacion(nombreArchivos.ENFERMEDADES.getName(), listaEnfermedades);
+		scan.close();
+	}
+
+	public void nuevaEnfermedad()
+	{
+		int choice = 0;
+		List<Enfermedad> listaEnfermedades = Sistema.verListaEnfermedades();
+		List<String> sintomas = new ArrayList<>();
+		Enfermedad nuevaEnfermedad = new Enfermedad();
+		Scanner scan = new Scanner(System.in);
+		do{
+			try{
+				System.out.println("Ingrese el nombre de la enfermedad: ");
+				nuevaEnfermedad.setName(scan.nextLine());
+				System.out.println("Ingrese los sintomas de la enfermedad: ");
+				do {
+					try {
+						sintomas.add(scan.nextLine());
+						System.out.println("1. Agregar otro sintoma.\n+"
+								+ "0. Salir.\n");
+						choice = scan.nextInt();
+					}
+					catch(InputMismatchException e){
+						System.out.println("Ingrese un valor numerico.\n");
+					}
+					} while (choice != 0);
+				nuevaEnfermedad.setSintomas(sintomas);
+				}
+			catch(InputMismatchException e){
+				System.out.println("Ingrese una opcion valida.\n");
+			}
+		} while (nuevaEnfermedad.getSintomas().isEmpty());
+		listaEnfermedades.add(nuevaEnfermedad);
+		SerializacionGuardado.serializacion(nombreArchivos.ENFERMEDADES.getName(), listaEnfermedades);
+		scan.close();
 
 	}
 	
@@ -49,7 +134,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 							break;
 					case 2: eliminarTarea();
 							break;
-					case 3: System.out.println(verListaTareas());
+					case 3: System.out.println(Sistema.verListaTareas());
 							break;
 				}
 			}
@@ -59,19 +144,10 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		} while (choice!=0);
 		scan.close();
 	}
-	
-	public List<Tarea> verListaTareas()
-	{
-		List<Tarea> l = new ArrayList<>();
-		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASBASICAS.getName(), new Tarea()), l);
-		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), new Tarea()), l);
-		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASNUMERICAS.getName(), new Tarea()), l);
-		return l;
-	}
-	
+
 	public void eliminarTarea()
 	{
-		List<Tarea> l = verListaTareas();
+		List<Tarea> l = Sistema.verListaTareas();
 		List<Tarea> save = new ArrayList<>();
 		Tarea aux = new Tarea();
 		Scanner scan = new Scanner(System.in);
@@ -84,13 +160,14 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		{
 			try
 			{
+				System.out.println("Ingrese el numero de la tarea a eliminar: ");
 				choice = scan.nextInt();
 				
 			}
 			catch (InputMismatchException e) {
 				System.out.println("Solo valores numericos");
 			}	
-		}while(choice>= l.size() && choice>0);
+		}while(choice < 0 || choice >= l.size());
 		aux = l.get(choice-1);
 		l.remove(choice-1);
 		
