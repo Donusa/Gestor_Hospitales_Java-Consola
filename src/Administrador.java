@@ -27,7 +27,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		Usuario.crearUser(p);
 		return p;
 	}
-	
+
 	public void administracionEnfermedades()
 	{
 		int choice = 0;
@@ -114,6 +114,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		listaEnfermedades.add(nuevaEnfermedad);
 		SerializacionGuardado.serializacion(nombreArchivos.ENFERMEDADES.getName(), listaEnfermedades);
 		scan.close();
+
 	}
 	
 	public void administracionTareasDeControl()
@@ -133,7 +134,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 							break;
 					case 2: eliminarTarea();
 							break;
-					case 3: System.out.println(verListaTareas());
+					case 3: System.out.println(Sistema.verListaTareas());
 							break;
 				}
 			}
@@ -143,19 +144,10 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		} while (choice!=0);
 		scan.close();
 	}
-	
-	public List<Tarea> verListaTareas()
-	{
-		List<Tarea> l = new ArrayList<>();
-		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASBASICAS.getName(), new Tarea()), l);
-		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), new Tarea()), l);
-		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASNUMERICAS.getName(), new Tarea()), l);
-		return l;
-	}
-	
+
 	public void eliminarTarea()
 	{
-		List<Tarea> l = verListaTareas();
+		List<Tarea> l = Sistema.verListaTareas();
 		List<Tarea> save = new ArrayList<>();
 		Tarea aux = new Tarea();
 		Scanner scan = new Scanner(System.in);
