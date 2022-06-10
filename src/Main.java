@@ -4,6 +4,13 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args){
+		Sistema thread1 = new Sistema();
+		TimeControl thread2 = new TimeControl();
+
+		thread1.run();
+		thread2.run();
+
+
         /* Carga de Profesionales
         Profesional p = new Profesional("Diego Acosta", "diegoacosta@gmail.com", "1234", "25300401", "2234203488");
         Profesional p1 = new Profesional("Cecilia Abrego", "ceciliaabrego@gmail.com", "1234", "29430287", "2234563701");
