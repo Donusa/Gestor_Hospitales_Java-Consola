@@ -1,6 +1,8 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         // de prueba para generar archivo tareas.json
         Tarea t = new Tarea("Tomar agua");
@@ -8,5 +10,6 @@ public class Main {
         l.add(t);
         SerializacionGuardado.serializacion(nombreArchivos.TAREASBASICAS.getName(), l);
     }
+}
 
 
