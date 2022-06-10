@@ -37,24 +37,20 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 	{
 		int choice = 0;
 		Scanner scan =  new Scanner(System.in);
-		Tarea tarea = null;
 
 		do{
 			try{
 				System.out.println("1. Agregar tarea.\n"
-								 + "2. Modificar tarea.\n"
-								 + "3. Eliminar tarea.\n"
-								 + "4. Ver lista de tareas.\n"
+								 + "2. Eliminar tarea.\n"
+								 + "3. Ver lista de tareas.\n"
 								 + "0. Salir.\n");
 				choice = scan.nextInt();
 				switch (choice){
-					case 1:	tarea = nuevaTarea();
+					case 1:	nuevaTarea();
 							break;
-					case 2:	tarea = modificarTarea(tarea);
+					case 2: eliminarTarea();
 							break;
-					case 3:	eliminarTarea();
-							break;
-					case 4: System.out.println(verListaTareas());
+					case 3: System.out.println(verListaTareas());
 							break;
 				}
 			}
@@ -142,28 +138,8 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		
 		scan.close();
 	}
-	
-	public Tarea modificarTarea(Tarea tareaAModificar)
-	{
-		List<Tarea> l = verListaTareas();
-		System.out.println("Lista de tareas : \n"+l);
-		System.out.println("Nombre : "+tareaAModificar.getTaskName());
-		if(tareaAModificar instanceof TareaAlfanumerica)
-		{
-			System.out.println(((TareaAlfanumerica) tareaAModificar).getInfo());
-		}
-		if(tareaAModificar instanceof TareaSiNo)
-		{
-			System.out.println(((TareaSiNo) tareaAModificar).getDecision());
-		}
-		if(tareaAModificar instanceof TareaNumerica)
-		{
-			System.out.println(((TareaNumerica) tareaAModificar).getNumero());
-		}
-		return tareaAModificar;
-	}
-	
-	public Tarea nuevaTarea()
+		
+	public void nuevaTarea()
 	{
 		int choice = 0;
 		String taskName = "";
@@ -197,7 +173,6 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		} while (nuevaTarea == null);
 		scan.close();
 		//agregar tarea al archivo
-		return nuevaTarea;
 	}
 
 
