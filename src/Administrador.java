@@ -28,9 +28,8 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		return p;
 	}
 	
-	public void administracionEnfermedades()
-	{
-		
+	public void administracionEnfermedades() {
+
 	}
 	
 	public void administracionTareasDeControl()
@@ -67,7 +66,6 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASBASICAS.getName(), new Tarea()), l);
 		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), new Tarea()), l);
 		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASNUMERICAS.getName(), new Tarea()), l);
-		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASSINO.getName(), new Tarea()), l);
 		return l;
 	}
 	
@@ -102,17 +100,13 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			{
 				save.add(t);
 			}
-			else if(aux instanceof TareaSiNo && t instanceof TareaSiNo)
-			{
-				save.add(t);
-			}
 			else if(aux instanceof TareaAlfanumerica && t instanceof TareaAlfanumerica)
 			{
 				save.add(t);
 			}
 			else
 			{
-				if(!(t instanceof TareaNumerica || t instanceof TareaSiNo || t instanceof TareaAlfanumerica))
+				if(!(t instanceof TareaNumerica || t instanceof TareaAlfanumerica))
 				{
 					save.add(t);
 				}
@@ -122,10 +116,6 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		{
 			SerializacionGuardado.serializacion(nombreArchivos.TAREASNUMERICAS.getName(), save);
 		}
-		else if(aux instanceof TareaSiNo)
-		{
-			SerializacionGuardado.serializacion(nombreArchivos.TAREASSINO.getName(), save);
-		}
 		else if(aux instanceof TareaAlfanumerica)
 		{
 			SerializacionGuardado.serializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), save);
@@ -134,8 +124,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		{
 			SerializacionGuardado.serializacion(nombreArchivos.TAREASBASICAS.getName(), save);
 		}
-		
-		
+
 		scan.close();
 	}
 		
@@ -147,23 +136,19 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		Scanner scan = new Scanner(System.in);
 		do{
 			try{
-				System.out.println("1. Tarea de Si/No\n"
+				System.out.println("1. Tarea simple de solo Check\n"
 								 + "2. Tarea con respuesta Alfanumerica.\n"
-								 + "3. Tarea con respuesta Numerica\n"
-								 + "4. Tarea simple de solo Check");
+								 + "3. Tarea con respuesta Numerica\n");
 				choice = scan.nextInt();
 				switch (choice){
 					case 1:
-						nuevaTarea = new TareaSiNo(taskName);
+						nuevaTarea = new Tarea(taskName);
 						break;
 					case 2:	
 						nuevaTarea = new TareaAlfanumerica(taskName);
 						break;
 					case 3:
 						nuevaTarea = new TareaNumerica(taskName);
-						break;
-					case 4:
-						nuevaTarea = new Tarea(taskName);
 						break;
 				}
 			}
@@ -207,9 +192,9 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		do{
 			try{
 				System.out.println("1. Modificar duracion.\n"
-						+ "2. Agregar tarea.\n"
-						+ "3. Borrar tarea.\n"
-						+ "0. Salir.\n");
+								+ "2. Agregar tarea.\n"
+								+ "3. Borrar tarea.\n"
+								+ "0. Salir.\n");
 				choice = scan.nextInt();
 				switch (choice) {
 					case 1 :
