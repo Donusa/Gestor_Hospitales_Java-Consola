@@ -81,7 +81,29 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 				choice = scan.nextInt();
 				switch (choice) {
 					case 1:
-						//buscar la lista de planes y mostrarle el preestablecido de la enfermedad e
+						List<Plan> listaPlanesDefault = Sistema.listarPlanes();
+						Plan p = null;
+						for(int i=0; i<listaPlanesDefault.size(); i++){
+							if(listaPlanesDefault.get(i).getEnfermedad().equals(t.getPlan().getEnfermedad())){
+								p = listaPlanesDefault.get(i);
+								break;
+							}
+						}
+						if(p!=null) {
+							System.out.println(p);
+							System.out.println("Desea asignar este plan preestablecido?" +
+									"\n1. Si" +
+									"\n2. No");
+							if (scan.nextInt() == 1) {
+								t.setPlan(p);
+							} else {
+								t.setPlan(crearNuevoPlan(t.getPlan().getEnfermedad()));
+							}
+						}
+						else{
+							System.out.println("No hay planes preestablecidos para esta enfermedad.\n");
+							t.setPlan(crearNuevoPlan(t.getPlan().getEnfermedad()));
+						}
 						break;
 					case 2:
 						t.setPlan(crearNuevoPlan(t.getPlan().getEnfermedad()));
@@ -115,9 +137,14 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		Scanner scan = new Scanner(System.in);
 		if (p!=null){
 			List<Tratamiento> tratamientosPaciente = listarTratamientosPaciente(p);
-			mostrarTratamientosPaciente(tratamientosPaciente);
-			System.out.println("Seleccione el numero del tratamiento a finalizar.\n");
-			tratamientosPaciente.get(scan.nextInt()).setEstado(EstadoDelTratamiento.FINALIZADO);
+			if(!tratamientosPaciente.isEmpty()) {
+				mostrarTratamientosPaciente(tratamientosPaciente);
+				System.out.println("Seleccione el numero del tratamiento a finalizar.\n");
+				tratamientosPaciente.get(scan.nextInt()).setEstado(EstadoDelTratamiento.FINALIZADO);
+			}
+			else{
+				System.out.println("No hay tratamientos con este paciente.\n");
+			}
 		}
 		else{
 			System.out.println("No se encuentra al paciente DNI: " + dniPaciente + " en la lista de pacientes asignados.\n");
@@ -142,7 +169,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		if(p!=null){
 			if(!p.getTratamientos().isEmpty()){
 				for(int i=0; i<p.getTratamientos().size(); i++){
-					if(p.getTratamientos().get(i).getProfesionalEncargado().equals(this)){
+					if(p.getTratamientos().get(i).getProfesionalEncargado().equals(this.userName)){
 						if(!(p.getTratamientos().get(i).getEstado().equals(EstadoDelTratamiento.FINALIZADO))) {
 							tratamientosPaciente.add(p.getTratamientos().get(i));
 						}

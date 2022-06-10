@@ -1,0 +1,12 @@
+[
+  {
+    "numero": 0,
+    "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+    "taskDone": false
+  },
+  {
+    "numero": 0,
+    "taskName": "Controlar el peso. Ingresar el resultado en Kg.",
+    "taskDone": false
+  }
+]

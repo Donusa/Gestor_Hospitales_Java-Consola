@@ -2,5 +2,45 @@
   {
     "taskName": "Tomar agua",
     "taskDone": false
+  },
+  {
+    "taskName": "Hacer nebulizacion",
+    "taskDone": false
+  },
+  {
+    "taskName": "Tomar ibuprofeno cada 8hs",
+    "taskDone": false
+  },
+  {
+    "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+    "taskDone": false
+  },
+  {
+    "taskName": "Tomar pastillas para el dolor de garganta",
+    "taskDone": false
+  },
+  {
+    "taskName": "Aplicar crema con antibiotico sobre la zona afectada",
+    "taskDone": false
+  },
+  {
+    "taskName": "Aplicar crema con antibiotico sobre la zona afectada",
+    "taskDone": false
+  },
+  {
+    "taskName": "Hacer dieta saludable",
+    "taskDone": false
+  },
+  {
+    "taskName": "Tomar bebidas deportivas para reponer los minerales del cuerpo",
+    "taskDone": false
+  },
+  {
+    "taskName": "Aplicar frio en la zona afectada para desinflamarla",
+    "taskDone": false
+  },
+  {
+    "taskName": "Tomar antiflamatorios cada 8hs",
+    "taskDone": false
   }
 ]
