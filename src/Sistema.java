@@ -1,17 +1,24 @@
-import java.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sistema {
+public class Sistema extends Thread{
 	static List<Usuario> users = new ArrayList<>();
-	LocalDate date;
 	//Map<Date, Paciente>; -- Definir archivos o implementacion en mapas
+	
+	
 	
 	public List<Usuario> filtradoLista(String tipoDeUsuario)
 	{
 		return new ArrayList<Usuario>();
+		
 	}
 	
+	@Override
+	public void run() {
+		
+	}
+
 	public void verificacionIdentidad()
 	{
 		
