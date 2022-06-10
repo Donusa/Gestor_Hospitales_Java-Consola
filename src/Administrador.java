@@ -50,7 +50,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 							break;
 					case 2: eliminarTarea();
 							break;
-					case 3: System.out.println(verListaTareas());
+					case 3: System.out.println(Sistema.verListaTareas());
 							break;
 				}
 			}
@@ -61,19 +61,9 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		scan.close();
 	}
 	
-	public List<Tarea> verListaTareas()
-	{
-		List<Tarea> l = new ArrayList<>();
-		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASBASICAS.getName(), new Tarea()), l);
-		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), new Tarea()), l);
-		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASNUMERICAS.getName(), new Tarea()), l);
-		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASSINO.getName(), new Tarea()), l);
-		return l;
-	}
-	
 	public void eliminarTarea()
 	{
-		List<Tarea> l = verListaTareas();
+		List<Tarea> l = Sistema.verListaTareas();
 		List<Tarea> save = new ArrayList<>();
 		Tarea aux = new Tarea();
 		Scanner scan = new Scanner(System.in);
