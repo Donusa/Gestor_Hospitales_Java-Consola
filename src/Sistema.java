@@ -41,7 +41,6 @@ public class Sistema {
 		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASBASICAS.getName(), new Tarea()), l);
 		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), new Tarea()), l);
 		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASNUMERICAS.getName(), new Tarea()), l);
-		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASSINO.getName(), new Tarea()), l);
 		return l;
 	}
 

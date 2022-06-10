@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a00d71c9-6a10-475f-8390-28ddea14d6f4" name="Changes" comment="a">
+    <list default="true" id="a00d71c9-6a10-475f-8390-28ddea14d6f4" name="Changes" comment="Administracion de enfermedades">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sistema.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654880518649</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Administracion de enfermedades">
+      <created>1654884421151</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1654884421151</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +151,7 @@
     <MESSAGE value="Arreglos en gestion planes de control+ privates de belen" />
     <MESSAGE value="Setfin de Tratamiento" />
     <MESSAGE value="a" />
-    <option name="LAST_COMMIT_MESSAGE" value="a" />
+    <MESSAGE value="Administracion de enfermedades" />
+    <option name="LAST_COMMIT_MESSAGE" value="Administracion de enfermedades" />
   </component>
 </project>
