@@ -1,0 +1,105 @@
+[
+  {
+    "pacientes": [
+      {
+        "tratamientos": [
+          {
+            "inicio": "2022-06-10",
+            "fin": "2022-06-10",
+            "profesionalEncargado": "Diego Acosta",
+            "plan": {
+              "enfermedad": {
+                "sintomas": [
+                  "Fiebre",
+                  "Tos",
+                  "Dolor de garganta",
+                  "Congestion nasal",
+                  "Dolores corporales"
+                ],
+                "name": "Gripe"
+              },
+              "tasks": [
+                {
+                  "taskName": "Tomar ibuprofeno cada 8hs",
+                  "taskDone": false
+                },
+                {
+                  "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+                  "taskDone": false
+                },
+                {
+                  "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+                  "taskDone": false
+                },
+                {
+                  "taskName": "Tomar pastillas para el dolor de garganta",
+                  "taskDone": false
+                }
+              ],
+              "duracion": 7
+            },
+            "estado": "SIN_ASIGNAR"
+          }
+        ],
+        "userName": "Ana Paz",
+        "email": "anapaz@gmail.com",
+        "password": "1234",
+        "userDni": "38487299",
+        "userCel": "2234756570"
+      }
+    ],
+    "userName": "Diego Acosta",
+    "email": "diegoacosta@gmail.com",
+    "password": "1234",
+    "userDni": "25300401",
+    "userCel": "2234203488"
+  },
+  {
+    "pacientes": [],
+    "userName": "Cecilia Abrego",
+    "email": "ceciliaabrego@gmail.com",
+    "password": "1234",
+    "userDni": "29430287",
+    "userCel": "2234563701"
+  },
+  {
+    "pacientes": [],
+    "userName": "Matias Alvarez",
+    "email": "matiasalvarez@gmail.com",
+    "password": "1234",
+    "userDni": "31000403",
+    "userCel": "2235331675"
+  },
+  {
+    "pacientes": [],
+    "userName": "Silvina Garcia",
+    "email": "silvinagarcia@gmail.com",
+    "password": "1234",
+    "userDni": "26547332",
+    "userCel": "2235554312"
+  },
+  {
+    "pacientes": [],
+    "userName": "Mariana Lopez",
+    "email": "marianalopez@gmail.com",
+    "password": "1234",
+    "userDni": "32876554",
+    "userCel": "2234386598"
+  },
+  {
+    "pacientes": [],
+    "userName": "Pablo Ledesma",
+    "email": "pabloledesma@gmail.com",
+    "password": "1234",
+    "userDni": "28443605",
+    "userCel": "2235463765"
+  },
+  {
+    "pacientes": [],
+    "userName": "Gustavo Perez",
+    "email": "gustavoperez@gmail.com",
+    "password": "1234",
+    "userDni": "20448796",
+    "userCel": "2235677892"
+  }
+]

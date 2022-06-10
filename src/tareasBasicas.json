@@ -20,7 +20,11 @@
     "taskDone": false
   },
   {
-    "taskName": "Aplicar crema con antibiotico sobre la zona afectada",
+    "taskName": "Tomar pastillas para el corazon",
+    "taskDone": false
+  },
+  {
+    "taskName": "Tomar antibioticos cada 8hs",
     "taskDone": false
   },
   {
