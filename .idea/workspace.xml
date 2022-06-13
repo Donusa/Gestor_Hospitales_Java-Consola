@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Cambio Scanners nextInt">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enfermedad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enfermedad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Plan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profesional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profesional.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScannerSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScannerSingleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SerializacionGuardado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SerializacionGuardado.java" afterDir="false" />
+    <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Cambios visuales al codigo">
       <change beforePath="$PROJECT_DIR$/src/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sistema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tarea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tarea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TareaAlfanumerica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TareaAlfanumerica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TareaNumerica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TareaNumerica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TimeControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TimeControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tratamiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tratamiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655158468112</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Cambios visuales al codigo">
+      <created>1655161090876</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1655161090876</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,6 +283,7 @@
     <MESSAGE value="Merge general / Carga archivos JSON" />
     <MESSAGE value="Carga datos pacientes.json" />
     <MESSAGE value="Cambio Scanners nextInt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambio Scanners nextInt" />
+    <MESSAGE value="Cambios visuales al codigo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios visuales al codigo" />
   </component>
 </project>

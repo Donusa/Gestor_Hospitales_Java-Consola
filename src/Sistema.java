@@ -7,10 +7,13 @@ import java.util.List;
 import java.util.Map;
 
 public class Sistema extends Thread{
+	//---Atributos------------------------------------------------------------------------------------------------------
 	static List<Usuario> users = new ArrayList<>();
 	static Map<LocalDate/*Fecha*/, List<Paciente>> userDate = new HashMap<>();
+	//------------------------------------------------------------------------------------------------------------------
 
-	
+
+	//---Metodos--------------------------------------------------------------------------------------------------------
 	@Override
 	public void run() {
 		Usuario currentUser = verificacionIdentidad();
@@ -31,8 +34,6 @@ public class Sistema extends Thread{
 		TimeControl.setLoop(false);
 		separacionGuardadoListas();
 	}
-	
-	
 
 	private void separacionGuardadoListas()
 	{
@@ -61,44 +62,42 @@ public class Sistema extends Thread{
 	
 	private Usuario verificacionIdentidad()
 	{
-			Boolean flag = false;
-			String userName = "";
-			String userPass = "";
-			Usuario currentLog = new Usuario();
-			users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.ADMINISTRADORES.getName(), new Administrador()));
-			users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.PACIENTES.getName(), new Paciente()));
-			users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.PROFESIONALES.getName(), new Profesional()));
+		Boolean flag = false;
+		String userName;
+		String userPass;
+		Usuario currentLog = new Usuario();
+		users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.ADMINISTRADORES.getName(), new Administrador()));
+		users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.PACIENTES.getName(), new Paciente()));
+		users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.PROFESIONALES.getName(), new Profesional()));
 			
-			do
+		do
+		{
+			System.out.println("Ingrese nombre de usuario");
+			userName = ScannerSingleton.getInstance().nextLine();
+			for(Usuario u : users)
 			{
-				System.out.println("Ingrese nombre de usuario");
-				userName = ScannerSingleton.getInstance().nextLine();
-				for(Usuario u : users)
+				if(userName.equalsIgnoreCase(u.getUserName()))
 				{
-					if(userName.equalsIgnoreCase(u.getUserName()))
-					{	
-						System.out.println("Ingrese Contraseña");
-						userPass = ScannerSingleton.getInstance().nextLine();
-						if(u.getPassword().equals(userPass))
-						{
-							flag = true;
-							currentLog = u;
-						}
+					System.out.println("Ingrese Contraseña");
+					userPass = ScannerSingleton.getInstance().nextLine();
+					if(u.getPassword().equals(userPass))
+					{
+						flag = true;
+						currentLog = u;
 					}
 				}
-				if(!flag)
-				{
-					System.out.println("Datos no validos");
-				}
-			}while(!flag);
-			
+			}
+			if(!flag)
+			{
+				System.out.println("Datos no validos");
+			}
+		}while(!flag);
+
 		return currentLog;
 	}
 
 	public static List<Plan> listarPlanes(){
-		List<Plan> listaPlanes = new ArrayList<>();
-		listaPlanes = SerializacionGuardado.deserializacion(nombreArchivos.PLANES.getName(), new Plan());
-		return listaPlanes;
+		return SerializacionGuardado.deserializacion(nombreArchivos.PLANES.getName(), new Plan());
 	}
 	
 
@@ -160,5 +159,5 @@ public class Sistema extends Thread{
 		} while (retorno == null || choice == 0);
 		return retorno;
 	}
-	
+	//------------------------------------------------------------------------------------------------------------------
 }
