@@ -5,16 +5,33 @@ import java.util.List;
 
 
 public class Profesional extends Usuario implements CrearPlan, Menu{
-	
+	//---Atributos------------------------------------------------------------------------------------------------------
 	private List<String> pacientes = new ArrayList<>();
+	//------------------------------------------------------------------------------------------------------------------
 
+
+	//---Constructores--------------------------------------------------------------------------------------------------
 	public Profesional() {
 	}
 
 	public Profesional(String userName , String email, String password, String userDni, String userCel) {
 		super(userName,email,password,userDni,userCel);
 	}
+	//------------------------------------------------------------------------------------------------------------------
 
+
+	//---Getters y Setters----------------------------------------------------------------------------------------------
+	public List<String> getPacientes() {
+		return pacientes;
+	}
+
+	public void setPacientes(List<String> pacientes) {
+		this.pacientes = pacientes;
+	}
+	//------------------------------------------------------------------------------------------------------------------
+
+
+	//---Metodos--------------------------------------------------------------------------------------------------------
 	@Override
 	public void menu() {
 		int choice = 0;
@@ -199,14 +216,6 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		}
 	}
 
-	public List<String> getPacientes() {
-		return pacientes;
-	}
-
-	public void setPacientes(List<String> pacientes) {
-		this.pacientes = pacientes;
-	}
-
 	@Override
 	public Plan crearNuevoPlan(Enfermedad e) {
 		Plan p= new Plan(e);
@@ -263,10 +272,14 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		
 		return p;
 	}
+	//------------------------------------------------------------------------------------------------------------------
 
+
+	//---toString-------------------------------------------------------------------------------------------------------
 	@Override
 	public String toString() {
 		return "PROFESIONAL | " + super.toString() +
 				"\nLista de Pacientes asignados:\n" + pacientes;
 	}
+	//------------------------------------------------------------------------------------------------------------------
 }

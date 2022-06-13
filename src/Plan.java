@@ -2,17 +2,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Plan {
+	//---Atributos------------------------------------------------------------------------------------------------------
 	private Enfermedad enfermedad;
 	private List<Tarea> tasks = new ArrayList<>();
 	private int duracion=0;
+	//------------------------------------------------------------------------------------------------------------------
 
+
+	//---Constructores--------------------------------------------------------------------------------------------------
 	public Plan() {
 	}
 
 	public Plan(Enfermedad enfermedad) {
 		this.enfermedad = enfermedad;
 	}
+	//------------------------------------------------------------------------------------------------------------------
 
+
+	//---Getters y Setters----------------------------------------------------------------------------------------------
 	public Enfermedad getEnfermedad() {
 		return enfermedad;
 	}
@@ -36,7 +43,10 @@ public class Plan {
 	public void setDuracion(int duracion) {
 		this.duracion = duracion;
 	}
+	//------------------------------------------------------------------------------------------------------------------
 
+
+	//---Metodos--------------------------------------------------------------------------------------------------------
 	public void mostrarTareas(){
 		for(int i=0; i<tasks.size(); i++){
 			System.out.println("Tarea N°"+(i+1)+":\n"+
@@ -83,7 +93,10 @@ public class Plan {
 		}while (flag == 2 );
 		
 	}
+	//------------------------------------------------------------------------------------------------------------------
 
+
+	//---toString-------------------------------------------------------------------------------------------------------
 	@Override
 	public String toString() {
 		return "Plan de Control:\n"
@@ -91,4 +104,5 @@ public class Plan {
 				"Tareas a realizar:\n" + tasks +
 				"Duracion: " + duracion + " dias.\n";
 	}
+	//------------------------------------------------------------------------------------------------------------------
 }

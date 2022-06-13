@@ -6,12 +6,19 @@ import java.util.List;
 import java.util.Map;
 
 public class Sistema extends Thread{
+	//---Atributos------------------------------------------------------------------------------------------------------
 	static List<Usuario> users = new ArrayList<>();
 	static Map<String/*Fecha*/, List<Paciente>> userDate = new HashMap<>();
+	//------------------------------------------------------------------------------------------------------------------
 
-	
-	
-	
+
+	//---Constructores--------------------------------------------------------------------------------------------------
+	public Sistema() {
+	}
+	//------------------------------------------------------------------------------------------------------------------
+
+
+	//---Metodos--------------------------------------------------------------------------------------------------------
 	@Override
 	public void run() {
 		Usuario currentUser = verificacionIdentidad();
@@ -30,8 +37,6 @@ public class Sistema extends Thread{
 		TimeControl.setLoop(false);
 		separacionGuardadoListas();
 	}
-	
-	
 
 	private void separacionGuardadoListas()
 	{
@@ -99,7 +104,6 @@ public class Sistema extends Thread{
 		listaPlanes = SerializacionGuardado.deserializacion(nombreArchivos.PLANES.getName(), new Plan());
 		return listaPlanes;
 	}
-	
 
 	public static List<Tarea> verListaTareas()
 	{
@@ -159,5 +163,5 @@ public class Sistema extends Thread{
 		} while (retorno == null || choice == 0);
 		return retorno;
 	}
-	
+	//------------------------------------------------------------------------------------------------------------------
 }

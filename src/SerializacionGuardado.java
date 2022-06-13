@@ -15,11 +15,12 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
 public class SerializacionGuardado implements Serializable{
-
-	
+	//---Atributos------------------------------------------------------------------------------------------------------
 	private static final long serialVersionUID = 1L;
-	
-	
+	//------------------------------------------------------------------------------------------------------------------
+
+
+	//---Metodos--------------------------------------------------------------------------------------------------------
 	public static <T> void serializacion(String saveName, List<T> dataSave)
 	{
 		try {
@@ -65,4 +66,5 @@ public class SerializacionGuardado implements Serializable{
 		}
 		return data;
 	}
+	//------------------------------------------------------------------------------------------------------------------
 }

@@ -1,10 +1,10 @@
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 
 public class Administrador extends Usuario implements CrearPlan, Menu{
 
+	//---Constructores--------------------------------------------------------------------------------------------------
 	public Administrador() {
 	}
 
@@ -12,8 +12,10 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		super(userName,email,password,userDni,userCel);
 		
 	}
+	//------------------------------------------------------------------------------------------------------------------
 
-	
+
+	//---Metodos--------------------------------------------------------------------------------------------------------
 	public void ingresoPacientes()
 	{
 		Paciente p = new Paciente();
@@ -350,43 +352,43 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 	@Override
 	public void menu() {
 		int choice = -1;
-		
-			do{
-				
-				System.out.println("1. Ingreso de Pacientes.\n"
-								 + "2. Ingreso de Profesionales.\n"
-								 + "3. Administracion de Enfermedades.\n"
-								 + "4. Administracion de Tareas de Control.\n"
-								 + "5. Administracion de Planes\n"
-								 + "0. Salir.\n");
-					
-				try {
-					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
-				} catch (InputMismatchException e) {
-					System.out.println(e);
-				}
+		do{
+			System.out.println("1. Ingreso de Pacientes.\n"
+							 + "2. Ingreso de Profesionales.\n"
+							 + "3. Administracion de Enfermedades.\n"
+							 + "4. Administracion de Tareas de Control.\n"
+							 + "5. Administracion de Planes\n"
+							 + "0. Salir.\n");
 
-				switch (choice){
-					case 1:	ingresoPacientes();
-							break;
-					case 2:	ingresoProfesionales();
-							break;
-					case 3:	administracionEnfermedades();
-							break;
-					case 4: administracionTareasDeControl();
-							break;
-					case 5: administracionPlanes();
-							break;
-					case 0: break;
-					default: System.out.println("Ingrese un dato numerico valido");
-							break;
+			try {
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
+			} catch (InputMismatchException e) {
+				System.out.println(e);
 			}
-		
-	} while (choice!=0);
-}
+			switch (choice){
+				case 1:	ingresoPacientes();
+						break;
+				case 2:	ingresoProfesionales();
+						break;
+				case 3:	administracionEnfermedades();
+						break;
+				case 4: administracionTareasDeControl();
+						break;
+				case 5: administracionPlanes();
+						break;
+				case 0: break;
+				default: System.out.println("Ingrese un dato numerico valido");
+						break;
+			}
+		} while (choice!=0);
+	}
+	//------------------------------------------------------------------------------------------------------------------
 
+
+	//---toString-------------------------------------------------------------------------------------------------------
 	@Override
 	public String toString() {
 		return "ADMINISTRADOR | " + super.toString();
 	}
+	//------------------------------------------------------------------------------------------------------------------
 }
