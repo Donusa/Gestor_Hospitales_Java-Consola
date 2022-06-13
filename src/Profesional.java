@@ -3,9 +3,10 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 
+
 public class Profesional extends Usuario implements CrearPlan, Menu{
 	
-	private List<Paciente> pacientes = new ArrayList<>();
+	private List<String> pacientes = new ArrayList<>();
 
 	public Profesional() {
 	}
@@ -147,15 +148,27 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 	}
 
 	public Paciente buscarPaciente(String dniPaciente){
-		if(!pacientes.isEmpty()) {
-			for (int i = 0; i < pacientes.size(); i++) {
-				if (dniPaciente.equals(pacientes.get(i).userDni)) {
-					Paciente p = pacientes.get(i);
-					return p;
-				}
+		Paciente p = null;
+		int i = 0, j = 0;
+		
+		while(i < pacientes.size() && !(dniPaciente.equals(pacientes.get(i))))
+		{
+			i++;
+		}
+		
+		if(dniPaciente.equals(pacientes.get(i))) {
+			while(j < Sistema.users.size() && !(Sistema.users.get(j).getUserDni().equals(pacientes.get(i))))
+			{
+				j++;
+			}
+			
+			if(Sistema.users.get(j).getUserDni().equals(pacientes.get(i)))
+			{
+				p = (Paciente)Sistema.users.get(j);
 			}
 		}
-		return null;
+		
+		return p;
 	}
 
 	public List<Tratamiento> listarTratamientosPaciente(Paciente p){
@@ -186,11 +199,11 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		}
 	}
 
-	public List<Paciente> getPacientes() {
+	public List<String> getPacientes() {
 		return pacientes;
 	}
 
-	public void setPacientes(List<Paciente> pacientes) {
+	public void setPacientes(List<String> pacientes) {
 		this.pacientes = pacientes;
 	}
 

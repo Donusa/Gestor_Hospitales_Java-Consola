@@ -1,11 +1,14 @@
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Map;
 
 public class Sistema extends Thread{
 	static List<Usuario> users = new ArrayList<>();
-	//Map<Date, Paciente>; -- Definir archivos o implementacion en mapas
+	static Map<String/*Fecha*/, List<Paciente>> userDate = new HashMap<>();
+
 	
 	
 	
