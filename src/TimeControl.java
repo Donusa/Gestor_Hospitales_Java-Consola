@@ -20,6 +20,7 @@ public class TimeControl extends Thread{
 		{
 			if(!(localDate.equals(LocalDate.now())))
 			{
+				setPacientesMapFinDelDia();
 				localDate = LocalDate.now();
 				saves.remove(0);
 				saves.add(localDate.toString());
@@ -33,6 +34,30 @@ public class TimeControl extends Thread{
 		TimeControl.loop = loop;
 	}
 	
+	private void setPacientesMapFinDelDia()
+	{
+		List<Paciente> listaPacientes = new ArrayList<>();
+		for(Usuario u : Sistema.users)
+		{
+			if(u instanceof Paciente)
+			{
+				listaPacientes.add((Paciente) u);
+			}
+		}
+		for(int i = 0 ; i < listaPacientes.size() ; i++)
+		{
+			for(int j = 0 ; j < listaPacientes.get(i).getTratamientos().size(); j++)
+			{
+				if(listaPacientes.get(i).getTratamientos().get(j).getEstado().equals(EstadoDelTratamiento.FINALIZADO))
+				{
+					listaPacientes.get(i).getTratamientos().remove(j);
+				}
+			}
+		}
+		Sistema.userDate.put(localDate.toString(), listaPacientes);
+	}
+	
+	  
 	private void setTasksPacientes()
 	{
 		for(Usuario u: Sistema.users)

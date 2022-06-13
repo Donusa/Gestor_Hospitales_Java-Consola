@@ -10,11 +10,10 @@ public class Sistema extends Thread{
 	static Map<String/*Fecha*/, List<Paciente>> userDate = new HashMap<>();
 
 	
-	
-	
 	@Override
 	public void run() {
 		Usuario currentUser = verificacionIdentidad();
+		JsonMapper.mapLoad();
 		if(currentUser instanceof Administrador)
 		{
 			((Administrador) currentUser).menu();
@@ -27,6 +26,7 @@ public class Sistema extends Thread{
 		{
 			((Profesional) currentUser).menu();
 		}
+		JsonMapper.mapSave();
 		TimeControl.setLoop(false);
 		separacionGuardadoListas();
 	}
