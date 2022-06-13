@@ -25,7 +25,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 								 + "2. Control de los Registros de los Pacientes.\n"
 								 + "3. Finalizacion de Planes de Control.\n"
 								 + "0. Salir.\n");
-				choice = ScannerSingleton.getInstance().nextInt();
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 				switch (choice) {
 					case 1 -> {
 						System.out.println("Ingrese el DNI del paciente a asignar el Plan.\n");
@@ -52,7 +52,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			List<Tratamiento> tratamientosPaciente = listarTratamientosPaciente(p);
 			mostrarTratamientosPaciente(tratamientosPaciente);
 			System.out.println("Seleccione el numero del tratamiento a asignar/modificar.\n");
-			Tratamiento auxT = tratamientosPaciente.get(ScannerSingleton.getInstance().nextInt() - 1);
+			Tratamiento auxT = tratamientosPaciente.get(Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1);
 			if (auxT.getEstado().equals(EstadoDelTratamiento.SIN_ASIGNAR)){
 				asignacionTratamientos(auxT);
 			}
@@ -74,7 +74,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 				System.out.println("Ingrese una opcion.\n"
 						+ "1. Asignar Plan preestablecido para la enfermedad \"" + t.getPlan().getEnfermedad() + "\".\n"
 						+ "2. Crear nuevo Plan.\n");
-				choice = ScannerSingleton.getInstance().nextInt();
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 				switch (choice) {
 					case 1:
 						List<Plan> listaPlanesDefault = Sistema.listarPlanes();
@@ -90,7 +90,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 							System.out.println("Desea asignar este plan preestablecido?" +
 									"\n1. Si" +
 									"\n2. No");
-							if (ScannerSingleton.getInstance().nextInt() == 1) {
+							if (Integer.parseInt(ScannerSingleton.getInstance().nextLine()) == 1) {
 								t.setPlan(p);
 							} else {
 								t.setPlan(crearNuevoPlan(t.getPlan().getEnfermedad()));
@@ -135,7 +135,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			if(!tratamientosPaciente.isEmpty()) {
 				mostrarTratamientosPaciente(tratamientosPaciente);
 				System.out.println("Seleccione el numero del tratamiento a finalizar.\n");
-				tratamientosPaciente.get(ScannerSingleton.getInstance().nextInt()).setEstado(EstadoDelTratamiento.FINALIZADO);
+				tratamientosPaciente.get(Integer.parseInt(ScannerSingleton.getInstance().nextLine())).setEstado(EstadoDelTratamiento.FINALIZADO);
 			}
 			else{
 				System.out.println("No hay tratamientos con este paciente.\n");
@@ -211,7 +211,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 	public Plan crearNuevoPlan(Enfermedad e) {
 		Plan p= new Plan(e);
 		System.out.println("Ingrese la duracion del Plan:");
-		p.setDuracion(ScannerSingleton.getInstance().nextInt());
+		p.setDuracion(Integer.parseInt(ScannerSingleton.getInstance().nextLine()));
 		int rta =2;
 		do {
 			try {
@@ -219,7 +219,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 				System.out.println("Desea agregar otra tarea?\n"+
 								"1. Si\n"+
 								"2. No");
-				rta=ScannerSingleton.getInstance().nextInt();
+				rta=Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 
 			}catch (InputMismatchException exception){
 				System.out.println("Ingrese una opcion valida.\n");
@@ -239,11 +239,11 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 								+ "2. Agregar tarea.\n"
 								+ "3. Borrar tarea.\n"
 								+ "0. Salir.\n");
-				choice = ScannerSingleton.getInstance().nextInt();
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 				switch (choice) {
 					case 1 :
 						System.out.println("Ingrese la nueva duracion:");
-						p.setDuracion(ScannerSingleton.getInstance().nextInt());
+						p.setDuracion(Integer.parseInt(ScannerSingleton.getInstance().nextLine()));
 						break;
 					case 2 :
 						p.agregarTarea();
@@ -251,7 +251,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 					case 3 :
 						p.mostrarTareas();
 						System.out.println("Ingrese el numero de tarea que quieras eliminar");
-						p.getTasks().remove(ScannerSingleton.getInstance().nextInt()-1);
+						p.getTasks().remove(Integer.parseInt(ScannerSingleton.getInstance().nextLine())-1);
 						break;
 				}
 			}

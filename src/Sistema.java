@@ -129,7 +129,7 @@ public class Sistema extends Thread{
 		
 			do {
 				try {
-					choice = ScannerSingleton.getInstance().nextInt() - 1;
+					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
 					retorno = listaEnfermedades.get(choice);
 				} catch (InputMismatchException e) {
 					System.out.println("Ingrese un valor numerico valido");
@@ -151,7 +151,7 @@ public class Sistema extends Thread{
 		
 		do {
 			try {
-				choice = ScannerSingleton.getInstance().nextInt() - 1;
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
 				retorno = listaPlanes.get(choice);
 			} catch (InputMismatchException e) {
 				System.out.println("Ingrese un valor numerico valido");

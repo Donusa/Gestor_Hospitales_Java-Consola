@@ -30,7 +30,7 @@ public class Paciente extends Usuario implements Menu{
 			try{
 				System.out.println("1. Ingreso de Datos de Control.\n"
 						         + "0. Salir.\n");
-				choice = ScannerSingleton.getInstance().nextInt();
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 				if(choice == 1){
 					ingresoDatosDeControl();
 				}
