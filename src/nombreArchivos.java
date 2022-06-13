@@ -9,7 +9,6 @@ public enum nombreArchivos {
 	ENFERMEDADES("enfermedades"),
 	TAREASBASICAS("tareasBasicas"),
 	TAREASALFANUMERICAS("tareasAlfanumericas"),
-	TAREASSINO("tareasSiNo"),
 	TAREASNUMERICAS("tareasNumericas"),
 	BACKUPFECHA("backupFecha");
 	

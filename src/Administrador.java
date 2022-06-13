@@ -220,6 +220,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		int choice = 0;
 		String taskName = "";
 		Tarea nuevaTarea = null;
+		List<Tarea> saves = new ArrayList<>();
 		do{
 			try{
 				System.out.println("1. Tarea simple de solo Check\n"
@@ -243,12 +244,25 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			}
 		} while (nuevaTarea == null);
 		
-		//agregar tarea al archivo
+		saves.add(nuevaTarea);
+		
+		if(nuevaTarea instanceof TareaNumerica)
+		{
+			SerializacionGuardado.serializacion(nombreArchivos.TAREASNUMERICAS.getName(), saves);
+		}
+		else if(nuevaTarea instanceof TareaAlfanumerica)
+		{
+			SerializacionGuardado.serializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), saves);
+		}
+		else
+		{
+			SerializacionGuardado.serializacion(nombreArchivos.TAREASBASICAS.getName(), saves);
+		}
 	}
 
 
 	@Override
-	public Plan crearNuevoPlan(Enfermedad e) {          /// Falta que agregue el nuevo plan al archivo de planes
+	public Plan crearNuevoPlan(Enfermedad e) {     
 		
 		Plan p= new Plan(e);
 		System.out.println("Ingrese la duracion del Plan:");
@@ -271,7 +285,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 	}
 
 	@Override
-	public Plan modificarPlan(Plan p){             /// Falta que modifique el plan en el archivo de planes
+	public Plan modificarPlan(Plan p){           
 		int choice = 0;
 
 		do{
@@ -305,6 +319,38 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		return p;
 	}
 
+	private void administracionPlanes()
+	{
+		int choice = 0;
+		List<Plan> save = Sistema.listarPlanes();
+		Plan plan = new Plan();
+		do{
+			
+			System.out.println("1. Crear nuevo plan.\n"
+							 + "2. Modificar plan existente"
+							 + "0. Salir");
+				
+			try {
+				choice = ScannerSingleton.getInstance().nextInt();
+			} catch (InputMismatchException e) {
+				System.out.println("Ingrese un dato numerico valido");
+			}
+
+			switch (choice){
+				case 1: Enfermedad enfermedad = Sistema.seleccionarEnfermedad(); 
+						crearNuevoPlan(enfermedad);
+						break;
+				case 2: plan = Sistema.seleccionarPlan();
+						modificarPlan(plan);
+						break;
+				default: System.out.println("Ingrese un dato numerico valido");
+						break;
+			}
+		} while (choice!=0);
+		
+		SerializacionGuardado.serializacion(nombreArchivos.PLANES.getName(), save);
+	}
+	
 	@Override
 	public void menu() {
 		int choice = 0;
@@ -315,6 +361,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 								 + "2. Ingreso de Profesionales.\n"
 								 + "3. Administracion de Enfermedades.\n"
 								 + "4. Administracion de Tareas de Control.\n"
+								 + "5. Administracion de Planes"
 								 + "0. Salir.\n");
 					
 				try {
@@ -331,6 +378,8 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 					case 3:	administracionEnfermedades();
 							break;
 					case 4: administracionTareasDeControl();
+							break;
+					case 5: administracionPlanes();
 							break;
 					default: System.out.println("Ingrese un dato numerico valido");
 							break;

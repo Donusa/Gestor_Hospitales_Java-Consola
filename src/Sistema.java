@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 
 public class Sistema extends Thread{
@@ -96,7 +97,7 @@ public class Sistema extends Thread{
 		return listaPlanes;
 	}
 	
-	
+
 	public static List<Tarea> verListaTareas()
 	{
 		List<Tarea> l = new ArrayList<>();
@@ -111,5 +112,49 @@ public class Sistema extends Thread{
 		listaEnfermedades.addAll(SerializacionGuardado.deserializacion(nombreArchivos.ENFERMEDADES.getName(), new Enfermedad()));
 		return listaEnfermedades;
 	}
-
+	
+	public static Enfermedad seleccionarEnfermedad() {
+		List<Enfermedad> listaEnfermedades = verListaEnfermedades();
+		Enfermedad retorno = null;
+		int choice = -1;
+		System.out.println("Seleccione una enfermedad");
+		for(int i = 0 ; i < listaEnfermedades.size() ; i++)
+		{
+			System.out.println((i+1)+"."+listaEnfermedades.get(i).getName());
+		}
+		System.out.println("0. Salir");
+		
+			do {
+				try {
+					choice = ScannerSingleton.getInstance().nextInt() - 1;
+					retorno = listaEnfermedades.get(choice);
+				} catch (InputMismatchException e) {
+					System.out.println("Ingrese un valor numerico valido");
+				} 
+			} while (retorno == null || choice == 0);
+		return retorno;
+	}
+	
+	public static Plan seleccionarPlan()
+	{
+		List<Plan> listaPlanes = listarPlanes();
+		int choice = -1;
+		Plan retorno = null;
+		for(int i = 0 ; i < listaPlanes.size() ; i++)
+		{
+			System.out.println("Plan "+(i+1)+"\n"+listaPlanes.get(i));
+		}
+		System.out.println("0. Salir");
+		
+		do {
+			try {
+				choice = ScannerSingleton.getInstance().nextInt() - 1;
+				retorno = listaPlanes.get(choice);
+			} catch (InputMismatchException e) {
+				System.out.println("Ingrese un valor numerico valido");
+			} 
+		} while (retorno == null || choice == 0);
+		return retorno;
+	}
+	
 }

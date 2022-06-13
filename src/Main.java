@@ -7,15 +7,14 @@ public class Main {
 	
 	
     public static void main(String[] args){
-//		Sistema thread1 = new Sistema();
-//		TimeControl thread2 = new TimeControl();
-//
-//		thread1.run();
-//		thread2.run();
-//		
-//    	
+		Sistema thread1 = new Sistema();
+		TimeControl thread2 = new TimeControl();
+
+		thread1.run();
+		thread2.run();
+		
     	
-    	System.out.println(Sistema.verListaTareas());
+    	
     	
 		
         /* Carga de Profesionales
