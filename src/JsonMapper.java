@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class JsonMapper {
 		JsonMapper aux = new JsonMapper();
 		Sistema.userDate.forEach((k,v)-> 
 		{
-			aux.setFecha(k);
+			aux.setFecha(k.toString());
 			aux.setLista(v);
 			mapaAux.add(aux);
 		});
@@ -26,7 +27,7 @@ public class JsonMapper {
 												.deserializacion(nombreArchivos.MAPAUSUARIO.getName(), new JsonMapper());
 		for(JsonMapper m : listaDeserializacion)
 		{
-			Sistema.userDate.put(m.getFecha(), m.getLista());
+			Sistema.userDate.put(LocalDate.parse(m.getFecha()), m.getLista());
 		}
 	}
 	

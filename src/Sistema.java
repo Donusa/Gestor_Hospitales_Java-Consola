@@ -1,4 +1,5 @@
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.InputMismatchException;
@@ -7,7 +8,7 @@ import java.util.Map;
 
 public class Sistema extends Thread{
 	static List<Usuario> users = new ArrayList<>();
-	static Map<String/*Fecha*/, List<Paciente>> userDate = new HashMap<>();
+	static Map<LocalDate/*Fecha*/, List<Paciente>> userDate = new HashMap<>();
 
 	
 	@Override

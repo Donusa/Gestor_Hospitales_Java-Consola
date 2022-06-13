@@ -54,7 +54,7 @@ public class TimeControl extends Thread{
 				}
 			}
 		}
-		Sistema.userDate.put(localDate.toString(), listaPacientes);
+		Sistema.userDate.put(localDate, listaPacientes);
 	}
 	
 	  
