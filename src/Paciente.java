@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
-import java.util.Scanner;
 
 public class Paciente extends Usuario implements Menu{
 
@@ -17,23 +16,21 @@ public class Paciente extends Usuario implements Menu{
 
 	public void ingresoDatosDeControl()
 	{
-		Scanner scan= new Scanner(System.in);
 		crearUser(this);
 		System.out.println("Ingrese la enfermedad:");
-		this.tratamientos.get(0).getPlan().getEnfermedad().setName(scan.nextLine());    //en el get el "0" habría que cambiarlo
-		scan.close();
+		this.tratamientos.get(0).getPlan().getEnfermedad().setName(ScannerSingleton.getInstance().nextLine());    //en el get el "0" habría que cambiarlo
+		
 	}
 
 	@Override
 	public void menu() {
 		int choice = 0;
-		Scanner scan =  new Scanner(System.in);
 
 		do{
 			try{
 				System.out.println("1. Ingreso de Datos de Control.\n"
 						         + "0. Salir.\n");
-				choice = scan.nextInt();
+				choice = ScannerSingleton.getInstance().nextInt();
 				if(choice == 1){
 					ingresoDatosDeControl();
 				}
@@ -42,7 +39,7 @@ public class Paciente extends Usuario implements Menu{
 				System.out.println("Ingrese una opcion valida.\n");
 			}
 		} while (choice!=0);
-		scan.close();
+		
 	}
 
 	public List<Tratamiento> getTratamientos() {
