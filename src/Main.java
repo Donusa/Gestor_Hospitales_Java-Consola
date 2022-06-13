@@ -10,8 +10,8 @@ public class Main {
 		Sistema thread1 = new Sistema();
 		TimeControl thread2 = new TimeControl();
 
-		thread1.run();
-		thread2.run();
+		thread1.start();
+		thread2.start();
 		
     	
     	
