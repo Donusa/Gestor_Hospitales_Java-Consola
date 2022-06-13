@@ -10,6 +10,7 @@ public enum nombreArchivos {
 	TAREASBASICAS("tareasBasicas"),
 	TAREASALFANUMERICAS("tareasAlfanumericas"),
 	TAREASNUMERICAS("tareasNumericas"),
+	MAPAUSUARIO("fechasUsuarios"),
 	BACKUPFECHA("backupFecha");
 	
 	private String name;

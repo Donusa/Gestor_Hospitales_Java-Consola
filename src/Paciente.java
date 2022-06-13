@@ -38,6 +38,8 @@ public class Paciente extends Usuario implements Menu{
 		this.tratamientos.get(0).getPlan().getEnfermedad().setName(ScannerSingleton.getInstance().nextLine());    //en el get el "0" habría que cambiarlo
 		
 	}
+	
+	
 
 	@Override
 	public void menu() {

@@ -1,4 +1,5 @@
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.InputMismatchException;
@@ -6,22 +7,14 @@ import java.util.List;
 import java.util.Map;
 
 public class Sistema extends Thread{
-	//---Atributos------------------------------------------------------------------------------------------------------
 	static List<Usuario> users = new ArrayList<>();
-	static Map<String/*Fecha*/, List<Paciente>> userDate = new HashMap<>();
-	//------------------------------------------------------------------------------------------------------------------
+	static Map<LocalDate/*Fecha*/, List<Paciente>> userDate = new HashMap<>();
 
-
-	//---Constructores--------------------------------------------------------------------------------------------------
-	public Sistema() {
-	}
-	//------------------------------------------------------------------------------------------------------------------
-
-
-	//---Metodos--------------------------------------------------------------------------------------------------------
+	
 	@Override
 	public void run() {
 		Usuario currentUser = verificacionIdentidad();
+		JsonMapper.mapLoad();
 		if(currentUser instanceof Administrador)
 		{
 			((Administrador) currentUser).menu();
@@ -34,9 +27,12 @@ public class Sistema extends Thread{
 		{
 			((Profesional) currentUser).menu();
 		}
+		JsonMapper.mapSave();
 		TimeControl.setLoop(false);
 		separacionGuardadoListas();
 	}
+	
+	
 
 	private void separacionGuardadoListas()
 	{
@@ -104,6 +100,7 @@ public class Sistema extends Thread{
 		listaPlanes = SerializacionGuardado.deserializacion(nombreArchivos.PLANES.getName(), new Plan());
 		return listaPlanes;
 	}
+	
 
 	public static List<Tarea> verListaTareas()
 	{
@@ -133,7 +130,7 @@ public class Sistema extends Thread{
 		
 			do {
 				try {
-					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
+					choice = ScannerSingleton.getInstance().nextInt() - 1;
 					retorno = listaEnfermedades.get(choice);
 				} catch (InputMismatchException e) {
 					System.out.println("Ingrese un valor numerico valido");
@@ -155,7 +152,7 @@ public class Sistema extends Thread{
 		
 		do {
 			try {
-				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
+				choice = ScannerSingleton.getInstance().nextInt() - 1;
 				retorno = listaPlanes.get(choice);
 			} catch (InputMismatchException e) {
 				System.out.println("Ingrese un valor numerico valido");
@@ -163,5 +160,5 @@ public class Sistema extends Thread{
 		} while (retorno == null || choice == 0);
 		return retorno;
 	}
-	//------------------------------------------------------------------------------------------------------------------
+	
 }
