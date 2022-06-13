@@ -23,8 +23,8 @@ public class TimeControl extends Thread{
 				localDate = LocalDate.now();
 				saves.remove(0);
 				saves.add(localDate.toString());
-				SerializacionGuardado.serializacion(nombreArchivos.BACKUPFECHA.getName(), saves);
 				setTasksPacientes();
+				SerializacionGuardado.serializacion(nombreArchivos.BACKUPFECHA.getName(), saves);
 			}
 		}while(loop == true);
 	}
@@ -44,6 +44,12 @@ public class TimeControl extends Thread{
 					for(Tarea tareas: t.getPlan().getTasks())
 					{
 						tareas.setTaskDone(false);
+						if(tareas instanceof TareaAlfanumerica) {
+							((TareaAlfanumerica) tareas).setInfo("");
+						}
+						else if(tareas instanceof TareaNumerica) {
+							((TareaNumerica) tareas).setNumero(0);
+						}
 					}
 				}
 			}
