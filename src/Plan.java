@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Plan {
 	private Enfermedad enfermedad;
@@ -46,7 +45,6 @@ public class Plan {
 	}
 
 	public void agregarTarea() {
-		Scanner scan = new Scanner(System.in);
 		TipoDeTarea tipo;
 		String nombre;
 		int flag=1;
@@ -56,24 +54,24 @@ public class Plan {
 								"-NUMERICA\n" +
 								"-ALFANUMERICA\n" +
 								"-SOLOMARCAR");
-			tipo = Enum.valueOf(TipoDeTarea.class, scan.nextLine().toUpperCase());
+			tipo = Enum.valueOf(TipoDeTarea.class, ScannerSingleton.getInstance().nextLine().toUpperCase());
 
 			switch (tipo) {
 				case NUMERICA:
 					System.out.println("Ingrese el nombre de la tarea:");
-					nombre = scan.nextLine();
+					nombre = ScannerSingleton.getInstance().nextLine();
 					TareaNumerica tareaNumerica = new TareaNumerica(nombre);
 					this.tasks.add(tareaNumerica);
 					break;
 				case ALFANUMERICA:
 					System.out.println("Ingrese el nombre de la tarea:");
-					nombre = scan.nextLine();
+					nombre = ScannerSingleton.getInstance().nextLine();
 					TareaAlfanumerica tareaAlfanumerica = new TareaAlfanumerica(nombre);
 					this.tasks.add(tareaAlfanumerica);
 					break;
 				case SOLOMARCAR:
 					System.out.println("Ingrese el nombre de la tarea:");
-					nombre = scan.nextLine();
+					nombre = ScannerSingleton.getInstance().nextLine();
 					Tarea tareaSoloMarcar = new Tarea(nombre);
 					this.tasks.add(tareaSoloMarcar);
 					break;
@@ -83,7 +81,7 @@ public class Plan {
 					break;
 			}
 		}while (flag == 2 );
-		scan.close();
+		
 	}
 
 	@Override

@@ -1,7 +1,6 @@
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Sistema extends Thread{
 	static List<Usuario> users = new ArrayList<>();
@@ -29,6 +28,7 @@ public class Sistema extends Thread{
 	}
 	
 	
+
 	private void separacionGuardadoListas()
 	{
 		List<Paciente> savesPacientes = new ArrayList<>();
@@ -56,53 +56,38 @@ public class Sistema extends Thread{
 	
 	private Usuario verificacionIdentidad()
 	{
-		Scanner scan = new Scanner(System.in);
-		Boolean flag = false, nameChecker = false, passChecker = false;
-		String userName = "";
-		String userPass = "";
-		Usuario currentLog = new Usuario();
-		users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.ADMINISTRADORES.getName(), new Administrador()));
-		users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.PACIENTES.getName(), new Paciente()));
-		users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.PROFESIONALES.getName(), new Profesional()));
-		
-		do
-		{
-			System.out.println("Ingrese nombre de usuario");
-			userName = scan.nextLine();
-			for(Usuario u : users)
+			Boolean flag = false;
+			String userName = "";
+			String userPass = "";
+			Usuario currentLog = new Usuario();
+			users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.ADMINISTRADORES.getName(), new Administrador()));
+			users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.PACIENTES.getName(), new Paciente()));
+			users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.PROFESIONALES.getName(), new Profesional()));
+			
+			do
 			{
-				if(userName.equalsIgnoreCase(u.getUserName()))
-				{	
-					nameChecker = true;
-					currentLog = u;
-				}
-			}
-			if(nameChecker)
-			{
-				System.out.println("Ingrese Contraseña");
-				userPass = scan.nextLine();
-				if(userPass.equals(currentLog.getPassword()));
+				System.out.println("Ingrese nombre de usuario");
+				userName = ScannerSingleton.getInstance().nextLine();
+				for(Usuario u : users)
 				{
-					flag = true;
-					passChecker = true;
+					if(userName.equalsIgnoreCase(u.getUserName()))
+					{	
+						System.out.println("Ingrese Contraseña");
+						userPass = ScannerSingleton.getInstance().nextLine();
+						if(u.getPassword().equals(userPass))
+						{
+							flag = true;
+							currentLog = u;
+						}
+					}
 				}
-			}
-			if(!passChecker || !nameChecker)
-			{
-				System.out.println("Datos no validos");
-				nameChecker = false;
-				passChecker = false;
-			}
-		}while(flag == false);
-		
-		scan.close();
+				if(!flag)
+				{
+					System.out.println("Datos no validos");
+				}
+			}while(!flag);
+			
 		return currentLog;
-	}
-
-	public static <T> List<T> mergeListas(List<T> lista, List<T> listaAgregada)
-	{
-		lista.addAll(listaAgregada);
-		return lista;
 	}
 
 	public static List<Plan> listarPlanes(){
@@ -115,15 +100,15 @@ public class Sistema extends Thread{
 	public static List<Tarea> verListaTareas()
 	{
 		List<Tarea> l = new ArrayList<>();
-		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASBASICAS.getName(), new Tarea()), l);
-		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), new Tarea()), l);
-		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.TAREASNUMERICAS.getName(), new Tarea()), l);
+		l.addAll(SerializacionGuardado.deserializacion(nombreArchivos.TAREASNUMERICAS.getName(), new TareaNumerica()));
+		l.addAll(SerializacionGuardado.deserializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), new TareaAlfanumerica()));
+		l.addAll(SerializacionGuardado.deserializacion(nombreArchivos.TAREASBASICAS.getName(), new Tarea()));
 		return l;
 	}
 
 	public static List<Enfermedad> verListaEnfermedades(){
 		List<Enfermedad> listaEnfermedades = new ArrayList<>();
-		Sistema.mergeListas(SerializacionGuardado.deserializacion(nombreArchivos.ENFERMEDADES.getName(), new Enfermedad()), listaEnfermedades);
+		listaEnfermedades.addAll(SerializacionGuardado.deserializacion(nombreArchivos.ENFERMEDADES.getName(), new Enfermedad()));
 		return listaEnfermedades;
 	}
 

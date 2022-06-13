@@ -14,7 +14,7 @@ public class TimeControl extends Thread{
 	public void run() {
 		
 		List<String> saves = new ArrayList<>();
-		SerializacionGuardado.deserializacion(nombreArchivos.BACKUPFECHA.getName(), saves);
+		saves = SerializacionGuardado.deserializacion(nombreArchivos.BACKUPFECHA.getName(), new String());
 		localDate = LocalDate.parse(saves.get(0));
 		do
 		{
@@ -24,19 +24,7 @@ public class TimeControl extends Thread{
 				saves.remove(0);
 				saves.add(localDate.toString());
 				SerializacionGuardado.serializacion(nombreArchivos.BACKUPFECHA.getName(), saves);
-				for(Usuario u: Sistema.users)
-				{
-					if(u instanceof Paciente)
-					{
-						for(Tratamiento t: ((Paciente) u).getTratamientos())
-						{
-							for(Tarea tareas: t.getPlan().getTasks())
-							{
-								tareas.setTaskDone(false);
-							}
-						}
-					}
-				}
+				setTasksPacientes();
 			}
 		}while(loop == true);
 	}
@@ -45,6 +33,22 @@ public class TimeControl extends Thread{
 		TimeControl.loop = loop;
 	}
 	
+	private void setTasksPacientes()
+	{
+		for(Usuario u: Sistema.users)
+		{
+			if(u instanceof Paciente)
+			{
+				for(Tratamiento t: ((Paciente) u).getTratamientos())
+				{
+					for(Tarea tareas: t.getPlan().getTasks())
+					{
+						tareas.setTaskDone(false);
+					}
+				}
+			}
+		}
+	}
 	
 	
 }
