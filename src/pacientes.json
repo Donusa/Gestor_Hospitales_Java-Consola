@@ -36,7 +36,7 @@
           ],
           "duracion": 7
         },
-        "estado": "SIN_ASIGNAR"
+        "estado": "EN_CURSO"
       }
     ],
     "userName": "Ana Paz",
@@ -48,9 +48,49 @@
   {
     "tratamientos": [],
     "userName": "Jorge Suarez",
-    "email": "Jorge@gmail.com",
-    "password": "123456",
+    "email": "jorgesuarez@gmail.com",
+    "password": "1234",
     "userDni": "30947628",
     "userCel": "2236958473"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Bruno Diaz",
+    "email": "brunodiaz@gmail.com",
+    "password": "1234",
+    "userDni": "40520333",
+    "userCel": "2236958474"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Di Mauro",
+    "email": "florenciadimauro@gmail.com",
+    "password": "1234",
+    "userDni": "40520334",
+    "userCel": "2236958475"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Julieta Galvan",
+    "email": "julietagalvan@gmail.com",
+    "password": "1234",
+    "userDni": "40520335",
+    "userCel": "2236958476"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Juan Gonzalez",
+    "email": "juangonzalez@gmail.com",
+    "password": "1234",
+    "userDni": "40520336",
+    "userCel": "2236958477"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Rodolfo Carlos",
+    "email": "rodolfocarlos@gmail.com",
+    "password": "1234",
+    "userDni": "40520337",
+    "userCel": "2236958478"
   }
 ]
