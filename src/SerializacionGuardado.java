@@ -47,6 +47,7 @@ public class SerializacionGuardado implements Serializable{
 			System.out.println(e.toString());
 		}
 	}
+		
 	
 	public static <T> List<T> deserializacion(String saveName, T dataType)
 	{
@@ -65,4 +66,5 @@ public class SerializacionGuardado implements Serializable{
 		}
 		return data;
 	}
+	
 }
