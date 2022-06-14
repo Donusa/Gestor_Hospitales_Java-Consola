@@ -16,7 +16,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 
 
 	//---Metodos--------------------------------------------------------------------------------------------------------
-	public void ingresoPacientes()
+	private void ingresoPacientes()
 	{
 		Paciente p = new Paciente();
 		Usuario.crearUser(p);
@@ -24,7 +24,70 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		
 	}
 	
-	public void ingresoProfesionales()
+	private void gestionPacientes()
+	{
+		int choice = -1;
+		System.out.println("1. Ingresar nuevo paciente\n"
+						 + "2. Asignar profesional a paciente\n"
+						 + "0. Salir\n");
+		
+		try {
+			choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
+		} catch (InputMismatchException e) {
+			System.out.println(e);
+		}
+		
+		switch(choice)
+		{
+		case 1: ingresoPacientes();
+			break;
+		case 2: asignarProfesional();
+			break;
+		case 0: break;
+		default: System.out.println("Ingrese una opcion valida");
+		break;
+		}
+		
+	}
+	
+	private void asignarProfesional()
+	{
+		Profesional profesional = null;
+		Paciente paciente = null;
+		System.out.println("Ingrese DNI de profesional a asignar");
+		String dni = ScannerSingleton.getInstance().nextLine();
+		
+		for(Usuario u: Sistema.users)
+		{
+			if(u instanceof Profesional && u.getUserDni().equals(dni)) {
+				profesional = (Profesional)u;
+				System.out.println("Ingrese DNI del paciente a asignar");
+				dni = ScannerSingleton.getInstance().nextLine();
+			}
+		}
+		if(profesional!=null)
+		{
+			for(Usuario u: Sistema.users)
+			{
+				if(u instanceof Paciente && u.getUserDni().equals(dni))
+				{
+					paciente = (Paciente)u;
+				}
+			}
+		}
+		
+		Enfermedad e = Sistema.seleccionarEnfermedad();
+		paciente.getTratamientos().add(crearTratamiento(profesional.getUserName(), e));
+		
+	}
+	
+	private Tratamiento crearTratamiento(String nombreProfesional, Enfermedad e)
+	{
+		Tratamiento t = new Tratamiento(nombreProfesional, e);
+		return t;
+	}
+	
+	private void ingresoProfesionales()
 	{
 		Profesional p = new Profesional();
 		Usuario.crearUser(p);
@@ -353,7 +416,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 	public void menu() {
 		int choice = -1;
 		do{
-			System.out.println("1. Ingreso de Pacientes.\n"
+			System.out.println("1. Gestion de pacientes.\n"
 							 + "2. Ingreso de Profesionales.\n"
 							 + "3. Administracion de Enfermedades.\n"
 							 + "4. Administracion de Tareas de Control.\n"
@@ -366,7 +429,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 				System.out.println(e);
 			}
 			switch (choice){
-				case 1:	ingresoPacientes();
+				case 1:	gestionPacientes();
 						break;
 				case 2:	ingresoProfesionales();
 						break;
