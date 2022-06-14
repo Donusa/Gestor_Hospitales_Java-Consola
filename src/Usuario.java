@@ -66,7 +66,7 @@ public class Usuario {
 
 
 	//---Metodos--------------------------------------------------------------------------------------------------------
-	public static void crearUser(Usuario u) {
+	public static Boolean crearUser(Usuario u) {
 		String email;
 		String dni;
 
@@ -91,10 +91,11 @@ public class Usuario {
 
 			System.out.println("Ingrese la contraseña:");
 			u.setPassword(ScannerSingleton.getInstance().nextLine());
+			return true;
 		}
 		else{
 			System.out.println("Error: El usuario DNI " + dni + " ya existe.\n");
-			u=null;
+			return false;
 		}
 	}
 

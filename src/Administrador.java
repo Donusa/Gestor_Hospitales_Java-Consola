@@ -19,11 +19,18 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 	private void ingresoPacientes()
 	{
 		Paciente p = new Paciente();
-		Usuario.crearUser(p);	//Envia paciente vacio a funcion, solo carga datos comunes de usuario(padre)
-		if(p!=null) {
-			Sistema.users.add(p);    //agrega a la lista general, esta se guarda al finalizar el programa y persiste los cambios
+		if(Usuario.crearUser(p)) {		//Envia paciente vacio a funcion, solo carga datos comunes de usuario(padre)
+			Sistema.users.add(p);    	//agrega a la lista general, esta se guarda al finalizar el programa y persiste los cambios
 		}
 		
+	}
+
+	private void ingresoProfesionales()	//Igual que con la funcion ingresoPaciente, este ingresa un profesional al sistema
+	{
+		Profesional p = new Profesional();
+		if(Usuario.crearUser(p)) {	//Se crea un nuevo profesional asignandole los valores comunes a todos los usuarios
+			Sistema.users.add(p);	//se asigna a la lista de usuarios que luego es persistida al finalizar el programa
+		}
 	}
 	
 	private void gestionPacientes()	//funcion encargada de agregar profesionales a los pacientes y/o agregar pacientes
@@ -82,18 +89,10 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		if(profesional!=null && paciente!=null)//si ambos datos fueron corroborados y existen
 		{
 			Enfermedad e = Sistema.seleccionarEnfermedad();//se selecciona una enfermedad de la lista
-			paciente.getTratamientos().add(new Tratamiento(profesional.getUserName(), e));
+			Tratamiento tratamiento = new Tratamiento(profesional.getUserName(), e);
+			paciente.getTratamientos().add(tratamiento);
 			//y se le asigna junto a un nuevo tratamiento al paciente previamente encontrado
 			
-		}
-	}
-	
-	private void ingresoProfesionales()	//Igual que con la funcion ingresoPaciente, este ingresa un profesional al sistema
-	{
-		Profesional p = new Profesional();
-		Usuario.crearUser(p);//Se crea un nuevo profesional asignandole los valores comunes a todos los usuarios
-		if(p!=null) {
-			Sistema.users.add(p);//se asigna a la lista de usuarios que luego es persistida al finalizar el programa
 		}
 	}
 	
@@ -111,7 +110,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 				}
 				catch(InputMismatchException e){
-					System.out.println("Ingrese una opcion valida.\n");
+					System.out.println("Ingrese una opcion valida prueba.\n");
 				}
 				switch (choice){
 					case 1:	nuevaEnfermedad();//crea y persiste nueva enfermedad
@@ -133,10 +132,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		for(int i = 0 ; i < listaEnfermedades.size() ; i++)
 		{
 			System.out.println((i+1)+"."+listaEnfermedades.get(i).getName());
-			System.out.println("0. Salir");
 		}
-		do
-		{
 			try
 			{
 				System.out.println("Ingrese el numero de la enfermedad a eliminar: ");
@@ -146,46 +142,51 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			catch (InputMismatchException e) {
 				System.out.println("Solo valores numericos");
 			}
-		}while(choice !=-1);//En este caso se contempla -1 ya que para la comodidad del usuario se evita usar el valor 0
-		//en la lista mostrada
 		listaEnfermedades.remove(choice-1);
 		SerializacionGuardado.serializacion(nombreArchivos.ENFERMEDADES.getName(), listaEnfermedades);
 		
 	}
 
-	public void nuevaEnfermedad()
-	{
-		int choice = 0;
+	public void nuevaEnfermedad() {
+		boolean yaExiste = false;
 		List<Enfermedad> listaEnfermedades = Sistema.verListaEnfermedades();
-		List<String> sintomas = new ArrayList<>();
 		Enfermedad nuevaEnfermedad = new Enfermedad();
-		do{
-			try{
-				System.out.println("Ingrese el nombre de la enfermedad: ");
-				nuevaEnfermedad.setName(ScannerSingleton.getInstance().nextLine());
-				System.out.println("Ingrese los sintomas de la enfermedad: ");
-				do {
-					try {
-						sintomas.add(ScannerSingleton.getInstance().nextLine());
-						System.out.println("1. Agregar otro sintoma.\n+"
-								+ "0. Salir.\n");
-						choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
-					}
-					catch(InputMismatchException e){
-						System.out.println("Ingrese un valor numerico.\n");
-					}
-				} while (choice != 0);
-				nuevaEnfermedad.setSintomas(sintomas);
-				}
-			catch(InputMismatchException e){
-				System.out.println("Ingrese una opcion valida.\n");
-			}
-		} while (nuevaEnfermedad.getSintomas().isEmpty());
-		listaEnfermedades.add(nuevaEnfermedad);
-		SerializacionGuardado.serializacion(nombreArchivos.ENFERMEDADES.getName(), listaEnfermedades);
-		//guarda la nueva enfermedaden sistema
-		
 
+		System.out.println("Ingrese el nombre de la enfermedad: ");
+		nuevaEnfermedad.setName(ScannerSingleton.getInstance().nextLine());
+		for(Enfermedad e : listaEnfermedades){
+			if(nuevaEnfermedad.getName().equals(e.getName())){
+				yaExiste = true;
+			}
+		}
+		if(yaExiste){
+			System.out.println("La enfermedad ya esta cargada en el Sistema.\n");
+		}
+		else{
+			int choice = -1;
+			System.out.println("Ingrese el nombre de un sintoma.");
+			nuevaEnfermedad.getSintomas().add(ScannerSingleton.getInstance().nextLine());
+			do {
+				System.out.println("1. Agregar otro sintoma.\n"
+									+ "0. Salir.");
+				try {
+					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
+					if(choice==1){
+						System.out.println("Ingrese el nombre de un sintoma.");
+						nuevaEnfermedad.getSintomas().add(ScannerSingleton.getInstance().nextLine());
+					}
+				}
+				catch(InputMismatchException | NumberFormatException e){
+					System.out.println("Ingrese una opcion valida:");
+					choice = -1;
+				}
+			} while (choice != 0);
+			listaEnfermedades.add(nuevaEnfermedad);
+
+			System.out.println("La enfermedad " + nuevaEnfermedad.getName() + " fue agregada exitosamente.");
+			SerializacionGuardado.serializacion(nombreArchivos.ENFERMEDADES.getName(), listaEnfermedades);
+			//guarda la nueva enfermedaden sistema
+		}
 	}
 	
 	public void administracionTareasDeControl() //Alta/baja de tareas
@@ -209,7 +210,11 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 							break;
 					case 2: eliminarTarea();
 							break;
-					case 3: System.out.println(Sistema.verListaTareas());
+					case 3: List<Tarea> l = Sistema.verListaTareas();
+							for(Tarea t: l)
+							{
+								System.out.println(t.getTaskName());
+							}
 							break;
 				}
 			
@@ -226,23 +231,18 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		for(int i = 0 ; i < l.size() ; i++)
 		{
 			System.out.println((i+1)+"."+l.get(i).getTaskName());
-			System.out.println("0. Salir");
 		}
-		do
-		{
-			try
+		try
 			{
 				System.out.println("Ingrese el numero de la tarea a eliminar: ");
 				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine())-1;
 				
 			}
-			catch (InputMismatchException e) {
+		catch (InputMismatchException e) {
 				System.out.println("Solo valores numericos");
-			}	
-		}while(choice!=-1);//Se usa -1 por la forma en la cual se muetra para los usuarios la lista, al captar 0(salida)
-		//choice lo interpreta como -1
-		aux = l.get(choice-1);
-		l.remove(choice-1);
+		}
+		aux = l.get(choice);
+		l.remove(choice);
 		
 		for(Tarea t: l)//Busca la instancia correspondiente para agregarla a una lista valida a la hora de guardar
 		{
@@ -256,10 +256,8 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			}
 			else
 			{
-				if(!(t instanceof TareaNumerica || t instanceof TareaAlfanumerica))
-				{
-					save.add(t);
-				}
+				save.add(t);
+
 			}
 		}
 		//dependiendo la instancia valida, guarda en el archivo correspondiente
@@ -275,7 +273,6 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		{
 			SerializacionGuardado.serializacion(nombreArchivos.TAREASBASICAS.getName(), save);
 		}
-
 		
 	}
 		
@@ -311,7 +308,8 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			
 		} while (nuevaTarea == null);
 		saves.add(nuevaTarea);
-		
+		System.out.println("Ingrese nombre de la tarea a agregar");
+		nuevaTarea.setTaskName(ScannerSingleton.getInstance().nextLine());
 		//guarda la lista valida correspondiente a la instancia de la tarea creada
 		
 		if(nuevaTarea instanceof TareaNumerica)
@@ -383,7 +381,12 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 					case 3 :
 						p.mostrarTareas();
 						System.out.println("Ingrese el numero de tarea que quieras eliminar");
-						p.getTasks().remove(Integer.parseInt(ScannerSingleton.getInstance().nextLine())-1);
+						try {
+							p.getTasks().remove(Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1);
+						}
+						catch(NumberFormatException e){
+							System.out.println("Opcion invalida.\n");
+						}
 						break;
 				}
 			
@@ -401,7 +404,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		do{
 			
 			System.out.println("1. Crear nuevo plan.\n"
-							 + "2. Modificar plan existente"
+							 + "2. Modificar plan existente\n"
 							 + "0. Salir");
 				
 			try {
@@ -427,36 +430,40 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 	
 	@Override
 	public void menu() {
-		int choice = -1;
+		int a = -1;
 		do{
-			System.out.println("1. Gestion de pacientes.\n"
-							 + "2. Ingreso de Profesionales.\n"
-							 + "3. Administracion de Enfermedades.\n"
-							 + "4. Administracion de Tareas de Control.\n"
-							 + "5. Administracion de Planes\n"
-							 + "0. Salir.\n");
+				System.out.println("1. Ingreso de Pacientes.\n"
+								 + "2. Ingreso de Profesionales.\n"
+								 + "3. Administracion de Enfermedades.\n"
+								 + "4. Administracion de Tareas de Control.\n"
+								 + "5. Administracion de Planes.\n"
+								 + "6. Asignar profesional a paciente.\n"
+								 + "0. Salir.\n");
+				try {
+					a = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
+				}
+				catch (InputMismatchException | NumberFormatException e) {
+					a = -1;
+				}
 
-			try {
-				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
-			} catch (InputMismatchException e) {
-				System.out.println(e);
-			}
-			switch (choice){
-				case 1:	gestionPacientes();
-						break;
-				case 2:	ingresoProfesionales();
-						break;
-				case 3:	administracionEnfermedades();
-						break;
-				case 4: administracionTareasDeControl();
-						break;
-				case 5: administracionPlanes();
-						break;
-				case 0: break;
-				default: System.out.println("Ingrese un dato numerico valido");
-						break;
-			}
-		} while (choice!=0);
+			switch (a){
+					case 1:	ingresoPacientes();
+							break;
+					case 2:	ingresoProfesionales();
+							break;
+					case 3:	administracionEnfermedades();
+							break;
+					case 4: administracionTareasDeControl();
+							break;
+					case 5: administracionPlanes();
+							break;
+					case 6: asignarProfesional();
+							break;
+					case 0: break;
+					default: System.out.println("Ingrese un dato numerico valido");
+							break;
+				}
+		} while (a!=0);
 	}
 	//------------------------------------------------------------------------------------------------------------------
 

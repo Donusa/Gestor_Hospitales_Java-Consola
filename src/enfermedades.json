@@ -11,16 +11,6 @@
   },
   {
     "sintomas": [
-      "Fiebre",
-      "Tos",
-      "Dolor de garganta",
-      "Congestion nasal",
-      "Estornudos"
-    ],
-    "name": "Resfriado"
-  },
-  {
-    "sintomas": [
       "Dolor de oído",
       "Fiebre"
     ],
@@ -71,14 +61,6 @@
       "Ganglios linfaticos del cuello inflamados"
     ],
     "name": "Laringitis"
-  },
-  {
-    "sintomas": [
-      "Dolor en la articulacion",
-      "Incapacidad de movimiento",
-      "Inflamacion"
-    ],
-    "name": "Tendinitis"
   },
   {
     "sintomas": [
