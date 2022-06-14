@@ -69,12 +69,19 @@ public class Tratamiento {
 	//---toString-------------------------------------------------------------------------------------------------------
 	@Override
 	public String toString() {
-		return "Tratamiento de Enfermedad: \"" + plan.getEnfermedad() + "\"" +
-				"\nProfesional encargado: " + profesionalEncargado +
-				"\nInicio: " + inicio +
-				" | Fin: " + fin +
-				"\n" + plan +
-				"\nEstado del Tratamiento: " + estado.getName();
+		StringBuilder sb = new StringBuilder();
+		sb.append("Tratamiento - " + plan.getEnfermedad() +
+				  "Profesional encargado: " + profesionalEncargado +
+				  "\nEstado del Tratamiento: " + estado.getName() +
+				  "\nInicio: " + inicio +
+				  " | Fin: " + fin +
+				  " | Duracion: " + plan.getDuracion() + " dias.\n" +
+		      	  "Tareas a realizar:\n");
+		for (int i=0; i<plan.getTasks().size(); i++) {
+			sb.append("\t" + (i+1) + ". " + plan.getTasks().get(i) + "\n");
+		}
+		sb.append("---------------------------------------------------------------------------------------\n");
+		return sb.toString();
 	}
 	//------------------------------------------------------------------------------------------------------------------
 }

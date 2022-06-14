@@ -39,15 +39,14 @@ public class Tarea {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Tarea: " + taskName +
-				" | Realizada: ");
-		if(taskDone){
+		sb.append(taskName + " | Realizada: ");
+		if (taskDone) {
 			sb.append("Si");
-		}
-		else{
+		} else {
 			sb.append("No");
 		}
 		return sb.toString();
 	}
-	//------------------------------------------------------------------------------------------------------------------
 }
+	//------------------------------------------------------------------------------------------------------------------
+

@@ -41,8 +41,15 @@ public class Enfermedad {
 	//---toString-------------------------------------------------------------------------------------------------------
 	@Override
 	public String toString() {
-		return "Enfermedad: " + name +
-				"\nSintomas: " + sintomas + "\n";
+		StringBuilder sb = new StringBuilder();
+		sb.append("Enfermedad: " + name +
+				  "\nSintomas: ");
+		sb.append(sintomas.get(0));
+		for(int i = 1; i< sintomas.size(); i++){
+			sb.append(", " + sintomas.get(i));
+		}
+		sb.append("\n");
+		return sb.toString();
 	}
 	//------------------------------------------------------------------------------------------------------------------
 }

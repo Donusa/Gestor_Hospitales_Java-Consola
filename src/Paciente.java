@@ -66,9 +66,14 @@ public class Paciente extends Usuario implements Menu{
 	//---toString-------------------------------------------------------------------------------------------------------
 	@Override
 	public String toString() {
-		return "PACIENTE | " + super.toString() +
-				"\nTratamientos del Paciente:\n" + tratamientos +
-				'}';
+		StringBuilder sb = new StringBuilder();
+		sb.append("PACIENTE | " + super.toString() +
+				"\nTratamientos del Paciente:\n");
+		sb.append("---------------------------------------------------------------------------------------\n");
+		for (int i = 0; i < tratamientos.size(); i++) {
+			sb.append((i+1) + ") " + tratamientos.get(i));
+		}
+		return sb.toString();
 	}
 	//------------------------------------------------------------------------------------------------------------------
 }
