@@ -20,13 +20,15 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 	{
 		Paciente p = new Paciente();
 		Usuario.crearUser(p);	//Envia paciente vacio a funcion, solo carga datos comunes de usuario(padre)
-		Sistema.users.add(p);	//agrega a la lista general, esta se guarda al finalizar el programa y persiste los cambios
+		if(p!=null) {
+			Sistema.users.add(p);    //agrega a la lista general, esta se guarda al finalizar el programa y persiste los cambios
+		}
 		
 	}
 	
 	private void gestionPacientes()	//funcion encargada de agregar profesionales a los pacientes y/o agregar pacientes
 	{
-		int choice = -1;
+		int choice = 0;
 		do {
 			System.out.println("1. Ingresar nuevo paciente\n" + "2. Asignar profesional a paciente\n" + "0. Salir\n");
 			try {
@@ -90,7 +92,9 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 	{
 		Profesional p = new Profesional();
 		Usuario.crearUser(p);//Se crea un nuevo profesional asignandole los valores comunes a todos los usuarios
-		Sistema.users.add(p);//se asigna a la lista de usuarios que luego es persistida al finalizar el programa
+		if(p!=null) {
+			Sistema.users.add(p);//se asigna a la lista de usuarios que luego es persistida al finalizar el programa
+		}
 	}
 	
 	public void administracionEnfermedades() //funcion que tiene el alta/baja/modificacion de las enfermedades
