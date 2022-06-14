@@ -15,6 +15,7 @@ public class Sistema extends Thread{
 	//---Metodos--------------------------------------------------------------------------------------------------------
 	@Override
 	public void run() {
+		levantarListaUsers();
 		Usuario currentUser = verificacionIdentidad();
 		JsonMapper.mapLoad();
 		if(currentUser instanceof Administrador)
@@ -32,6 +33,12 @@ public class Sistema extends Thread{
 		JsonMapper.mapSave();
 		TimeControl.setLoop(false);
 		separacionGuardadoListas();
+	}
+
+	private void levantarListaUsers(){
+		users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.ADMINISTRADORES.getName(), new Administrador()));
+		users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.PACIENTES.getName(), new Paciente()));
+		users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.PROFESIONALES.getName(), new Profesional()));
 	}
 
 	private void separacionGuardadoListas()
@@ -65,9 +72,6 @@ public class Sistema extends Thread{
 		String userName;
 		String userPass;
 		Usuario currentLog = new Usuario();
-		users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.ADMINISTRADORES.getName(), new Administrador()));
-		users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.PACIENTES.getName(), new Paciente()));
-		users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.PROFESIONALES.getName(), new Profesional()));
 			
 		do
 		{
@@ -127,7 +131,7 @@ public class Sistema extends Thread{
 		
 			do {
 				try {
-					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine())-1;
+					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
 					retorno = listaEnfermedades.get(choice);
 				} catch (InputMismatchException e) {
 					System.out.println("Ingrese un valor numerico valido");
@@ -148,7 +152,7 @@ public class Sistema extends Thread{
 		
 		do {
 			try {
-				choice = ScannerSingleton.getInstance().nextInt() - 1;
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
 				if(choice>=0)retorno = listaPlanes.get(choice);
 			} catch (InputMismatchException e) {
 				System.out.println("Ingrese un valor numerico valido");

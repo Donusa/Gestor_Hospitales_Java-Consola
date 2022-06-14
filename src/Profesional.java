@@ -34,7 +34,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 	//---Metodos--------------------------------------------------------------------------------------------------------
 	@Override
 	public void menu() {
-		int choice = 0;
+		int choice = -1;
 		System.out.println("***************************************************************************************************");
 		System.out.println("-NOTIFICACIONES-\n");
 		chequearTratamientosSinAsignar();

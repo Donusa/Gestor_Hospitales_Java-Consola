@@ -66,19 +66,67 @@ public class Usuario {
 
 
 	//---Metodos--------------------------------------------------------------------------------------------------------
-	public static void crearUser(Usuario u)
-	{
-		System.out.println("Ingrese el e-mail:");
-		u.setEmail(ScannerSingleton.getInstance().nextLine());
-		System.out.println("Ingrese el nombre:");
-		u.setUserName(ScannerSingleton.getInstance().nextLine());
-		System.out.println("Ingrese la contraseña:");
-		u.setPassword(ScannerSingleton.getInstance().nextLine());
-		System.out.println("Ingrese el celular:");
-		u.setUserCel(ScannerSingleton.getInstance().nextLine());
+	public static Boolean crearUser(Usuario u) {
+		String email;
+		String dni;
+
 		System.out.println("Ingrese el DNI:");
-		u.setUserDni(ScannerSingleton.getInstance().nextLine());
-		
+		dni = ScannerSingleton.getInstance().nextLine();
+		if(!isDNIUsed(dni)){
+			u.setUserDni(dni);
+
+			System.out.println("Ingrese el nombre:");
+			u.setUserName(ScannerSingleton.getInstance().nextLine());
+
+			System.out.println("Ingrese el e-mail:");
+			email = ScannerSingleton.getInstance().nextLine();
+			while (isEmailUsed(email)){
+				System.out.println("El e-mail ingresado ya esta en uso. Ingrese otro e-mail:");
+				email = ScannerSingleton.getInstance().nextLine();
+			}
+			u.setEmail(email);
+
+			System.out.println("Ingrese el celular:");
+			u.setUserCel(ScannerSingleton.getInstance().nextLine());
+
+			System.out.println("Ingrese la contraseña:");
+			u.setPassword(ScannerSingleton.getInstance().nextLine());
+			return true;
+		}
+		else{
+			System.out.println("Error: El usuario DNI " + dni + " ya existe.\n");
+			return false;
+		}
+	}
+
+	private static boolean isEmailUsed(String email){
+		if(!Sistema.users.isEmpty()) {
+			int i = 0;
+			while (i < Sistema.users.size() && !email.equals(Sistema.users.get(i).getEmail())) {
+				i++;
+			}
+			if (i < Sistema.users.size()) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		else{
+			return false;
+		}
+	}
+
+	private static boolean isDNIUsed(String dni){
+		int i = 0;
+		while(i < Sistema.users.size() && !dni.equals(Sistema.users.get(i).getUserDni())){
+			i++;
+		}
+		if(i < Sistema.users.size()){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	//------------------------------------------------------------------------------------------------------------------
 
