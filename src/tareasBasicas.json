@@ -1,5 +1,30 @@
 [
   {
+    "numero": 0,
+    "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+    "taskDone": false
+  },
+  {
+    "numero": 0,
+    "taskName": "Controlar el peso. Ingresar el resultado en Kg.",
+    "taskDone": false
+  },
+  {
+    "info": "",
+    "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+    "taskDone": false
+  },
+  {
+    "info": "",
+    "taskName": "Medirse la presion. Ingresar el resultado de minima y maxima",
+    "taskDone": false
+  },
+  {
+    "info": "",
+    "taskName": "Controlar si sigue teniendo dolor.",
+    "taskDone": false
+  },
+  {
     "taskName": "Tomar agua",
     "taskDone": false
   },
