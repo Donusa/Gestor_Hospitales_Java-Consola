@@ -146,10 +146,10 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		
 		do {
 			System.out.println(
-					"1. Ver lista de pacientes" 
-				  + "2. Ver historial de un paciente" 
-				  + "3. Ver tareas incompletas"
-				  + "0. Salir");
+					"1. Ver lista de pacientes\n" 
+				  + "2. Ver historial de un paciente\n" 
+				  + "3. Ver tareas incompletas\n"
+				  + "0. Salir\n");
 			try {
 				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 			} catch (InputMismatchException e) {
@@ -173,6 +173,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			case 3:
 				tareasIncompletas();
 				break;
+			case 0: break;
 			default: System.out.println("Ingrese un dato valido");
 				break; 
 			}
@@ -191,7 +192,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 					{
 						if(!tarea.isTaskDone())
 						{
-							System.out.println(p.getUserDni()+tarea.getTaskName()+"\n");
+							System.out.println(p.getUserName()+" "+p.getUserDni()+" "+tarea.getTaskName()+"\n");
 						}
 					}
 				}
