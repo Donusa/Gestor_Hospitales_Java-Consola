@@ -35,13 +35,19 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 	@Override
 	public void menu() {
 		int choice = 0;
-
+		System.out.println("***************************************************************************************************");
+		System.out.println("-NOTIFICACIONES-\n");
+		chequearTratamientosSinAsignar();
+		tareasIncompletas();
+		System.out.println("***************************************************************************************************\n\n");
 		do{
 			try{
-				System.out.println("1. Asignacion o Modificacion de Planes de Control.\n"
+				System.out.println("-- M E N U --\n"
+								 + "1. Asignacion o Modificacion de Planes de Control.\n"
 								 + "2. Control de los Registros de los Pacientes.\n"
 								 + "3. Finalizacion de Planes de Control.\n"
-								 + "0. Salir.\n");
+								 + "0. Salir.\n"
+								 + "----\n");
 				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 				switch (choice) {
 					case 1 -> {
@@ -50,7 +56,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 					}
 					case 2 -> controlRegistrosDePacientes();
 					case 3 -> {
-						System.out.println("Ingrese el DNI del paciente a asignar el Plan.\n");
+						System.out.println("Ingrese el DNI del paciente a finalizar el Plan.\n");
 						finalizacionPlanesDeControl(ScannerSingleton.getInstance().nextLine());
 					}
 				}
@@ -148,7 +154,8 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			System.out.println(
 					"1. Ver lista de pacientes\n" 
 				  + "2. Ver historial de un paciente\n" 
-				  + "3. Ver tareas incompletas\n"
+				  + "3. Ver tareas incompletas del dia anterior.\n"
+				  + "4. Ver pacientes con planes Sin Asignar.\n"
 				  + "0. Salir\n");
 			try {
 				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
@@ -159,24 +166,31 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			switch(choice)
 			{
 			case 1:
-				for(String dni: pacientes)
-				{
-					System.out.println(buscarPaciente(dni));
-				}break;
+				if(!pacientes.isEmpty()) {
+					for (String dni : pacientes) {
+						System.out.println(buscarPaciente(dni));
+					}
+				}
+				else{
+					System.out.println("No hay pacientes asignados.\n");
+				}
+				break;
 			case 2:
-				System.out.println("Ingrese DNI del paciente a buscar : ");
-				Paciente p = buscarPaciente(
-								ScannerSingleton.getInstance().nextLine());
-				if(pacientes.contains(p.getUserDni()))
+				System.out.println("Ingrese DNI del paciente a buscar: ");
+				Paciente p = buscarPaciente(ScannerSingleton.getInstance().nextLine());
+				if(p!=null && pacientes.contains(p.getUserDni()))
 				{
 					historialClinico(p);
 				}
 				else {
-					System.out.println("DNI NO VALIDO");
+					System.out.println("No hay pacientes asignados con ese DNI.\n");
 				}
 				break;
 			case 3:
 				tareasIncompletas();
+				break;
+			case 4:
+				chequearTratamientosSinAsignar();
 				break;
 			case 0: break;
 			default: System.out.println("Ingrese un dato valido");
@@ -189,18 +203,38 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 	private void tareasIncompletas()
 	{
 		Sistema.userDate.forEach((k,v) -> {
-			for(Paciente p : v)
-			{
-				for(Tratamiento t : p.getTratamientos())
-				{
-					for(Tarea tarea : t.getPlan().getTasks())
-					{
-						if(!tarea.isTaskDone())
-						{
-							System.out.println(p.getUserName()+" "+p.getUserDni()+" "+tarea.getTaskName()+"\n");
+			boolean flag = false;
+			System.out.println("Tareas incompletas del dia anterior:");
+			System.out.println("-------------------------------------------------------------------------");
+			if(k.isEqual(LocalDate.now().minusDays(1))){
+				for(Paciente p : v) {
+					if (pacientes.contains(p.getUserDni())) {
+						for (Tratamiento t : p.getTratamientos()) {
+							if (t.getProfesionalEncargado().equals(this.userName)) {
+								List<Tarea> listaT = new ArrayList<>();
+								for (Tarea tarea : t.getPlan().getTasks()) {
+									if (!tarea.isTaskDone()) {
+										listaT.add(tarea);
+										flag = true;
+									}
+								}
+								if (!listaT.isEmpty()) {
+									System.out.println("Paciente: " + p.getUserName() + " | DNI: " + p.getUserDni() +
+											" | Tratamiento: " + t.getPlan().getEnfermedad().getName() +
+											"\nTareas incompletas:");
+									for (Tarea tarea : listaT) {
+										System.out.println("\t" + tarea);
+									}
+									System.out.println("-------------------------------------------------------------------------");
+								}
+							}
 						}
 					}
 				}
+			}
+			if(!flag){
+				System.out.println("No hubo pacientes con tareas sin realizar.");
+				System.out.println("-------------------------------------------------------------------------");
 			}
 		});
 	}
@@ -219,7 +253,33 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			}
 		});
 	}
-	
+
+	private void chequearTratamientosSinAsignar(){
+		if(!pacientes.isEmpty()) {
+			boolean flag = false;
+			for (String dni : pacientes) {
+				Paciente auxP = buscarPaciente(dni);
+				List<Tratamiento> tratamientosPaciente = listarTratamientosPaciente(auxP);
+				if(!tratamientosPaciente.isEmpty()){
+					int i = 0;
+					while(i < tratamientosPaciente.size() && !(tratamientosPaciente.get(i).getEstado().equals(EstadoDelTratamiento.SIN_ASIGNAR))){
+						i++;
+					}
+					if(i < tratamientosPaciente.size()){
+						System.out.println("El paciente DNI:" + auxP.getUserDni() + " tiene tratamientos Sin Asignar.\n");
+						flag = true;
+					}
+				}
+			}
+			if(!flag){
+				System.out.println("Todos los pacientes tienen asignados sus planes.\n");
+			}
+		}
+		else{
+			System.out.println("No hay pacientes asignados.\n");
+		}
+	}
+
 	public void finalizacionPlanesDeControl(String dniPaciente) {
 		Paciente p = buscarPaciente(dniPaciente);
 		if (p!=null){
@@ -227,7 +287,9 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			if(!tratamientosPaciente.isEmpty()) {
 				mostrarTratamientosPaciente(tratamientosPaciente);
 				System.out.println("Seleccione el numero del tratamiento a finalizar.\n");
-				tratamientosPaciente.get(Integer.parseInt(ScannerSingleton.getInstance().nextLine())).setEstado(EstadoDelTratamiento.FINALIZADO);
+				tratamientosPaciente.get(Integer.parseInt(ScannerSingleton.getInstance().nextLine())-1).setEstado(EstadoDelTratamiento.FINALIZADO);
+				System.out.println("Tratamiento finalizado.\n");
+				chequearTratamientosPendientes(tratamientosPaciente, dniPaciente);
 			}
 			else{
 				System.out.println("No hay tratamientos con este paciente.\n");
@@ -236,7 +298,18 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		else{
 			System.out.println("No se encuentra al paciente DNI: " + dniPaciente + " en la lista de pacientes asignados.\n");
 		}
-		
+	}
+
+	private void chequearTratamientosPendientes(List<Tratamiento> tratamientosPaciente, String dniPaciente){
+		int cont=0;
+		for(Tratamiento t : tratamientosPaciente){
+			if(t.getEstado().equals(EstadoDelTratamiento.FINALIZADO)){
+				cont++;
+			}
+		}
+		if(cont==tratamientosPaciente.size()){
+			pacientes.remove(dniPaciente);
+		}
 	}
 
 	public Paciente buscarPaciente(String dniPaciente){
@@ -247,19 +320,16 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		{
 			i++;
 		}
-		
-		if(dniPaciente.equals(pacientes.get(i))) {
+		if(i< pacientes.size()){
 			while(j < Sistema.users.size() && !(Sistema.users.get(j).getUserDni().equals(pacientes.get(i))))
 			{
 				j++;
 			}
-			
-			if(Sistema.users.get(j).getUserDni().equals(pacientes.get(i)))
-			{
+			if(j < Sistema.users.size()){
 				p = (Paciente)Sistema.users.get(j);
 			}
 		}
-		
+
 		return p;
 	}
 
@@ -283,7 +353,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		if(!tratamientosPaciente.isEmpty()){
 			System.out.println("Lista de Tratamientos con este paciente:\n");
 			for(int i=0; i<tratamientosPaciente.size(); i++){
-				System.out.println(tratamientosPaciente.get(i));
+				System.out.println((i+1) + ". " + tratamientosPaciente.get(i));
 			}
 		}
 		else{
