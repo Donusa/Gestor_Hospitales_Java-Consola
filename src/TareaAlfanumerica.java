@@ -29,8 +29,12 @@ public class TareaAlfanumerica extends Tarea{
 	//---toString-------------------------------------------------------------------------------------------------------
 	@Override
 	public String toString() {
-		return super.toString() +
-				"\nInfo: " + info;
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		if(this.isTaskDone()){
+			sb.append(" | Info: " + info);
+		}
+		return sb.toString();
 	}
 	//------------------------------------------------------------------------------------------------------------------
 }

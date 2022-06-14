@@ -1,8 +1,8 @@
 
 public class Tarea {
 	//---Atributos------------------------------------------------------------------------------------------------------
-	private String taskName;
-	private boolean taskDone = false;
+	protected String taskName;
+	protected boolean taskDone = false;
 	//------------------------------------------------------------------------------------------------------------------
 
 
