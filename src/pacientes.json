@@ -19,23 +19,23 @@
           "tasks": [
             {
               "taskName": "Tomar ibuprofeno cada 8hs",
-              "taskDone": false
+              "taskDone": true
             },
             {
               "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
-              "taskDone": false
+              "taskDone": true
             },
             {
               "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
-              "taskDone": false
+              "taskDone": true
             },
             {
               "taskName": "Tomar pastillas para el dolor de garganta",
-              "taskDone": false
+              "taskDone": true
             },
             {
               "taskName": "prueba",
-              "taskDone": false
+              "taskDone": true
             }
           ],
           "duracion": 5

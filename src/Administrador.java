@@ -32,34 +32,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			Sistema.users.add(p);	//se asigna a la lista de usuarios que luego es persistida al finalizar el programa
 		}
 	}
-	
-	private void gestionPacientes()	//funcion encargada de agregar profesionales a los pacientes y/o agregar pacientes
-	{
-		int choice = 0;
-		do {
-			System.out.println("1. Ingresar nuevo paciente\n" + "2. Asignar profesional a paciente\n" + "0. Salir\n");
-			try {
-				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
-			} catch (InputMismatchException e) {
-				System.out.println(e);
-			}
-			switch (choice) {
-			case 1:
-				ingresoPacientes();
-				break;
-			case 2:
-				asignarProfesional();
-				break;
-			case 0:
-				break;
-			default:
-				System.out.println("Ingrese una opcion valida");
-				break;
-			}
-		} while (choice!=0);
 		
-	}
-	
 	private void asignarProfesional()  //asigna profesional al paciente
 	{
 		Profesional profesional = null;
