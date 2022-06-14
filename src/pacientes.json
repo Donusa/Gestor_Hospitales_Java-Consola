@@ -74,7 +74,24 @@
     "userCel": "2236958475"
   },
   {
-    "tratamientos": [],
+    "tratamientos": [
+      {
+        "profesionalEncargado": "Mariana Lopez",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Dolor en la articulacion",
+              "Incapacidad de movimiento",
+              "Inflamacion"
+            ],
+            "name": "Tendinitis"
+          },
+          "tasks": [],
+          "duracion": 0
+        },
+        "estado": "SIN_ASIGNAR"
+      }
+    ],
     "userName": "Julieta Galvan",
     "email": "julietagalvan@gmail.com",
     "password": "1234",
@@ -137,9 +154,6 @@
     "password": "1234",
     "userDni": "28934564",
     "userCel": "2234387456"
-  },
-  {
-    "tratamientos": []
   },
   {
     "tratamientos": [],

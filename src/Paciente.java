@@ -31,12 +31,8 @@ public class Paciente extends Usuario implements Menu{
 
 
 	//---Metodos--------------------------------------------------------------------------------------------------------
-	public void ingresoDatosDeControl()
-	{
-		crearUser(this);
-		System.out.println("Ingrese la enfermedad:");
-		this.tratamientos.get(0).getPlan().getEnfermedad().setName(ScannerSingleton.getInstance().nextLine());    //en el get el "0" habría que cambiarlo
-		
+	public void ingresoDatosDeControl() {
+		// sin hacer
 	}
 	
 	

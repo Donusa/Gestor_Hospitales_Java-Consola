@@ -54,5 +54,13 @@
     "password": "1234",
     "userDni": "20448796",
     "userCel": "2235677892"
+  },
+  {
+    "pacientes": [],
+    "userName": "Juan Jose Echeverry",
+    "email": "juanjoseecheverry@gmail.com",
+    "password": "1234",
+    "userDni": "20343506",
+    "userCel": "2235467892"
   }
 ]

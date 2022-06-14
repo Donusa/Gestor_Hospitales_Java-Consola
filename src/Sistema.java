@@ -152,7 +152,7 @@ public class Sistema extends Thread{
 		
 		do {
 			try {
-				choice = ScannerSingleton.getInstance().nextInt() - 1;
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
 				if(choice>=0)retorno = listaPlanes.get(choice);
 			} catch (InputMismatchException e) {
 				System.out.println("Ingrese un valor numerico valido");
