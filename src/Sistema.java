@@ -1,4 +1,3 @@
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -92,7 +91,6 @@ public class Sistema extends Thread{
 				System.out.println("Datos no validos");
 			}
 		}while(!flag);
-
 		return currentLog;
 	}
 

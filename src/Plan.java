@@ -99,10 +99,14 @@ public class Plan {
 	//---toString-------------------------------------------------------------------------------------------------------
 	@Override
 	public String toString() {
-		return "Plan de Control:\n"
-				+ enfermedad +
-				"Tareas a realizar:\n" + tasks +
-				"Duracion: " + duracion + " dias.\n";
+		StringBuilder sb = new StringBuilder();
+		sb.append("Plan de Control:\n" + enfermedad +
+				"Duracion: " + duracion + " dias.\n" +
+				"Tareas a realizar:\n");
+		for (int i=0; i<tasks.size(); i++) {
+			sb.append("\t" + i+1 + ". " + tasks.get(i) + "\n");
+		}
+		return sb.toString();
 	}
 	//------------------------------------------------------------------------------------------------------------------
 }

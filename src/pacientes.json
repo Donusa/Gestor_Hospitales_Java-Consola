@@ -32,11 +32,15 @@
             {
               "taskName": "Tomar pastillas para el dolor de garganta",
               "taskDone": false
+            },
+            {
+              "taskName": "prueba",
+              "taskDone": false
             }
           ],
-          "duracion": 7
+          "duracion": 5
         },
-        "estado": "EN_CURSO"
+        "estado": "FINALIZADO"
       }
     ],
     "userName": "Ana Paz",
@@ -92,5 +96,13 @@
     "password": "1234",
     "userDni": "40520337",
     "userCel": "2236958478"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Alex Zapata",
+    "email": "alexzapata@gmail.com",
+    "password": "1234",
+    "userDni": "40520338",
+    "userCel": "2236958479"
   }
 ]
