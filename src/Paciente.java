@@ -49,7 +49,7 @@ public class Paciente extends Usuario implements Menu{
 					else
 						tarea.setTaskDone(false);
 				}
-				if(tarea instanceof TareaNumerica)
+				if(tarea instanceof TareaNumerica)   ///ingreso de informacion adicional dependiendo el tipo de tarea
 				{
 					System.out.println("Ingrese valor numerico correspondiente a la tarea");
 					((TareaNumerica) tarea).setNumero(Integer.parseInt(ScannerSingleton.getInstance().nextLine()));
