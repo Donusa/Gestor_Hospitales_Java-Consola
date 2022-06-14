@@ -29,8 +29,12 @@ public class TareaNumerica extends Tarea{
 	//---toString-------------------------------------------------------------------------------------------------------
 	@Override
 	public String toString() {
-		return super.toString() +
-				"Numero: " + numero;
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		if(this.isTaskDone()){
+			sb.append(" | Dato: " + numero);
+		}
+		return sb.toString();
 	}
 	//------------------------------------------------------------------------------------------------------------------
 }
