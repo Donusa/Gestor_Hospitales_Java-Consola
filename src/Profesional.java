@@ -142,7 +142,76 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 	}
 
 	public void controlRegistrosDePacientes() {
-		// falta ver que va aca
+		int choice = -1;	
+		
+		do {
+			System.out.println(
+					"1. Ver lista de pacientes" 
+				  + "2. Ver historial de un paciente" 
+				  + "3. Ver tareas incompletas"
+				  + "0. Salir");
+			try {
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
+			} catch (InputMismatchException e) {
+				System.out.println(e);
+			} 
+			
+			switch(choice)
+			{
+			case 1:
+				for(String dni: pacientes)
+				{
+					System.out.println(buscarPaciente(dni));
+				}break;
+			case 2:
+				System.out.println("Ingrese DNI del paciente a buscar : ");
+				historialClinico(
+						buscarPaciente(
+								ScannerSingleton.getInstance().nextLine()));
+				
+				break;
+			case 3:
+				tareasIncompletas();
+				break;
+			default: System.out.println("Ingrese un dato valido");
+				break; 
+			}
+		} while (choice != 0);
+			
+	}
+	
+	private void tareasIncompletas()
+	{
+		Sistema.userDate.forEach((k,v) -> {
+			for(Paciente p : v)
+			{
+				for(Tratamiento t : p.getTratamientos())
+				{
+					for(Tarea tarea : t.getPlan().getTasks())
+					{
+						if(!tarea.isTaskDone())
+						{
+							System.out.println(p.getUserDni()+tarea.getTaskName()+"\n");
+						}
+					}
+				}
+			}
+		});
+	}
+	
+	private void historialClinico(Paciente paciente)
+	{
+		Sistema.userDate.forEach((k, v) -> 
+		{
+			System.out.println(k.toString());
+			for(Paciente p : v)
+			{
+				if(p.getUserDni().equals(paciente.getUserDni())) {
+					System.out.println(p);
+				}
+				
+			}
+		});
 	}
 	
 	public void finalizacionPlanesDeControl(String dniPaciente) {
