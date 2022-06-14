@@ -1,12 +1,14 @@
-
-
 public class Usuario {
+	//---Atributos------------------------------------------------------------------------------------------------------
 	protected String userName;
 	protected String email;
 	protected String password;
 	protected String userDni;
 	protected String userCel;
+	//------------------------------------------------------------------------------------------------------------------
 
+
+	//---Constructores--------------------------------------------------------------------------------------------------
 	public Usuario() {
 	}
 
@@ -17,22 +19,10 @@ public class Usuario {
 		this.userDni = userDni;
 		this.userCel = userCel;
 	}
-	
-	public static void crearUser(Usuario u)
-	{
-		System.out.println("Ingrese el e-mail:");
-		u.setEmail(ScannerSingleton.getInstance().nextLine());
-		System.out.println("Ingrese el nombre:");
-		u.setUserName(ScannerSingleton.getInstance().nextLine());
-		System.out.println("Ingrese la contraseña:");
-		u.setPassword(ScannerSingleton.getInstance().nextLine());
-		System.out.println("Ingrese el celular:");
-		u.setUserCel(ScannerSingleton.getInstance().nextLine());
-		System.out.println("Ingrese el DNI:");
-		u.setUserDni(ScannerSingleton.getInstance().nextLine());
-		
-	}
+	//------------------------------------------------------------------------------------------------------------------
 
+
+	//---Getters y Setters----------------------------------------------------------------------------------------------
 	public String getUserName() {
 		return userName;
 	}
@@ -72,7 +62,28 @@ public class Usuario {
 	public void setUserCel(String userCel) {
 		this.userCel = userCel;
 	}
+	//------------------------------------------------------------------------------------------------------------------
 
+
+	//---Metodos--------------------------------------------------------------------------------------------------------
+	public static void crearUser(Usuario u)
+	{
+		System.out.println("Ingrese el e-mail:");
+		u.setEmail(ScannerSingleton.getInstance().nextLine());
+		System.out.println("Ingrese el nombre:");
+		u.setUserName(ScannerSingleton.getInstance().nextLine());
+		System.out.println("Ingrese la contraseña:");
+		u.setPassword(ScannerSingleton.getInstance().nextLine());
+		System.out.println("Ingrese el celular:");
+		u.setUserCel(ScannerSingleton.getInstance().nextLine());
+		System.out.println("Ingrese el DNI:");
+		u.setUserDni(ScannerSingleton.getInstance().nextLine());
+		
+	}
+	//------------------------------------------------------------------------------------------------------------------
+
+
+	//---toString-------------------------------------------------------------------------------------------------------
 	@Override
 	public String toString() {
 		return "Nombre: " + userName + " | DNI: " + userDni +
@@ -80,5 +91,5 @@ public class Usuario {
 				"\nCelular: " + userCel +
 				"\nContraseña: " + password;
 	}
-	
+	//------------------------------------------------------------------------------------------------------------------
 }

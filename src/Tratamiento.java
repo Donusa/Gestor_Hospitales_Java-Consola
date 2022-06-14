@@ -1,12 +1,16 @@
 import java.time.LocalDate;
 
 public class Tratamiento {
+	//---Atributos------------------------------------------------------------------------------------------------------
 	private String inicio;
 	private String fin;
 	private String profesionalEncargado;
 	private Plan plan;
 	private EstadoDelTratamiento estado = EstadoDelTratamiento.SIN_ASIGNAR;
+	//------------------------------------------------------------------------------------------------------------------
 
+
+	//---Constructores--------------------------------------------------------------------------------------------------
 	public Tratamiento() {
 	}
 
@@ -14,7 +18,10 @@ public class Tratamiento {
 		this.profesionalEncargado = profesionalEncargado;
 		this.plan = new Plan(e);
 	}
+	//------------------------------------------------------------------------------------------------------------------
 
+
+	//---Getters y Setters----------------------------------------------------------------------------------------------
 	public String getInicio() {
 		return inicio;
 	}
@@ -56,7 +63,10 @@ public class Tratamiento {
 	public void setEstado(EstadoDelTratamiento estado) {
 		this.estado = estado;
 	}
+	//------------------------------------------------------------------------------------------------------------------
 
+
+	//---toString-------------------------------------------------------------------------------------------------------
 	@Override
 	public String toString() {
 		return "Tratamiento de Enfermedad: \"" + plan.getEnfermedad() + "\"" +
@@ -66,4 +76,5 @@ public class Tratamiento {
 				"\n" + plan +
 				"\nEstado del Tratamiento: " + estado.getName();
 	}
+	//------------------------------------------------------------------------------------------------------------------
 }

@@ -1,10 +1,10 @@
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 
 public class Administrador extends Usuario implements CrearPlan, Menu{
 
+	//---Constructores--------------------------------------------------------------------------------------------------
 	public Administrador() {
 	}
 
@@ -12,8 +12,10 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		super(userName,email,password,userDni,userCel);
 		
 	}
+	//------------------------------------------------------------------------------------------------------------------
 
-	
+
+	//---Metodos--------------------------------------------------------------------------------------------------------
 	public void ingresoPacientes()
 	{
 		Paciente p = new Paciente();
@@ -40,7 +42,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 						+ "3. Ver lista de enfermedades.\n"
 						+ "0. Salir.\n");
 				try{
-					choice = ScannerSingleton.getInstance().nextInt();
+					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 				}
 				catch(InputMismatchException e){
 					System.out.println("Ingrese una opcion valida.\n");
@@ -71,7 +73,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			try
 			{
 				System.out.println("Ingrese el numero de la enfermedad a eliminar: ");
-				choice = ScannerSingleton.getInstance().nextInt()-1;
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine())-1;
 
 			}
 			catch (InputMismatchException e) {
@@ -99,12 +101,12 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 						sintomas.add(ScannerSingleton.getInstance().nextLine());
 						System.out.println("1. Agregar otro sintoma.\n+"
 								+ "0. Salir.\n");
-						choice = ScannerSingleton.getInstance().nextInt();
+						choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 					}
 					catch(InputMismatchException e){
 						System.out.println("Ingrese un valor numerico.\n");
 					}
-					} while (choice != 0);
+				} while (choice != 0);
 				nuevaEnfermedad.setSintomas(sintomas);
 				}
 			catch(InputMismatchException e){
@@ -128,7 +130,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 								 + "3. Ver lista de tareas.\n"
 								 + "0. Salir.\n");
 				try{
-					choice = ScannerSingleton.getInstance().nextInt();
+					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 				}
 				catch(InputMismatchException e){
 					System.out.println("Ingrese una opcion valida.\n");
@@ -161,7 +163,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			try
 			{
 				System.out.println("Ingrese el numero de la tarea a eliminar: ");
-				choice = ScannerSingleton.getInstance().nextInt();
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 				
 			}
 			catch (InputMismatchException e) {
@@ -217,7 +219,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 								 + "2. Tarea con respuesta Alfanumerica.\n"
 								 + "3. Tarea con respuesta Numerica\n");
 				try{
-					choice = ScannerSingleton.getInstance().nextInt();
+					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 				}
 				catch(InputMismatchException e){
 					System.out.println("Ingrese una opcion valida.\n");
@@ -259,7 +261,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		
 		Plan p= new Plan(e);
 		System.out.println("Ingrese la duracion del Plan:");
-		p.setDuracion(ScannerSingleton.getInstance().nextInt());
+		p.setDuracion(Integer.parseInt(ScannerSingleton.getInstance().nextLine()));
 		int rta =2;
 		do {
 			try {
@@ -267,7 +269,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 				System.out.println("Desea agregar otra tarea?\n"+
 						"1. Si\n"+
 						"2. No");
-				rta=ScannerSingleton.getInstance().nextInt();
+				rta=Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 
 			}catch (InputMismatchException exception){
 				System.out.println("Ingrese una opcion valida.\n");
@@ -288,7 +290,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 								+ "3. Borrar tarea.\n"
 								+ "0. Salir.\n");
 				try{
-					choice = ScannerSingleton.getInstance().nextInt();
+					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 				}
 				catch(InputMismatchException e){
 					System.out.println("Ingrese una opcion valida.\n");
@@ -297,7 +299,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 				switch (choice) {
 					case 1 :
 						System.out.println("Ingrese la nueva duracion:");
-						p.setDuracion(ScannerSingleton.getInstance().nextInt());
+						p.setDuracion(Integer.parseInt(ScannerSingleton.getInstance().nextLine()));
 						break;
 					case 2 :
 						p.agregarTarea();
@@ -305,7 +307,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 					case 3 :
 						p.mostrarTareas();
 						System.out.println("Ingrese el numero de tarea que quieras eliminar");
-						p.getTasks().remove(ScannerSingleton.getInstance().nextInt()-1);
+						p.getTasks().remove(Integer.parseInt(ScannerSingleton.getInstance().nextLine())-1);
 						break;
 				}
 			
@@ -327,7 +329,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 							 + "0. Salir");
 				
 			try {
-				choice = ScannerSingleton.getInstance().nextInt();
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 			} catch (InputMismatchException e) {
 				System.out.println("Ingrese un dato numerico valido");
 			}
@@ -350,43 +352,43 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 	@Override
 	public void menu() {
 		int choice = -1;
-		
-			do{
-				
-				System.out.println("1. Ingreso de Pacientes.\n"
-								 + "2. Ingreso de Profesionales.\n"
-								 + "3. Administracion de Enfermedades.\n"
-								 + "4. Administracion de Tareas de Control.\n"
-								 + "5. Administracion de Planes\n"
-								 + "0. Salir.\n");
-					
-				try {
-					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
-				} catch (InputMismatchException e) {
-					System.out.println(e);
-				}
+		do{
+			System.out.println("1. Ingreso de Pacientes.\n"
+							 + "2. Ingreso de Profesionales.\n"
+							 + "3. Administracion de Enfermedades.\n"
+							 + "4. Administracion de Tareas de Control.\n"
+							 + "5. Administracion de Planes\n"
+							 + "0. Salir.\n");
 
-				switch (choice){
-					case 1:	ingresoPacientes();
-							break;
-					case 2:	ingresoProfesionales();
-							break;
-					case 3:	administracionEnfermedades();
-							break;
-					case 4: administracionTareasDeControl();
-							break;
-					case 5: administracionPlanes();
-							break;
-					case 0: break;
-					default: System.out.println("Ingrese un dato numerico valido");
-							break;
+			try {
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
+			} catch (InputMismatchException e) {
+				System.out.println(e);
 			}
-		
-	} while (choice!=0);
-}
+			switch (choice){
+				case 1:	ingresoPacientes();
+						break;
+				case 2:	ingresoProfesionales();
+						break;
+				case 3:	administracionEnfermedades();
+						break;
+				case 4: administracionTareasDeControl();
+						break;
+				case 5: administracionPlanes();
+						break;
+				case 0: break;
+				default: System.out.println("Ingrese un dato numerico valido");
+						break;
+			}
+		} while (choice!=0);
+	}
+	//------------------------------------------------------------------------------------------------------------------
 
+
+	//---toString-------------------------------------------------------------------------------------------------------
 	@Override
 	public String toString() {
 		return "ADMINISTRADOR | " + super.toString();
 	}
+	//------------------------------------------------------------------------------------------------------------------
 }

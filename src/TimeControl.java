@@ -1,15 +1,16 @@
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class TimeControl extends Thread{
-
+	//---Atributos------------------------------------------------------------------------------------------------------
 	private LocalDate localDate = LocalDate.now();
 	private static Boolean loop = true;
+	//------------------------------------------------------------------------------------------------------------------
 
 
+	//---Metodos--------------------------------------------------------------------------------------------------------
 	@Override
 	public void run() {
 		
@@ -80,6 +81,5 @@ public class TimeControl extends Thread{
 			}
 		}
 	}
-	
-	
+	//------------------------------------------------------------------------------------------------------------------
 }

@@ -3,9 +3,12 @@ import java.util.InputMismatchException;
 import java.util.List;
 
 public class Paciente extends Usuario implements Menu{
-
+	//---Atributos------------------------------------------------------------------------------------------------------
 	private List<Tratamiento> tratamientos = new ArrayList<>();
+	//------------------------------------------------------------------------------------------------------------------
 
+
+	//---Constructores--------------------------------------------------------------------------------------------------
 	public Paciente() {
 	}
 
@@ -13,7 +16,21 @@ public class Paciente extends Usuario implements Menu{
 		super(userName,email,password,userDni,userCel);
 		tratamientos.add(new Tratamiento(profesionalEncargado, e));
 	}
+	//------------------------------------------------------------------------------------------------------------------
 
+
+	//---Getters y Setters----------------------------------------------------------------------------------------------
+	public List<Tratamiento> getTratamientos() {
+		return tratamientos;
+	}
+
+	public void setTratamientos(List<Tratamiento> tratamientos) {
+		this.tratamientos = tratamientos;
+	}
+	//------------------------------------------------------------------------------------------------------------------
+
+
+	//---Metodos--------------------------------------------------------------------------------------------------------
 	public void ingresoDatosDeControl()
 	{
 		crearUser(this);
@@ -32,7 +49,7 @@ public class Paciente extends Usuario implements Menu{
 			try{
 				System.out.println("1. Ingreso de Datos de Control.\n"
 						         + "0. Salir.\n");
-				choice = ScannerSingleton.getInstance().nextInt();
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 				if(choice == 1){
 					ingresoDatosDeControl();
 				}
@@ -43,19 +60,15 @@ public class Paciente extends Usuario implements Menu{
 		} while (choice!=0);
 		
 	}
+	//------------------------------------------------------------------------------------------------------------------
 
-	public List<Tratamiento> getTratamientos() {
-		return tratamientos;
-	}
 
-	public void setTratamientos(List<Tratamiento> tratamientos) {
-		this.tratamientos = tratamientos;
-	}
-
+	//---toString-------------------------------------------------------------------------------------------------------
 	@Override
 	public String toString() {
 		return "PACIENTE | " + super.toString() +
 				"\nTratamientos del Paciente:\n" + tratamientos +
 				'}';
 	}
+	//------------------------------------------------------------------------------------------------------------------
 }
