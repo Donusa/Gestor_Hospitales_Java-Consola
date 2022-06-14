@@ -55,7 +55,7 @@ public class Plan {
 	}
 
 	public void agregarTarea() {
-		TipoDeTarea tipo;
+		TipoDeTarea tipo = null;
 		String nombre;
 		int flag=1;
 		do {
@@ -64,9 +64,15 @@ public class Plan {
 								"-NUMERICA\n" +
 								"-ALFANUMERICA\n" +
 								"-SOLOMARCAR");
-			tipo = Enum.valueOf(TipoDeTarea.class, ScannerSingleton.getInstance().nextLine().toUpperCase());
-
-			switch (tipo) {
+			try{
+				tipo = Enum.valueOf(TipoDeTarea.class, ScannerSingleton.getInstance().nextLine().toUpperCase());
+			}
+			catch (IllegalArgumentException e) {
+				System.out.println("NOMBRE EN LETRAS");
+			}
+			if(tipo!=null)
+			{
+				switch (tipo) {
 				case NUMERICA:
 					System.out.println("Ingrese el nombre de la tarea:");
 					nombre = ScannerSingleton.getInstance().nextLine();
@@ -89,6 +95,7 @@ public class Plan {
 					System.out.println("Tipo de tarea no valido, vuelva a ingresar");
 					flag = 2;
 					break;
+			}
 			}
 		}while (flag == 2 );
 		

@@ -127,12 +127,12 @@ public class Sistema extends Thread{
 		
 			do {
 				try {
-					choice = ScannerSingleton.getInstance().nextInt() - 1;
+					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine())-1;
 					retorno = listaEnfermedades.get(choice);
 				} catch (InputMismatchException e) {
 					System.out.println("Ingrese un valor numerico valido");
 				} 
-			} while (retorno == null || choice == 0);
+			} while (retorno == null || choice == -1);
 		return retorno;
 	}
 	
@@ -145,16 +145,15 @@ public class Sistema extends Thread{
 		{
 			System.out.println("Plan "+(i+1)+"\n"+listaPlanes.get(i));
 		}
-		System.out.println("0. Salir");
 		
 		do {
 			try {
 				choice = ScannerSingleton.getInstance().nextInt() - 1;
-				retorno = listaPlanes.get(choice);
+				if(choice>=0)retorno = listaPlanes.get(choice);
 			} catch (InputMismatchException e) {
 				System.out.println("Ingrese un valor numerico valido");
 			} 
-		} while (retorno == null || choice == 0);
+		} while (retorno == null);
 		return retorno;
 	}
 	//------------------------------------------------------------------------------------------------------------------

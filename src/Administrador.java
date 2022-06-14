@@ -24,33 +24,6 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		
 	}
 	
-	private void gestionPacientes()	//funcion encargada de agregar profesionales a los pacientes y/o agregar pacientes
-	{
-		int choice = -1;
-		do {
-			System.out.println("1. Ingresar nuevo paciente\n" + "2. Asignar profesional a paciente\n" + "0. Salir\n");
-			try {
-				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
-			} catch (InputMismatchException e) {
-				System.out.println(e);
-			}
-			switch (choice) {
-			case 1:
-				ingresoPacientes();
-				break;
-			case 2:
-				asignarProfesional();
-				break;
-			case 0:
-				break;
-			default:
-				System.out.println("Ingrese una opcion valida");
-				break;
-			}
-		} while (choice!=0);
-		
-	}
-	
 	private void asignarProfesional()  //asigna profesional al paciente
 	{
 		Profesional profesional = null;
@@ -80,7 +53,8 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		if(profesional!=null && paciente!=null)//si ambos datos fueron corroborados y existen
 		{
 			Enfermedad e = Sistema.seleccionarEnfermedad();//se selecciona una enfermedad de la lista
-			paciente.getTratamientos().add(new Tratamiento(profesional.getUserName(), e));
+			Tratamiento tratamiento = new Tratamiento(profesional.getUserName(), e);
+			paciente.getTratamientos().add(tratamiento);
 			//y se le asigna junto a un nuevo tratamiento al paciente previamente encontrado
 			
 		}
@@ -129,10 +103,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		for(int i = 0 ; i < listaEnfermedades.size() ; i++)
 		{
 			System.out.println((i+1)+"."+listaEnfermedades.get(i).getName());
-			System.out.println("0. Salir");
 		}
-		do
-		{
 			try
 			{
 				System.out.println("Ingrese el numero de la enfermedad a eliminar: ");
@@ -142,8 +113,6 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			catch (InputMismatchException e) {
 				System.out.println("Solo valores numericos");
 			}
-		}while(choice !=-1);//En este caso se contempla -1 ya que para la comodidad del usuario se evita usar el valor 0
-		//en la lista mostrada
 		listaEnfermedades.remove(choice-1);
 		SerializacionGuardado.serializacion(nombreArchivos.ENFERMEDADES.getName(), listaEnfermedades);
 		
@@ -205,7 +174,11 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 							break;
 					case 2: eliminarTarea();
 							break;
-					case 3: System.out.println(Sistema.verListaTareas());
+					case 3: List<Tarea> l = Sistema.verListaTareas();
+							for(Tarea t: l)
+							{
+								System.out.println(t.getTaskName());
+							}
 							break;
 				}
 			
@@ -222,23 +195,18 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		for(int i = 0 ; i < l.size() ; i++)
 		{
 			System.out.println((i+1)+"."+l.get(i).getTaskName());
-			System.out.println("0. Salir");
 		}
-		do
-		{
-			try
+		try
 			{
 				System.out.println("Ingrese el numero de la tarea a eliminar: ");
 				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine())-1;
 				
 			}
-			catch (InputMismatchException e) {
+		catch (InputMismatchException e) {
 				System.out.println("Solo valores numericos");
-			}	
-		}while(choice!=-1);//Se usa -1 por la forma en la cual se muetra para los usuarios la lista, al captar 0(salida)
-		//choice lo interpreta como -1
-		aux = l.get(choice-1);
-		l.remove(choice-1);
+		}
+		aux = l.get(choice);
+		l.remove(choice);
 		
 		for(Tarea t: l)//Busca la instancia correspondiente para agregarla a una lista valida a la hora de guardar
 		{
@@ -252,10 +220,8 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			}
 			else
 			{
-				if(!(t instanceof TareaNumerica || t instanceof TareaAlfanumerica))
-				{
-					save.add(t);
-				}
+				save.add(t);
+			
 			}
 		}
 		//dependiendo la instancia valida, guarda en el archivo correspondiente
@@ -271,7 +237,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		{
 			SerializacionGuardado.serializacion(nombreArchivos.TAREASBASICAS.getName(), save);
 		}
-
+		
 		
 	}
 		
@@ -307,7 +273,8 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			
 		} while (nuevaTarea == null);
 		saves.add(nuevaTarea);
-		
+		System.out.println("Ingrese nombre de la tarea a agregar");
+		nuevaTarea.setTaskName(ScannerSingleton.getInstance().nextLine());
 		//guarda la lista valida correspondiente a la instancia de la tarea creada
 		
 		if(nuevaTarea instanceof TareaNumerica)
@@ -423,36 +390,40 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 	
 	@Override
 	public void menu() {
-		int choice = -1;
+		int a = 0;
 		do{
-			System.out.println("1. Gestion de pacientes.\n"
-							 + "2. Ingreso de Profesionales.\n"
-							 + "3. Administracion de Enfermedades.\n"
-							 + "4. Administracion de Tareas de Control.\n"
-							 + "5. Administracion de Planes\n"
-							 + "0. Salir.\n");
-
 			try {
-				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
+				System.out.println("1. Ingreso pacientes.\n"
+								 + "2. Ingreso de Profesionales.\n"
+								 + "3. Administracion de Enfermedades.\n"
+								 + "4. Administracion de Tareas de Control.\n"
+								 + "5. Administracion de Planes\n"
+								 + "6. Asignar profesional a paciente.\n"
+								 + "0. Salir.\n");
+					
+					a = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
+				
+				switch (a){
+					case 1:	ingresoPacientes();
+							break;
+					case 2:	ingresoProfesionales();
+							break;
+					case 3:	administracionEnfermedades();
+							break;
+					case 4: administracionTareasDeControl();
+							break;
+					case 5: administracionPlanes();
+							break;
+					case 6: asignarProfesional();
+							break;
+					case 0: break;
+					default: System.out.println("Ingrese un dato numerico valido");
+							break;
+				}
 			} catch (InputMismatchException e) {
 				System.out.println(e);
 			}
-			switch (choice){
-				case 1:	gestionPacientes();
-						break;
-				case 2:	ingresoProfesionales();
-						break;
-				case 3:	administracionEnfermedades();
-						break;
-				case 4: administracionTareasDeControl();
-						break;
-				case 5: administracionPlanes();
-						break;
-				case 0: break;
-				default: System.out.println("Ingrese un dato numerico valido");
-						break;
-			}
-		} while (choice!=0);
+		} while (a!=0);
 	}
 	//------------------------------------------------------------------------------------------------------------------
 

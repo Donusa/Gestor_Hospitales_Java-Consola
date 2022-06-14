@@ -11,16 +11,6 @@
   },
   {
     "sintomas": [
-      "Fiebre",
-      "Tos",
-      "Dolor de garganta",
-      "Congestion nasal",
-      "Estornudos"
-    ],
-    "name": "Resfriado"
-  },
-  {
-    "sintomas": [
       "Dolor de oído",
       "Fiebre"
     ],
