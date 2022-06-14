@@ -76,7 +76,7 @@ public class Tratamiento {
 				  "\nInicio: " + inicio +
 				  " | Fin: " + fin +
 				  " | Duracion: " + plan.getDuracion() + " dias.\n" +
-		      	  "Tareas a realizar:\n");
+		      	  "Tareas del Plan de Control:\n");
 		for (int i=0; i<plan.getTasks().size(); i++) {
 			sb.append("\t" + (i+1) + ". " + plan.getTasks().get(i) + "\n");
 		}
