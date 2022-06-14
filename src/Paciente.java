@@ -114,7 +114,8 @@ public class Paciente extends Usuario implements Menu{
 				System.out.println("Ingrese una opcion valida.\n");
 			}
 		} while (choice!=0);
-		
+
+
 	}
 	//------------------------------------------------------------------------------------------------------------------
 
