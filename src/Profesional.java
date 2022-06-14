@@ -165,10 +165,15 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 				}break;
 			case 2:
 				System.out.println("Ingrese DNI del paciente a buscar : ");
-				historialClinico(
-						buscarPaciente(
-								ScannerSingleton.getInstance().nextLine()));
-				
+				Paciente p = buscarPaciente(
+								ScannerSingleton.getInstance().nextLine());
+				if(pacientes.contains(p.getUserDni()))
+				{
+					historialClinico(p);
+				}
+				else {
+					System.out.println("DNI NO VALIDO");
+				}
 				break;
 			case 3:
 				tareasIncompletas();
