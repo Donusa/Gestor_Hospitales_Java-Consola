@@ -3,60 +3,7 @@
     "fecha": "2022-06-15",
     "lista": [
       {
-        "tratamientos": [
-          {
-            "inicio": "2022-06-10",
-            "fin": "2022-06-10",
-            "profesionalEncargado": "Diego Acosta",
-            "plan": {
-              "enfermedad": {
-                "sintomas": [
-                  "Fiebre",
-                  "Tos",
-                  "Dolor de garganta",
-                  "Congestion nasal",
-                  "Dolores corporales"
-                ],
-                "name": "Gripe"
-              },
-              "tasks": [
-                {
-                  "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "Tomar pastillas para el dolor de garganta",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "Tomar ibuprofeno cada 8hs",
-                  "taskDone": false
-                }
-              ],
-              "duracion": 5
-            },
-            "estado": "EN_CURSO"
-          },
-          {
-            "profesionalEncargado": "Cecilia Abrego",
-            "plan": {
-              "enfermedad": {
-                "sintomas": [
-                  "Mucosidad",
-                  "Tos"
-                ],
-                "name": "Bronquitis"
-              },
-              "tasks": [],
-              "duracion": 0
-            },
-            "estado": "SIN_ASIGNAR"
-          }
-        ],
+        "tratamientos": [],
         "userName": "Ana Paz",
         "email": "anapaz@gmail.com",
         "password": "1234",
@@ -88,43 +35,7 @@
         "userCel": "2236958475"
       },
       {
-        "tratamientos": [
-          {
-            "inicio": "2022-06-15",
-            "fin": "2022-06-15",
-            "profesionalEncargado": "Mariana Lopez",
-            "plan": {
-              "enfermedad": {
-                "sintomas": [
-                  "Dolor en la articulacion",
-                  "Incapacidad de movimiento",
-                  "Inflamacion"
-                ],
-                "name": "Tendinitis"
-              },
-              "tasks": [
-                {
-                  "taskName": "Tomar antiflamatorios cada 8hs",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "Controlar si sigue teniendo dolor.",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "Aplicar frio en la zona afectada para desinflamarla",
-                  "taskDone": false
-                }
-              ],
-              "duracion": 8
-            },
-            "estado": "EN_CURSO"
-          }
-        ],
+        "tratamientos": [],
         "userName": "Julieta Galvan",
         "email": "julietagalvan@gmail.com",
         "password": "1234",
@@ -148,39 +59,7 @@
         "userCel": "2236958478"
       },
       {
-        "tratamientos": [
-          {
-            "inicio": "2022-06-15",
-            "fin": "2022-06-20",
-            "profesionalEncargado": "Diego Acosta",
-            "plan": {
-              "enfermedad": {
-                "sintomas": [
-                  "Dolor de cabeza",
-                  "Congestion nasal",
-                  "Presion en la cara"
-                ],
-                "name": "Sinusitis"
-              },
-              "tasks": [
-                {
-                  "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "Ver tele",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "prueba tarea alfanumerica 111",
-                  "taskDone": false
-                }
-              ],
-              "duracion": 5
-            },
-            "estado": "EN_CURSO"
-          }
-        ],
+        "tratamientos": [],
         "userName": "Alex Zapata",
         "email": "alexzapata@gmail.com",
         "password": "1234",
@@ -188,53 +67,7 @@
         "userCel": "2236958479"
       },
       {
-        "tratamientos": [
-          {
-            "inicio": "2022-06-15",
-            "fin": "2022-06-15",
-            "profesionalEncargado": "Diego Acosta",
-            "plan": {
-              "enfermedad": {
-                "sintomas": [
-                  "Fiebre",
-                  "Tos",
-                  "Dolor de garganta",
-                  "Congestion nasal",
-                  "Dolores corporales"
-                ],
-                "name": "Gripe"
-              },
-              "tasks": [
-                {
-                  "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "pruebita numerica",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "pruebita prof modificar plan",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "Tomar ibuprofeno cada 8hs",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "Tomar pastillas para el dolor de garganta",
-                  "taskDone": false
-                }
-              ],
-              "duracion": 99
-            },
-            "estado": "EN_CURSO"
-          }
-        ],
+        "tratamientos": [],
         "userName": "Florencia Herondale",
         "email": "florenciaherondale@gmail.com",
         "password": "1234",
@@ -250,82 +83,7 @@
         "userCel": "2234397086"
       },
       {
-        "tratamientos": [
-          {
-            "inicio": "2022-06-15",
-            "fin": "2022-06-15",
-            "profesionalEncargado": "Mariana Lopez",
-            "plan": {
-              "enfermedad": {
-                "sintomas": [
-                  "Dolor de cabeza",
-                  "Sangrado nasal",
-                  "Dificultad para respirar"
-                ],
-                "name": "Hipertension"
-              },
-              "tasks": [
-                {
-                  "taskName": "Hacer dieta saludable",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "Tomar agua",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "Controlar el peso. Ingresar el resultado en Kg.",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "Medirse la presion. Ingresar el resultado de minima y maxima",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "Tomar pastillas para el corazon",
-                  "taskDone": false
-                }
-              ],
-              "duracion": 30
-            },
-            "estado": "EN_CURSO"
-          },
-          {
-            "inicio": "2022-06-15",
-            "fin": "2022-06-15",
-            "profesionalEncargado": "Mariana Lopez",
-            "plan": {
-              "enfermedad": {
-                "sintomas": [
-                  "Dolor en la articulacion",
-                  "Incapacidad de movimiento",
-                  "Inflamacion"
-                ],
-                "name": "Tendinitis"
-              },
-              "tasks": [
-                {
-                  "taskName": "Aplicar frio en la zona afectada para desinflamarla",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "Tomar antiflamatorios cada 8hs",
-                  "taskDone": false
-                },
-                {
-                  "taskName": "Controlar si sigue teniendo dolor.",
-                  "taskDone": false
-                }
-              ],
-              "duracion": 10
-            },
-            "estado": "EN_CURSO"
-          }
-        ],
+        "tratamientos": [],
         "userName": "Facundo Ariel",
         "email": "facundoariel@gmail.com",
         "password": "1234",

@@ -20,6 +20,7 @@
         "taskDone": false
       },
       {
+        "numero": 0,
         "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
         "taskDone": false
       },
@@ -51,6 +52,7 @@
         "taskDone": false
       },
       {
+        "numero": 0,
         "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
         "taskDone": false
       }
@@ -75,6 +77,7 @@
         "taskDone": false
       },
       {
+        "numero": 0,
         "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
         "taskDone": false
       }
@@ -164,10 +167,12 @@
         "taskDone": false
       },
       {
+        "numero": 0,
         "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
         "taskDone": false
       },
       {
+        "info": "",
         "taskName": "Controlar si sigue teniendo dolor.",
         "taskDone": false
       }
@@ -189,10 +194,12 @@
         "taskDone": false
       },
       {
+        "info": "",
         "taskName": "Medirse la presion. Ingresar el resultado de minima y maxima",
         "taskDone": false
       },
       {
+        "numero": 0,
         "taskName": "Controlar el peso. Ingresar el resultado en Kg.",
         "taskDone": false
       },
@@ -223,6 +230,7 @@
         "taskDone": false
       },
       {
+        "numero": 0,
         "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
         "taskDone": false
       },
@@ -235,6 +243,7 @@
         "taskDone": false
       },
       {
+        "info": "",
         "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
         "taskDone": false
       }
@@ -256,6 +265,7 @@
         "taskDone": false
       },
       {
+        "info": "",
         "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
         "taskDone": false
       },
@@ -264,6 +274,7 @@
         "taskDone": false
       },
       {
+        "info": "",
         "taskName": "Controlar si sigue teniendo dolor.",
         "taskDone": false
       }
@@ -286,38 +297,19 @@
         "taskDone": false
       },
       {
+        "taskName": "Tomar agua",
+        "taskDone": false
+      },
+      {
         "taskName": "Tomar bebidas deportivas para reponer los minerales del cuerpo",
         "taskDone": false
       },
       {
+        "numero": 0,
         "taskName": "Controlar el peso. Ingresar el resultado en Kg.",
         "taskDone": false
       }
     ],
     "duracion": 5
-  },
-  {
-    "enfermedad": {
-      "sintomas": [
-        "Fiebre",
-        "Tos",
-        "Dolor de garganta",
-        "Congestion nasal",
-        "Dolores corporales"
-      ],
-      "name": "Gripe"
-    },
-    "tasks": [
-      {
-        "numero": 0,
-        "taskName": "pruebita numerica",
-        "taskDone": false
-      },
-      {
-        "taskName": "prueba tarea agregada al plan",
-        "taskDone": false
-      }
-    ],
-    "duracion": 10
   }
 ]
