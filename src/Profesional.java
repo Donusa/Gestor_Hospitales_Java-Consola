@@ -1,3 +1,5 @@
+import jdk.jfr.TransitionTo;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -214,7 +216,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		do {
 			System.out.println("\n-- CONTROL REGISTROS DE PACIENTES --\n"
 								+ "1. Ver lista de pacientes\n"
-								+ "2. Ver historial de un paciente\n"
+								+ "2. Ver Historia Clinica de un paciente.\n"
 								+ "3. Ver tareas incompletas del dia anterior.\n"
 								+ "4. Ver pacientes con planes Sin Asignar.\n"
 								+ "0. Salir\n"
@@ -328,45 +330,115 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			}
 		});
 	}
-
-	private void historialClinico(Paciente paciente)
-	{
+	//----------------------------------------------------
+	private void historialClinico(Paciente paciente) {
 		int choice = -1;
 		
-		System.out.println("1. Ver historial completo del paciente"
-				+ "2. Ver historial de un tratamiento especifico"
-				+ "0. Salir");
+		System.out.println("\n-- HISTORIAL CLINICO --\n"
+							+ "Paciente: " + paciente.getUserName() + " | DNI: " + paciente.getUserDni() + "\n"
+							+ "1. Ver historial de tratamientos del paciente\n"
+							+ "2. Ver historial de un tratamiento especifico\n"
+							+ "3. Ver datos de un tratamiento para un dia especifico.\n"
+							+ "0. Salir\n"
+							+ "----");
 		
 		choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 		
 		switch(choice) {
-		case 1 :
-			Sistema.userDate.forEach((k, v) ->  //por cada clave valor
-			{
-				System.out.println(k.toString());
-				for(Paciente p : v) {
-					if(paciente.getUserDni().equals(p.getUserDni())) {
-						System.out.println(p.getTratamientos()+"\n");
-					}
-
-				}
-				
-			});
-			break;
-		case 2:
-			System.out.println("Ingrese fecha del tratamiento : (Formato YYYY-MM-DD)");
-			try {
-				String choiceB = ScannerSingleton.getInstance().nextLine();
-				System.out.println(Sistema.userDate.get(LocalDate.parse(choiceB)));
-			} catch (Exception e) {
-				System.out.println("Datos no validos");
-			}
-			break;
-			
+		case 1: paciente.mostrarTratamientos();
+				 break;
+		case 2:	historialTratamientoEspecifico(paciente);
+				break;
+		case 3:	historialTratamientoDiaEspecifico(seleccionarFecha(), paciente, seleccionarTratamiento(paciente));
+				break;
 		}
 	}
 
-	
+	private void historialTratamientoEspecifico(Paciente p){
+		LocalDate fecha;
+		Tratamiento t = seleccionarTratamiento(p);
+		if(t!=null){
+			System.out.println("\n--HISTORIAL DEL TRATAMIENTO--\n"
+								+ "Tratamiento: " + t.getPlan().getEnfermedad().getName() + "\n");
+			fecha = LocalDate.parse(t.getInicio());
+			for(int i=0; i < t.getPlan().getDuracion(); i++){
+				historialTratamientoDiaEspecifico(fecha.plusDays(i), p, t);
+			}
+		}
+	}
+
+	private void historialTratamientoDiaEspecifico(LocalDate fecha, Paciente p, Tratamiento t){
+		if(fecha!=null && t!=null) {
+			List<Paciente> listaFechaPacientes = Sistema.userDate.get(fecha);        //consigo la Lista Pacientes de esa Fecha
+			if(listaFechaPacientes!=null) {
+				List<Tratamiento> listaFechaTratamiento;
+				int i = 0;
+				while (i < listaFechaPacientes.size() && !listaFechaPacientes.get(i).getUserDni().equals(p.getUserDni())) {    //busco mi paciente
+					i++;
+				}
+				if (i < listaFechaPacientes.size()) {        //si lo encontre, busco mi tratamiento
+					int j = 0;
+					listaFechaTratamiento = listaFechaPacientes.get(i).getTratamientos();
+					if(!listaFechaTratamiento.isEmpty()) {
+						while (j < listaFechaTratamiento.size() && listaFechaTratamiento.get(j).getPlan().getEnfermedad().getName().equals(t.getPlan().getEnfermedad().getName())) {
+							j++;
+						}
+						if (j < listaFechaTratamiento.size()) {        //si encontre el tratamiento, lo muestro
+							System.out.println("Fecha: " + fecha.toString() + "\n"
+									+ "Paciente: " + p.getUserName() + " | Dni: " + p.getUserDni() + "\n"
+									+ listaFechaTratamiento.get(j));
+						}
+					}
+					else{
+						System.out.println("Fecha " + fecha.toString() + ": No hay datos disponibles.");
+					}
+				}
+			}
+			else{
+				System.out.println("Fecha " + fecha.toString() + ": No hay datos disponibles.");
+			}
+		}
+		else{
+			System.out.println("No hay datos para mostrar.");
+		}
+	}
+
+	private Tratamiento seleccionarTratamiento(Paciente p){
+		int choice;
+		boolean repeat;
+		Tratamiento t = null;
+		System.out.println("\nSeleccione un numero de tratamiento:");
+		p.mostrarTratamientos();
+		do {
+			repeat=false;
+			try {
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
+				t = p.getTratamientos().get(choice);
+			} catch (InputMismatchException | NumberFormatException | IndexOutOfBoundsException e) {
+				repeat = true;
+				System.out.println("Ingrese un numero valido.");
+			}
+		} while(repeat);
+		return t;
+	}
+
+	private LocalDate seleccionarFecha(){
+		boolean repeat;
+		LocalDate fecha=null;
+		System.out.println("\nIngrese una fecha en formato YYYY-MM-DD:");
+		do {
+			repeat=false;
+			try {
+				fecha = LocalDate.parse(ScannerSingleton.getInstance().nextLine());
+			} catch (InputMismatchException | NumberFormatException e) {
+				repeat = true;
+				System.out.println("Ingrese una fecha valida.");
+			}
+		} while(repeat);
+		return fecha;
+	}
+	//----------------------------------------------------------------
+
 	private void chequearTratamientosSinAsignar(){
 		if(!pacientes.isEmpty()) {
 			boolean flag = false;

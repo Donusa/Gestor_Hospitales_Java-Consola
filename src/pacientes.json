@@ -26,6 +26,7 @@
               "taskDone": false
             },
             {
+              "numero": 0,
               "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
               "taskDone": false
             },

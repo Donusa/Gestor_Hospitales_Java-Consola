@@ -236,7 +236,7 @@ public class Paciente extends Usuario implements Menu{
 		}
 	}
 
-	private void mostrarTratamientos(){
+	public void mostrarTratamientos(){
 		System.out.println("\nLISTADO DE TRATAMIENTOS\n"
 						 + "-----------------------");
 		for(int i=0; i < tratamientos.size(); i++){
