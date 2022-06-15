@@ -312,7 +312,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 											+ " | Tratamiento: " + t.getPlan().getEnfermedad().getName()
 											+ "\nTareas incompletas:\n");
 									for (Tarea tarea : listaT) {
-										sb.append("-" + tarea + "\n");
+										sb.append("-" + tarea + " \n");
 									}
 								}
 							}
