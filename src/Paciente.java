@@ -69,12 +69,13 @@ public class Paciente extends Usuario implements Menu{
 		System.out.println("Tareas sin realizar : ");
 		for(Tratamiento t :this.getTratamientos())
 		{
-			for(int i = 0 ; i < t.getPlan().getTasks().size() ; i++) {
-				if(!t.getPlan().getTasks().get(i).isTaskDone())
-				{
-					flag = true;
-					System.out.println(t.getPlan().getTasks().get(i).getTaskName());
-				}
+			if (t.getEstado().equals(EstadoDelTratamiento.EN_CURSO)) {
+				for (int i = 0; i < t.getPlan().getTasks().size(); i++) {
+					if (!t.getPlan().getTasks().get(i).isTaskDone()) {
+						flag = true;
+						System.out.println(t.getPlan().getTasks().get(i).getTaskName());
+					}
+				} 
 			}
 		}
 		if(!flag)
