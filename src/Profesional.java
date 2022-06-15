@@ -329,19 +329,41 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 	
 	private void historialClinico(Paciente paciente)
 	{
-		Sistema.userDate.forEach((k, v) ->  //por cada clave valor
-		{
-			System.out.println(k.toString());
-			for(Paciente p : v)
+		int choice = -1;
+		
+		System.out.println("1. Ver historial completo del paciente"
+				+ "2. Ver historial de un tratamiento especifico"
+				+ "0. Salir");
+		
+		choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
+		
+		switch(choice) {
+		case 1 :
+			Sistema.userDate.forEach((k, v) ->  //por cada clave valor
 			{
-				if(p.getUserDni().equals(paciente.getUserDni())) { //si el paciente pasado coincide devuelve el mismo por pantalla
-					System.out.println(p);
+				System.out.println(k.toString());
+				for(Paciente p : v) {
+					if(paciente.getUserDni().equals(p.getUserDni())) {
+						System.out.println(p.getTratamientos()+"\n");
+					}
 				}
 				
+			});
+			break;
+		case 2:
+			System.out.println("Ingrese fecha del tratamiento : (Formato YYYY-MM-DD)");
+			try {
+				String choiceB = ScannerSingleton.getInstance().nextLine();
+				System.out.println(Sistema.userDate.get(LocalDate.parse(choiceB)));
+			} catch (Exception e) {
+				System.out.println("Datos no validos");
 			}
-		});
+			break;
+			
+		}
 	}
 
+	
 	private void chequearTratamientosSinAsignar(){
 		if(!pacientes.isEmpty()) {
 			boolean flag = false;
