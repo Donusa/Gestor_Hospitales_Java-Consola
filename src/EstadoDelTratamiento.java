@@ -1,6 +1,7 @@
 public enum EstadoDelTratamiento {
     SIN_ASIGNAR ("Sin asignar"),
     EN_CURSO ("En curso"),
+    ESPERANDO_ALTA("Esperando alta"),
     FINALIZADO ("Finalizado");
 
     private String name;
