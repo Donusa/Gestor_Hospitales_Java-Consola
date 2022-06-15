@@ -55,7 +55,9 @@
     "userCel": "2235463765"
   },
   {
-    "pacientes": [],
+    "pacientes": [
+      "34774899"
+    ],
     "userName": "Gustavo Perez",
     "email": "gustavoperez@gmail.com",
     "password": "1234",

@@ -309,15 +309,18 @@
     },
     "tasks": [
       {
-        "numero": 0,
         "taskName": "pruebita numerica",
         "taskDone": false
       },
       {
         "taskName": "prueba tarea agregada al plan",
         "taskDone": false
+      },
+      {
+        "taskName": "Tomar antiflamatorios cada 8hs",
+        "taskDone": false
       }
     ],
-    "duracion": 10
+    "duracion": 8
   }
 ]

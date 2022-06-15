@@ -339,5 +339,32 @@
     "password": "1234",
     "userDni": "10232454",
     "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "profesionalEncargado": "Gustavo Perez",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Estornudos"
+            ],
+            "name": "Resfriado"
+          },
+          "tasks": [],
+          "duracion": 0
+        },
+        "estado": "SIN_ASIGNAR"
+      }
+    ],
+    "userName": "lucas perez",
+    "email": "lucasperez@gmail.com",
+    "password": "1234",
+    "userDni": "34774899",
+    "userCel": "2235678811"
   }
 ]

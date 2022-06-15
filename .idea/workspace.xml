@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="act">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enfermedades.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/enfermedades.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fechasUsuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/fechasUsuarios.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pacientes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacientes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/planes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/planes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profesionales.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/profesionales.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tareasNumericas.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tareasNumericas.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655312871503</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="act">
+      <created>1655326479867</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1655326479867</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
