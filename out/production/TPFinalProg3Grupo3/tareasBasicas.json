@@ -1,5 +1,25 @@
 [
   {
+    "taskName": "pruebita prof modificar plan",
+    "taskDone": false
+  },
+  {
+    "taskName": "prueba tarea agregada al plan",
+    "taskDone": false
+  },
+  {
+    "taskName": "pruebita",
+    "taskDone": false
+  },
+  {
+    "taskName": "Ver tele",
+    "taskDone": false
+  },
+  {
+    "taskName": "Bailar",
+    "taskDone": false
+  },
+  {
     "taskName": "Tomar agua",
     "taskDone": false
   },

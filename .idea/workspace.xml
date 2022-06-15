@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Cambios de estructura">
+    <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="debug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profesional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profesional.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/Paciente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/Paciente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/Profesional.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/Profesional.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/Sistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/Sistema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/admins.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/admins.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/backupFecha.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/backupFecha.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/enfermedades.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/enfermedades.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/fechasUsuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/fechasUsuarios.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/pacientes.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/pacientes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/planes.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/planes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/profesionales.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TPFinalProg3Grupo3/profesionales.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admins.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/admins.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backupFecha.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/backupFecha.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enfermedades.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/enfermedades.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fechasUsuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/fechasUsuarios.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pacientes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacientes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tareasAlfanumericas.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tareasAlfanumericas.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/planes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/planes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profesionales.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/profesionales.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,7 +354,42 @@
       <option name="project" value="LOCAL" />
       <updated>1655323888656</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="fechasUsuarios.json fixed">
+      <created>1655325972575</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1655325972575</updated>
+    </task>
+    <task id="LOCAL-00037" summary="cambios archivos.json">
+      <created>1655327527217</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1655327527218</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Profesional historialClinico">
+      <created>1655332521627</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1655332521627</updated>
+    </task>
+    <task id="LOCAL-00039" summary="debug">
+      <created>1655593476191</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1655593476191</updated>
+    </task>
+    <task id="LOCAL-00040" summary="debug">
+      <created>1655593847306</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1655593847306</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -370,10 +417,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Creacion del Proyecto en IntelliJ - add Main" />
-    <MESSAGE value="CrearNuevoPlan ahora retorna Plan | Enum EstadoDelTratamiento | Avance funciones del Profesional" />
-    <MESSAGE value="Seteo de inicio y fin de Tratamiento" />
-    <MESSAGE value="Constructores vacios en todas las Clases" />
     <MESSAGE value="Asignacion de tratamientos" />
     <MESSAGE value="Creacion de toStrings" />
     <MESSAGE value="Carga JSON File de Enfermedades" />
@@ -395,6 +438,10 @@
     <MESSAGE value="Cambios archivos json" />
     <MESSAGE value="Pull general" />
     <MESSAGE value="Cambios de estructura" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambios de estructura" />
+    <MESSAGE value="fechasUsuarios.json fixed" />
+    <MESSAGE value="cambios archivos.json" />
+    <MESSAGE value="Profesional historialClinico" />
+    <MESSAGE value="debug" />
+    <option name="LAST_COMMIT_MESSAGE" value="debug" />
   </component>
 </project>
