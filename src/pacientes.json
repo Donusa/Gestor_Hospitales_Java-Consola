@@ -176,6 +176,11 @@
             {
               "taskName": "Ver tele",
               "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "prueba tarea alfanumerica 111",
+              "taskDone": false
             }
           ],
           "duracion": 5

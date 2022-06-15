@@ -231,7 +231,9 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 				mostrarListaPacientes();
 				break;
 			case 2:
-				System.out.println("Ingrese DNI del paciente a buscar: ");
+				System.out.println("-- HISTORIAL CLINICO --");
+				mostrarListaPacientes();
+				System.out.println("\nIngrese DNI del paciente a buscar: ");
 				Paciente p = buscarPaciente(ScannerSingleton.getInstance().nextLine());
 				if(p!=null && pacientes.contains(p.getUserDni()))
 				{
@@ -326,7 +328,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			}
 		});
 	}
-	
+
 	private void historialClinico(Paciente paciente)
 	{
 		int choice = -1;
@@ -346,6 +348,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 					if(paciente.getUserDni().equals(p.getUserDni())) {
 						System.out.println(p.getTratamientos()+"\n");
 					}
+
 				}
 				
 			});
