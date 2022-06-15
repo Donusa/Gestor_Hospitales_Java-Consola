@@ -16,10 +16,13 @@ public class Sistema extends Thread{
 	@Override
 	public void run() {
 		levantarListaUsers();
-		int choice = 0;
+		int choice;
 		do {
-			System.out.println("1. Ingresar");
-			System.out.println("2. Salir");
+			System.out.println("\n************************************************\n"
+								+ "\tSistema de Control de Enfermedades\n"
+								+ "************************************************\n"
+								+ "1. Iniciar Sesion.\n"
+								+ "0. Salir del programa.");
 			try {
 				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 			} catch (Exception e) {
@@ -36,8 +39,8 @@ public class Sistema extends Thread{
 					((Profesional) currentUser).menu();
 				} 
 			} 
-			else if(choice!=2 ){ System.out.println("Opcion no valida");}
-		} while (choice!=2);
+			else if(choice!=0 ){ System.out.println("Opcion no valida");}
+		} while (choice!=0);
 		JsonMapper.mapSave();
 		TimeControl.setLoop(false);
 		separacionGuardadoListas();
@@ -81,12 +84,9 @@ public class Sistema extends Thread{
 		String userPass;
 		Usuario currentLog = new Usuario();
 
-		System.out.println("\n************************************************\n"
-							+ "\tSistema de Control de Enfermedades\n"
-							+ "************************************************\n");;
 		do
 		{
-			System.out.println("-- INICIAR SESION --");
+			System.out.println("\n-- INICIAR SESION --");
 			System.out.println("Ingrese nombre de usuario");
 			userName = ScannerSingleton.getInstance().nextLine();
 			for(Usuario u : users)
@@ -105,7 +105,7 @@ public class Sistema extends Thread{
 			}
 			if(!flag)
 			{
-				System.out.println("Datos no validos.\n");
+				System.out.println("Datos no validos.");
 			}
 		}while(!flag);
 		return currentLog;

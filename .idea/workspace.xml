@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Debug Administrador">
+    <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Cambios archivos json">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Plan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profesional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profesional.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sistema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tratamiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tratamiento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pacientes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacientes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tareasBasicas.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tareasBasicas.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655271831727</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Debug / Cambios visuales">
+      <created>1655285403062</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1655285403062</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -373,6 +374,8 @@
     <MESSAGE value="Debug Profesional" />
     <MESSAGE value="Modif. Crear Usuario" />
     <MESSAGE value="Debug Administrador" />
-    <option name="LAST_COMMIT_MESSAGE" value="Debug Administrador" />
+    <MESSAGE value="Debug / Cambios visuales" />
+    <MESSAGE value="Cambios archivos json" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios archivos json" />
   </component>
 </project>
