@@ -1,0 +1,85 @@
+[
+  {
+    "sintomas": [
+      "Fiebre",
+      "Tos",
+      "Dolor de garganta",
+      "Congestion nasal",
+      "Dolores corporales"
+    ],
+    "name": "Gripe"
+  },
+  {
+    "sintomas": [
+      "Fiebre",
+      "Tos",
+      "Dolor de garganta",
+      "Congestion nasal",
+      "Estornudos"
+    ],
+    "name": "Resfriado"
+  },
+  {
+    "sintomas": [
+      "Mucosidad",
+      "Tos"
+    ],
+    "name": "Bronquitis"
+  },
+  {
+    "sintomas": [
+      "Dolor de cabeza",
+      "Congestion nasal",
+      "Presion en la cara"
+    ],
+    "name": "Sinusitis"
+  },
+  {
+    "sintomas": [
+      "Enrojecimiento",
+      "Inflamacion del area afectada"
+    ],
+    "name": "Infeccion de la piel"
+  },
+  {
+    "sintomas": [
+      "Dolor al orinar",
+      "Necesidad de orinar con frecuencia"
+    ],
+    "name": "Infeccion urinaria"
+  },
+  {
+    "sintomas": [
+      "Dolor de cabeza",
+      "Sangrado nasal",
+      "Dificultad para respirar"
+    ],
+    "name": "Hipertension"
+  },
+  {
+    "sintomas": [
+      "Irritacion de garganta",
+      "Voz ronca",
+      "Fiebre",
+      "Ganglios linfaticos del cuello inflamados"
+    ],
+    "name": "Laringitis"
+  },
+  {
+    "sintomas": [
+      "Dolor en la articulacion",
+      "Incapacidad de movimiento",
+      "Inflamacion"
+    ],
+    "name": "Tendinitis"
+  },
+  {
+    "sintomas": [
+      "Dolor abdominal",
+      "Diarrea",
+      "Nauseas",
+      "Vomitos"
+    ],
+    "name": "Gastroenteritis"
+  }
+]
