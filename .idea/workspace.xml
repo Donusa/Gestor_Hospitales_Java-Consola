@@ -4,7 +4,11 @@
     <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Debug Administrador">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backupFecha.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/backupFecha.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pacientes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacientes.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/planes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/planes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profesionales.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/profesionales.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tareasBasicas.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tareasBasicas.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -304,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655250143387</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Debug Administrador">
+      <created>1655253737371</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1655253737371</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

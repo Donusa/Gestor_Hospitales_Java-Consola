@@ -68,13 +68,17 @@ public class Sistema extends Thread{
 	
 	private Usuario verificacionIdentidad()
 	{
-		Boolean flag = false;
+		boolean flag = false;
 		String userName;
 		String userPass;
 		Usuario currentLog = new Usuario();
-			
+
+		System.out.println("\n************************************************\n"
+							+ "\tSistema de Control de Enfermedades\n"
+							+ "************************************************\n");;
 		do
 		{
+			System.out.println("-- INICIAR SESION --");
 			System.out.println("Ingrese nombre de usuario");
 			userName = ScannerSingleton.getInstance().nextLine();
 			for(Usuario u : users)
@@ -83,6 +87,7 @@ public class Sistema extends Thread{
 				{
 					System.out.println("Ingrese Contraseña");
 					userPass = ScannerSingleton.getInstance().nextLine();
+					System.out.println("----");
 					if(u.getPassword().equals(userPass))
 					{
 						flag = true;
@@ -92,7 +97,7 @@ public class Sistema extends Thread{
 			}
 			if(!flag)
 			{
-				System.out.println("Datos no validos");
+				System.out.println("Datos no validos.\n");
 			}
 		}while(!flag);
 		return currentLog;

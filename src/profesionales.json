@@ -1,6 +1,9 @@
 [
   {
-    "pacientes": [],
+    "pacientes": [
+      "38487299",
+      "40520338"
+    ],
     "userName": "Diego Acosta",
     "email": "diegoacosta@gmail.com",
     "password": "1234",
@@ -32,7 +35,10 @@
     "userCel": "2235554312"
   },
   {
-    "pacientes": [],
+    "pacientes": [
+      "40520335",
+      "10232454"
+    ],
     "userName": "Mariana Lopez",
     "email": "marianalopez@gmail.com",
     "password": "1234",

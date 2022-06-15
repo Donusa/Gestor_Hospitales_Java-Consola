@@ -20,13 +20,15 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 	public void menu() {
 		int a = -1;
 		do{
-			System.out.println("1. Ingreso de Pacientes.\n"
+			System.out.println("\n-- MENU ADMINISTRADOR --\n"
+								+ "1. Ingreso de Pacientes.\n"
 								+ "2. Ingreso de Profesionales.\n"
 								+ "3. Administracion de Enfermedades.\n"
 								+ "4. Administracion de Tareas de Control.\n"
 								+ "5. Administracion de Planes.\n"
 								+ "6. Asignar profesional a paciente.\n"
-								+ "0. Salir.\n");
+								+ "0. Salir.\n"
+								+ "----");
 			try {
 				a = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 			}
@@ -35,20 +37,23 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			}
 
 			switch (a){
-				case 1:	ingresoPacientes();
-					break;
-				case 2:	ingresoProfesionales();
-					break;
+				case 1: System.out.println("\n-- Ingreso de Pacientes --");
+						ingresoPacientes();
+						break;
+				case 2: System.out.println("\n-- Ingreso de Profesionales --");
+						ingresoProfesionales();
+						break;
 				case 3:	administracionEnfermedades();
-					break;
+						break;
 				case 4: administracionTareasDeControl();
-					break;
+						break;
 				case 5: administracionPlanes();
-					break;
-				case 6: asignarProfesional();
-					break;
+						break;
+				case 6: System.out.println("-- Asignar Profesional a un Paciente --");
+						asignarProfesional();
+						break;
 				case 0: break;
-				default: System.out.println("Ingrese un dato numerico valido");
+				default: System.out.println("Ingrese un dato numerico valido.");
 					break;
 			}
 		} while (a!=0);
@@ -58,6 +63,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		Paciente p = new Paciente();
 		if(Usuario.crearUser(p)) {		//Envia paciente vacio a funcion, solo carga datos comunes de usuario(padre)
 			Sistema.users.add(p);    	//agrega a la lista general, esta se guarda al finalizar el programa y persiste los cambios
+			System.out.println("Paciente registrado correctamente.");
 		}
 		
 	}
@@ -66,6 +72,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		Profesional p = new Profesional();
 		if(Usuario.crearUser(p)) {			//Se crea un nuevo profesional asignandole los valores comunes a todos los usuarios
 			Sistema.users.add(p);			//se asigna a la lista de usuarios que luego es persistida al finalizar el programa
+			System.out.println("Profesional registrado correctamente.");
 		}
 	}
 	
@@ -111,10 +118,12 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 
 		do{
 			
-				System.out.println("1. Agregar enfermedad.\n"
+				System.out.println("\n-- ADMINISTRACION DE ENFERMEDADES -- \n"
+								+ "1. Agregar enfermedad.\n"
 								+ "2. Eliminar enfermedad.\n"
 								+ "3. Ver lista de enfermedades.\n"
-								+ "0. Salir.");
+								+ "0. Salir.\n"
+								+ "----");
 				try{
 					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 				}
@@ -219,10 +228,12 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 
 		do{
 			
-				System.out.println("1. Agregar tarea.\n"
+				System.out.println("\n-- ADMINISTRACION TAREAS DE CONTROL -- \n"
+								 + "1. Agregar tarea.\n"
 								 + "2. Eliminar tarea.\n"
 								 + "3. Ver lista de tareas.\n"
-								 + "0. Salir.\n");
+								 + "0. Salir.\n"
+								 + "----");
 				try{
 					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 				}
@@ -242,16 +253,17 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		
 	}
 
-	private void nuevaTarea() {
+	private Tarea nuevaTarea() {
 		int choice = 0;
 		String taskName = "";
 		Tarea nuevaTarea = null;
 		List<Tarea> saves = new ArrayList<>();
 		do{
 
-			System.out.println("1. Tarea simple de solo Check\n"
-					+ "2. Tarea con respuesta Alfanumerica.\n"
-					+ "3. Tarea con respuesta Numerica\n");
+			System.out.println("Agregar Tarea:\n"
+								+ "1. Tarea simple de solo Check\n"
+								+ "2. Tarea con respuesta Alfanumerica.\n"
+								+ "3. Tarea con respuesta Numerica\n");
 			try{
 				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 			}
@@ -292,6 +304,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			saves.addAll(SerializacionGuardado.deserializacion(nombreArchivos.TAREASBASICAS.getName(), new Tarea()));
 			SerializacionGuardado.serializacion(nombreArchivos.TAREASBASICAS.getName(), saves);
 		}
+		return nuevaTarea;
 	}
 
 	private void eliminarTarea() {
@@ -355,9 +368,11 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		int choice;
 		List<Plan> save = Sistema.listarPlanes();
 		do{
-			System.out.println("1. Crear nuevo plan.\n"
+			System.out.println("\n-- ADMINISTRACION DE PLANES DE CONTROL --\n"
+								+ "1. Crear nuevo plan.\n"
 								+ "2. Modificar plan existente\n"
-								+ "0. Salir");
+								+ "0. Salir\n"
+								+ "----");
 
 			try {
 				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
@@ -371,6 +386,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 				case 2: Plan plan = Sistema.seleccionarPlan();
 					modificarPlan(plan);
 					break;
+				case 0: break;
 				default:
 					System.out.println("Ingrese un numero valido.");
 					break;
@@ -383,7 +399,6 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 	@Override
 	public Plan crearNuevoPlan(Enfermedad e) {
 		int choice = 1;
-		int numTarea;
 		Plan p= new Plan(e);
 		System.out.println("Ingrese la duracion del Plan:");
 		p.setDuracion(Integer.parseInt(ScannerSingleton.getInstance().nextLine()));
@@ -391,16 +406,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		do{
 			try {
 				if(choice==1) {
-					System.out.println("Seleccione un numero de tarea para agregarla al nuevo Plan:\n");
-					List<Tarea> listaTareas = Sistema.verListaTareas();
-					mostrarListaTareas();
-					System.out.println("0. Crear nueva tarea.");
-					numTarea = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
-					if (numTarea == -1) {
-						nuevaTarea();				//////////////////////////////////////////////////////////////ARREGLAR
-					} else {
-						p.getTasks().add(listaTareas.get(numTarea));
-					}
+					agregarTareaAlPlan(p);
 					System.out.println("Desea agregar otra tarea?\n"
 							+ "1. Si\n"
 							+ "2. No");
@@ -441,7 +447,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 						p.setDuracion(Integer.parseInt(ScannerSingleton.getInstance().nextLine()));
 						break;
 					case 2 :
-						p.agregarTarea();
+						agregarTareaAlPlan(p);
 						break;
 					case 3 :
 						p.mostrarTareas();
@@ -458,6 +464,21 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		} while (choice!=0);
 		
 		return p;
+	}
+
+	private void agregarTareaAlPlan(Plan p){
+		int numTarea;
+
+		System.out.println("Seleccione un numero de tarea para agregarla al nuevo Plan:\n");
+		List<Tarea> listaTareas = Sistema.verListaTareas();
+		mostrarListaTareas();
+		System.out.println("0. Crear nueva tarea.");
+		numTarea = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
+		if (numTarea == -1) {
+			p.getTasks().add(nuevaTarea());
+		} else {
+			p.getTasks().add(listaTareas.get(numTarea));
+		}
 	}
 	//------------------------------------------------------------------------------------------------------------------
 

@@ -162,5 +162,30 @@
     "password": "1234",
     "userDni": "25467895",
     "userCel": "2234397086"
+  },
+  {
+    "tratamientos": [
+      {
+        "profesionalEncargado": "Mariana Lopez",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Dolor de cabeza",
+              "Sangrado nasal",
+              "Dificultad para respirar"
+            ],
+            "name": "Hipertension"
+          },
+          "tasks": [],
+          "duracion": 0
+        },
+        "estado": "SIN_ASIGNAR"
+      }
+    ],
+    "userName": "Facundo Ariel",
+    "email": "facundoariel@gmail.com",
+    "password": "1234",
+    "userDni": "10232454",
+    "userCel": "2234556453"
   }
 ]
