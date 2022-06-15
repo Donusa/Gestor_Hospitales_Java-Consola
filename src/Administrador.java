@@ -351,13 +351,10 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		}
 	}
 
-	private void administracionPlanes()
-	{
-		int choice = 0;
+	private void administracionPlanes() {
+		int choice;
 		List<Plan> save = Sistema.listarPlanes();
-		Plan plan = new Plan();
 		do{
-
 			System.out.println("1. Crear nuevo plan.\n"
 								+ "2. Modificar plan existente\n"
 								+ "0. Salir");
@@ -365,17 +362,17 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			try {
 				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 			} catch (InputMismatchException | NumberFormatException e) {
-				System.out.println("Ingrese un dato numerico valido");
+				choice=-1;
 			}
-
 			switch (choice){
 				case 1: Enfermedad enfermedad = Sistema.seleccionarEnfermedad();
-					crearNuevoPlan(enfermedad);
+					save.add(crearNuevoPlan(enfermedad));
 					break;
-				case 2: plan = Sistema.seleccionarPlan();
+				case 2: Plan plan = Sistema.seleccionarPlan();
 					modificarPlan(plan);
 					break;
-				default: System.out.println("Ingrese un dato numerico valido");
+				default:
+					System.out.println("Ingrese un numero valido.");
 					break;
 			}
 		} while (choice!=0);
@@ -385,23 +382,38 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 
 	@Override
 	public Plan crearNuevoPlan(Enfermedad e) {
-		
+		int choice = 1;
+		int numTarea;
 		Plan p= new Plan(e);
 		System.out.println("Ingrese la duracion del Plan:");
 		p.setDuracion(Integer.parseInt(ScannerSingleton.getInstance().nextLine()));
-		int rta =2;
-		do {
-			try {
-				p.agregarTarea();
-				System.out.println("Desea agregar otra tarea?\n"+
-						"1. Si\n"+
-						"2. No");
-				rta=Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 
-			}catch (InputMismatchException exception){
-				System.out.println("Ingrese una opcion valida.\n");
+		do{
+			try {
+				if(choice==1) {
+					System.out.println("Seleccione un numero de tarea para agregarla al nuevo Plan:\n");
+					List<Tarea> listaTareas = Sistema.verListaTareas();
+					mostrarListaTareas();
+					System.out.println("0. Crear nueva tarea.");
+					numTarea = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
+					if (numTarea == -1) {
+						nuevaTarea();				//////////////////////////////////////////////////////////////ARREGLAR
+					} else {
+						p.getTasks().add(listaTareas.get(numTarea));
+					}
+					System.out.println("Desea agregar otra tarea?\n"
+							+ "1. Si\n"
+							+ "2. No");
+				}
+				else if (choice!=2){
+					System.out.println("Ingrese una opcion valida.");
+				}
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 			}
-		}while (rta == 1);
+			catch (InputMismatchException | NumberFormatException | IndexOutOfBoundsException exception){
+				choice = 0;
+			}
+		} while(choice!=2);
 		
 		return p;
 	}
