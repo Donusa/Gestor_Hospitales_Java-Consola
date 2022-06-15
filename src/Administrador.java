@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 
@@ -248,129 +247,16 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 					System.out.println("Ingrese una opcion valida.\n");
 				}
 				switch (choice){
-					case 1:	nuevaTarea();
+					case 1:	Tarea.nuevaTarea();
 							break;
-					case 2: eliminarTarea();
+					case 2: Tarea.eliminarTarea();
 							break;
-					case 3: mostrarListaTareas();
+					case 3: Tarea.mostrarListaTareas();
 							break;
 				}
 			
 		} while (choice!=0);
 		
-	}
-
-	private Tarea nuevaTarea() {
-		int choice = 0;
-		String taskName = "";
-		Tarea nuevaTarea = null;
-		List<Tarea> saves = new ArrayList<>();
-		do{
-
-			System.out.println("Agregar Tarea:\n"
-								+ "1. Tarea simple de solo Check\n"
-								+ "2. Tarea con respuesta Alfanumerica.\n"
-								+ "3. Tarea con respuesta Numerica\n");
-			try{
-				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
-			}
-			catch(InputMismatchException e){
-				System.out.println("Ingrese una opcion valida.\n");
-			}
-
-			switch (choice){
-				case 1:
-					nuevaTarea = new Tarea(taskName);
-					break;
-				case 2:
-					nuevaTarea = new TareaAlfanumerica(taskName);
-					break;
-				case 3:
-					nuevaTarea = new TareaNumerica(taskName);
-					break;
-			}
-
-		} while (nuevaTarea == null);
-		saves.add(nuevaTarea);
-		System.out.println("Ingrese nombre de la tarea a agregar");
-		nuevaTarea.setTaskName(ScannerSingleton.getInstance().nextLine());
-		//guarda la lista valida correspondiente a la instancia de la tarea creada
-
-		if(nuevaTarea instanceof TareaNumerica)
-		{
-			saves.addAll(SerializacionGuardado.deserializacion(nombreArchivos.TAREASNUMERICAS.getName(), new TareaNumerica()));
-			SerializacionGuardado.serializacion(nombreArchivos.TAREASNUMERICAS.getName(), saves);
-		}
-		else if(nuevaTarea instanceof TareaAlfanumerica)
-		{
-			saves.addAll(SerializacionGuardado.deserializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), new TareaAlfanumerica()));
-			SerializacionGuardado.serializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), saves);
-		}
-		else
-		{
-			saves.addAll(SerializacionGuardado.deserializacion(nombreArchivos.TAREASBASICAS.getName(), new Tarea()));
-			SerializacionGuardado.serializacion(nombreArchivos.TAREASBASICAS.getName(), saves);
-		}
-		System.out.println("Tarea agregada.");
-		return nuevaTarea;
-	}
-
-	private void eliminarTarea() {
-		List<Tarea> l = Sistema.verListaTareas();
-		List<Tarea> save = new ArrayList<>();
-		Tarea aux = new Tarea();
-		int choice = -1;
-		boolean repeat;
-		if(!l.isEmpty()) {
-			mostrarListaTareas();
-			System.out.println("\nIngrese el numero de la tarea a eliminar: ");
-			do {
-				repeat=false;
-				try {
-					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
-					aux = l.get(choice);
-					l.remove(choice);
-					if (aux instanceof TareaNumerica) {
-						for (Tarea t : l) {
-							if (t instanceof TareaNumerica) {
-								save.add(t);
-							}
-						}
-						SerializacionGuardado.serializacion(nombreArchivos.TAREASNUMERICAS.getName(), save);
-					} else if (aux instanceof TareaAlfanumerica) {
-						for (Tarea t : l) {
-							if (t instanceof TareaAlfanumerica) {
-								save.add(t);
-							}
-						}
-						SerializacionGuardado.serializacion(nombreArchivos.TAREASALFANUMERICAS.getName(), save);
-					} else {
-						for (Tarea t : l) {
-							if (!(t instanceof TareaAlfanumerica || t instanceof TareaNumerica)) {
-								save.add(t);
-							}
-						}
-						SerializacionGuardado.serializacion(nombreArchivos.TAREASBASICAS.getName(), save);
-					}
-				} catch (InputMismatchException | NumberFormatException | IndexOutOfBoundsException e) {
-					System.out.println("Error. Ingrese una opcion valida:");
-					repeat=true;
-				}
-			} while(repeat);
-			System.out.println("Tarea eliminada.");
-		}
-		else{
-			System.out.println("No hay tareas cargadas en el Sistema.");
-		}
-	}
-
-	private void mostrarListaTareas(){
-		List<Tarea> listaTareas = Sistema.verListaTareas();
-		System.out.println("LISTA DE TAREAS\n"
-						 + "---------------");
-		for(int i = 0; i < listaTareas.size(); i++){
-			System.out.println((i+1) + ". " + listaTareas.get(i));
-		}
 	}
 
 	private void administracionPlanes() {
@@ -380,6 +266,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			System.out.println("\n-- ADMINISTRACION DE PLANES DE CONTROL --\n"
 								+ "1. Crear nuevo plan.\n"
 								+ "2. Modificar plan existente\n"
+								+ "3. Ver todos los planes precargados.\n"
 								+ "0. Salir\n"
 								+ "----");
 
@@ -402,6 +289,8 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 						}
 						}
 					break;
+				case 3:	mostrarListaPlanes();
+					break;
 				case 0: break;
 				default:
 					System.out.println("Ingrese un numero valido.");
@@ -422,7 +311,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		do{
 			try {
 				if(choice==1) {
-					agregarTareaAlPlan(p);
+					p.agregarTareaAlPlan();
 					System.out.println("\nDesea agregar otra tarea?\n"
 							+ "1. Si\n"
 							+ "2. No");
@@ -467,10 +356,10 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 						System.out.println("Duracion modificada.");
 						break;
 					case 2 :
-						agregarTareaAlPlan(p);
+						p.agregarTareaAlPlan();
 						break;
 					case 3 :
-						p.mostrarTareas();
+						p.mostrarTareasDelPlan();
 						System.out.println("\nIngrese el numero de la tarea a eliminar.");
 						try {
 							p.getTasks().remove(Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1);
@@ -485,30 +374,12 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		return p;
 	}
 
-	private void agregarTareaAlPlan(Plan p){
-		int numTarea=-2;
-		boolean repeat;
-
-		System.out.println("\nSeleccione un numero de tarea para agregarla al nuevo Plan:\n");
-		List<Tarea> listaTareas = Sistema.verListaTareas();
-		mostrarListaTareas();
-		System.out.println("0. Crear nueva tarea.");
-		do {
-			repeat = false;
-			try {
-				numTarea = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
-				if (numTarea == -1) {
-					p.getTasks().add(nuevaTarea());
-				} else {
-					p.getTasks().add(listaTareas.get(numTarea));
-				}
-			} catch (InputMismatchException | NumberFormatException | IndexOutOfBoundsException e) {
-				System.out.println("Error. Ingrese una opcion valida:");
-				repeat = true;
-			}
-		} while(repeat);
-		if(numTarea!=-1) {
-			System.out.println("Tarea agregada.");
+	private void mostrarListaPlanes(){
+		List<Plan> listaPlanes = Sistema.listarPlanes();
+		System.out.println("LISTA DE PLANES:\n"
+						 + "----------------");
+		for(int i = 0; i < listaPlanes.size(); i++){
+			System.out.println((i+1) + ". " + listaPlanes.get(i));
 		}
 	}
 	//------------------------------------------------------------------------------------------------------------------

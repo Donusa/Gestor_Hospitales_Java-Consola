@@ -22,11 +22,12 @@
               "taskDone": false
             },
             {
-              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
-              "taskDone": true
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
             },
             {
-              "taskName": "Tomar pastillas para el dolor de garganta",
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
               "taskDone": false
             },
             {
@@ -101,19 +102,21 @@
           },
           "tasks": [
             {
-              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
-              "taskDone": true
+              "taskName": "Tomar antiflamatorios cada 8hs",
+              "taskDone": false
             },
             {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            },
+            {
+              "info": "",
               "taskName": "Controlar si sigue teniendo dolor.",
               "taskDone": false
             },
             {
               "taskName": "Aplicar frio en la zona afectada para desinflamarla",
-              "taskDone": false
-            },
-            {
-              "taskName": "Tomar antiflamatorios cada 8hs",
               "taskDone": false
             }
           ],
@@ -147,6 +150,8 @@
   {
     "tratamientos": [
       {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-20",
         "profesionalEncargado": "Diego Acosta",
         "plan": {
           "enfermedad": {
@@ -157,10 +162,20 @@
             ],
             "name": "Sinusitis"
           },
-          "tasks": [],
-          "duracion": 0
+          "tasks": [
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Ver tele",
+              "taskDone": false
+            }
+          ],
+          "duracion": 5
         },
-        "estado": "SIN_ASIGNAR"
+        "estado": "EN_CURSO"
       }
     ],
     "userName": "Alex Zapata",
@@ -172,6 +187,8 @@
   {
     "tratamientos": [
       {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-15",
         "profesionalEncargado": "Diego Acosta",
         "plan": {
           "enfermedad": {
@@ -184,10 +201,37 @@
             ],
             "name": "Gripe"
           },
-          "tasks": [],
-          "duracion": 0
+          "tasks": [
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "pruebita numerica",
+              "taskDone": false
+            },
+            {
+              "taskName": "pruebita prof modificar plan",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 99
         },
-        "estado": "SIN_ASIGNAR"
+        "estado": "EN_CURSO"
       }
     ],
     "userName": "Florencia Herondale",
@@ -221,23 +265,25 @@
           },
           "tasks": [
             {
-              "taskName": "Medirse la presion. Ingresar el resultado de minima y maxima",
-              "taskDone": true
-            },
-            {
-              "taskName": "Controlar el peso. Ingresar el resultado en Kg.",
-              "taskDone": true
-            },
-            {
               "taskName": "Hacer dieta saludable",
-              "taskDone": true
-            },
-            {
-              "taskName": "Tomar pastillas para el corazon",
-              "taskDone": true
+              "taskDone": false
             },
             {
               "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Controlar el peso. Ingresar el resultado en Kg.",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Medirse la presion. Ingresar el resultado de minima y maxima",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el corazon",
               "taskDone": false
             }
           ],
@@ -264,6 +310,7 @@
               "taskDone": false
             },
             {
+              "info": "",
               "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
               "taskDone": false
             },
@@ -272,6 +319,7 @@
               "taskDone": false
             },
             {
+              "info": "",
               "taskName": "Controlar si sigue teniendo dolor.",
               "taskDone": false
             }
