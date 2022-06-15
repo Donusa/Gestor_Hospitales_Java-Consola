@@ -107,7 +107,13 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			Enfermedad e = Sistema.seleccionarEnfermedad();//se selecciona una enfermedad de la lista
 			Tratamiento tratamiento = new Tratamiento(profesional.getUserName(), e);
 			paciente.getTratamientos().add(tratamiento);
-			profesional.getPacientes().add(paciente.getUserDni());
+			for(Usuario u : Sistema.users)
+			{
+				if(u instanceof Profesional && u.equals(profesional))
+				{
+					((Profesional)u).getPacientes().add(paciente.getUserDni());
+				}
+			}
 			//y se le asigna junto a un nuevo tratamiento al paciente previamente encontrado
 			System.out.println("Paciente DNI " + paciente.getUserDni() + " asignado al Profesional DNI " + profesional.userDni);
 		}
@@ -387,7 +393,14 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 					save.add(crearNuevoPlan(enfermedad));
 					break;
 				case 2: Plan plan = Sistema.seleccionarPlan();
-					modificarPlan(plan);
+						
+					for(int i = 0 ; i < save.size(); i ++){
+						if (save.get(i).getEnfermedad().getName().equals(plan.getEnfermedad().getName())
+								&& save.get(i).getTasks().toString().equals(plan.getTasks().toString())) {
+							plan = modificarPlan(plan);
+							save.set(i, plan);
+						}
+						}
 					break;
 				case 0: break;
 				default:

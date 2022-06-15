@@ -34,6 +34,12 @@ public class Paciente extends Usuario implements Menu{
 	@Override
 	public void menu() {
 		int choice;
+		for(Tratamiento t : tratamientos)
+		{
+			for(Tarea tarea : t.getPlan().getTasks()) {
+				System.out.println(tarea.getClass());
+			}
+		}
 		System.out.println("******************************\n"
 							+ "\t\tNOTIFICACIONES\n"
 							+ "******************************");
@@ -103,8 +109,13 @@ public class Paciente extends Usuario implements Menu{
 			} while(repeat);
 		}
 		else{
-			System.out.println("Tratamiento: " + tratEnCurso.get(0).getPlan().getEnfermedad().getName());
-			marcarTareasDeUnPlan(tratEnCurso.get(0).getPlan());
+			try {
+				System.out.println("Tratamiento: " + tratEnCurso.get(0).getPlan().getEnfermedad().getName());
+				marcarTareasDeUnPlan(tratEnCurso.get(0).getPlan());
+			} catch (IndexOutOfBoundsException e) {
+				// TODO Auto-generated catch block
+				System.out.println("Todos sus tratamientos estan finalizados o en curso");
+			}
 		}
 	}
 
@@ -119,12 +130,15 @@ public class Paciente extends Usuario implements Menu{
 					try {
 						numTarea = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
 						p.getTasks().get(numTarea).setTaskDone(true);
+						System.out.println(p.getTasks().get(numTarea).getClass());
 						if (p.getTasks().get(numTarea) instanceof TareaNumerica) {    // si elijo una tarea numerica
 							System.out.println("Ingrese el numero requerido:");
-							((TareaNumerica) p.getTasks().get(numTarea)).setNumero(Integer.parseInt(ScannerSingleton.getInstance().nextLine()));
+							((TareaNumerica) p.getTasks().get(numTarea))
+										.setNumero(Integer.parseInt(ScannerSingleton.getInstance().nextLine()));
 						} else if (p.getTasks().get(numTarea) instanceof TareaAlfanumerica) {    // si elijo una tarea alfanumerica
 							System.out.println("Ingrese la informacion requerida:");
-							((TareaAlfanumerica) p.getTasks().get(numTarea)).setInfo(ScannerSingleton.getInstance().nextLine());
+							((TareaAlfanumerica) p.getTasks().get(numTarea))
+										.setInfo(ScannerSingleton.getInstance().nextLine());
 						}
 						choice=0;
 					} catch (InputMismatchException | NumberFormatException | IndexOutOfBoundsException e) {
@@ -244,7 +258,8 @@ public class Paciente extends Usuario implements Menu{
 		for(Tratamiento t :this.getTratamientos())
 		{
 			for(int i = 0 ; i < t.getPlan().getTasks().size() ; i++) {
-				if(!t.getPlan().getTasks().get(i).isTaskDone())
+				if(!t.getPlan().getTasks().get(i).isTaskDone() 
+						&& t.getEstado().equals(EstadoDelTratamiento.EN_CURSO))
 				{
 					flag = true;
 					sb.append("\t" + t.getPlan().getTasks().get(i).getTaskName() + ".\n");
