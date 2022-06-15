@@ -16,16 +16,8 @@ public class Sistema extends Thread{
 	@Override
 	public void run() {
 		levantarListaUsers();
+		JsonMapper.mapLoad();
 		int choice;
-//		for(Usuario u : Sistema.users){
-//			if(u instanceof Paciente){
-//				for(Tratamiento t : ((Paciente) u).getTratamientos()){
-//					for(Tarea tarea : t.getPlan().getTasks()){
-//						System.out.println(tarea.getClass() + " " + tarea.getTaskName());
-//					}
-//				}
-//			}
-//		}
 		do {
 			System.out.println("\n************************************************\n"
 								+ "\tSistema de Control de Enfermedades\n"

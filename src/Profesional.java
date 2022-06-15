@@ -231,7 +231,9 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 				mostrarListaPacientes();
 				break;
 			case 2:
-				System.out.println("Ingrese DNI del paciente a buscar: ");
+				System.out.println("-- HISTORIAL CLINICO --");
+				mostrarListaPacientes();
+				System.out.println("\nIngrese DNI del paciente a buscar: ");
 				Paciente p = buscarPaciente(ScannerSingleton.getInstance().nextLine());
 				if(p!=null && pacientes.contains(p.getUserDni()))
 				{
@@ -327,13 +329,11 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		});
 	}
 	
-	private void historialClinico(Paciente paciente)
-	{
+	private void historialClinico(Paciente paciente) {
 		Sistema.userDate.forEach((k, v) ->  //por cada clave valor
 		{
 			System.out.println(k.toString());
-			for(Paciente p : v)
-			{
+			for(Paciente p : v) {
 				if(p.getUserDni().equals(paciente.getUserDni())) { //si el paciente pasado coincide devuelve el mismo por pantalla
 					System.out.println(p);
 				}
