@@ -100,6 +100,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			Enfermedad e = Sistema.seleccionarEnfermedad();//se selecciona una enfermedad de la lista
 			Tratamiento tratamiento = new Tratamiento(profesional.getUserName(), e);
 			paciente.getTratamientos().add(tratamiento);
+			profesional.getPacientes().add(paciente.getUserDni());
 			//y se le asigna junto a un nuevo tratamiento al paciente previamente encontrado
 			
 		}
