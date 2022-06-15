@@ -40,6 +40,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 							+ "******************************");
 		chequearTratamientosSinAsignar();
 		tareasIncompletas();
+		pacientesEsperandoAlta();
 		do{
 			try{
 				System.out.println("\n-- MENU PROFESIONAL --\n"
@@ -106,7 +107,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 						Plan p = null;
 						for(int i=0; i<listaPlanesDefault.size(); i++){
 							if(listaPlanesDefault.get(i).getEnfermedad().equals(t.getPlan().getEnfermedad())){
-								p = listaPlanesDefault.get(i);
+								p = listaPlanesDefault.get(i);	//obtiene el plan cargado desde archivo
 								break;
 							}
 						}
@@ -203,17 +204,37 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			
 	}
 	
+	private void pacientesEsperandoAlta()
+	{
+		for(Usuario u : Sistema.users)
+		{
+			if(u instanceof Paciente
+					&& pacientes.contains(u.getUserDni()))
+			{
+				for(Tratamiento t : ((Paciente)u).getTratamientos())
+				{
+					if(t.getEstado().equals(EstadoDelTratamiento.ESPERANDO_ALTA))
+					{
+						System.out.println("Paciente "+u.getUserName()+ " de DNI : "+u.getUserDni()+" esperando alta");
+					}
+				}
+			}
+		}
+	}
+
 	private void tareasIncompletas() {
-		Sistema.userDate.forEach((k,v) -> {
+		Sistema.userDate.forEach((k,v) -> { //por cada par clave valor hace ->
 			boolean flag = false;
 			StringBuilder sb = new StringBuilder();
 			sb.append("Tareas incompletas del dia anterior:\n");
 			if(k.isEqual(LocalDate.now().minusDays(1))){
 				for(Paciente p : v) {
 					if (pacientes.contains(p.getUserDni())) {
-						for (Tratamiento t : p.getTratamientos()) {
-							if (t.getProfesionalEncargado().equals(this.userName)) {
-								List<Tarea> listaT = new ArrayList<>();
+						for (Tratamiento t : p.getTratamientos()) { //ciclos para llegar a las listas contenidas en listas.
+							if (t.getProfesionalEncargado().equals(this.userName)
+									&& !t.getEstado().equals(EstadoDelTratamiento.ESPERANDO_ALTA))
+							 	{						//Obtiene el profesional encargado de dicha tarea y compara
+								List<Tarea> listaT = new ArrayList<>();					// con el profesional logueado
 								for (Tarea tarea : t.getPlan().getTasks()) {
 									if (!tarea.isTaskDone()) {
 										listaT.add(tarea);
@@ -244,12 +265,12 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 	
 	private void historialClinico(Paciente paciente)
 	{
-		Sistema.userDate.forEach((k, v) -> 
+		Sistema.userDate.forEach((k, v) ->  //por cada clave valor
 		{
 			System.out.println(k.toString());
 			for(Paciente p : v)
 			{
-				if(p.getUserDni().equals(paciente.getUserDni())) {
+				if(p.getUserDni().equals(paciente.getUserDni())) { //si el paciente pasado coincide devuelve el mismo por pantalla
 					System.out.println(p);
 				}
 				

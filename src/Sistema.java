@@ -16,20 +16,28 @@ public class Sistema extends Thread{
 	@Override
 	public void run() {
 		levantarListaUsers();
-		Usuario currentUser = verificacionIdentidad();
-		JsonMapper.mapLoad();
-		if(currentUser instanceof Administrador)
-		{
-			((Administrador) currentUser).menu();
-		}
-		else if(currentUser instanceof Paciente)
-		{
-			((Paciente) currentUser).menu();
-		}
-		else if(currentUser instanceof Profesional)
-		{
-			((Profesional) currentUser).menu();
-		}
+		int choice = 0;
+		do {
+			System.out.println("1. Ingresar");
+			System.out.println("2. Salir");
+			try {
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
+			} catch (Exception e) {
+				choice = -1;
+			}
+			if (choice == 1) {
+				Usuario currentUser = verificacionIdentidad();
+				JsonMapper.mapLoad();
+				if (currentUser instanceof Administrador) {
+					((Administrador) currentUser).menu();
+				} else if (currentUser instanceof Paciente) {
+					((Paciente) currentUser).menu();
+				} else if (currentUser instanceof Profesional) {
+					((Profesional) currentUser).menu();
+				} 
+			} 
+			else if(choice!=2 ){ System.out.println("Opcion no valida");}
+		} while (choice!=2);
 		JsonMapper.mapSave();
 		TimeControl.setLoop(false);
 		separacionGuardadoListas();

@@ -67,6 +67,10 @@ public class TimeControl extends Thread{
 			{
 				for(Tratamiento t: ((Paciente) u).getTratamientos())
 				{
+					if(t.getFin().equals(LocalDate.now().toString()))
+					{
+						t.setEstado(EstadoDelTratamiento.ESPERANDO_ALTA);
+					}
 					for(Tarea tareas: t.getPlan().getTasks())
 					{
 						tareas.setTaskDone(false);

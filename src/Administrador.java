@@ -75,8 +75,8 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 			System.out.println("Profesional registrado correctamente.");
 		}
 	}
-	
-	private void asignarProfesional() 	 //asigna profesional al paciente
+		
+	private void asignarProfesional()  //asigna profesional al paciente
 	{
 		Profesional profesional = null;
 		Paciente paciente = null;
