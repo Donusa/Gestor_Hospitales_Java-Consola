@@ -124,7 +124,6 @@ public class Paciente extends Usuario implements Menu{
 					try {
 						numTarea = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
 						p.getTasks().get(numTarea).setTaskDone(true);
-						System.out.println(p.getTasks().get(numTarea).getClass());
 						if (p.getTasks().get(numTarea) instanceof TareaNumerica) {    // si elijo una tarea numerica
 							System.out.println("Ingrese el numero requerido:");
 							((TareaNumerica) p.getTasks().get(numTarea))
