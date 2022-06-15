@@ -35,34 +35,35 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 	@Override
 	public void menu() {
 		int choice = -1;
-		System.out.println("***************************************************************************************************");
-		System.out.println("-NOTIFICACIONES-\n");
+		System.out.println("******************************\n"
+							+ "\t\tNOTIFICACIONES\n"
+							+ "******************************");
 		chequearTratamientosSinAsignar();
 		tareasIncompletas();
-		System.out.println("***************************************************************************************************\n\n");
 		do{
 			try{
-				System.out.println("-- M E N U --\n"
+				System.out.println("\n-- MENU PROFESIONAL --\n"
 								 + "1. Asignacion o Modificacion de Planes de Control.\n"
 								 + "2. Control de los Registros de los Pacientes.\n"
 								 + "3. Finalizacion de Planes de Control.\n"
 								 + "0. Salir.\n"
-								 + "----\n");
+								 + "----");
 				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 				switch (choice) {
 					case 1 -> {
-						System.out.println("Ingrese el DNI del paciente a asignar el Plan.\n");
+						System.out.println("\n-- ASIGNACION O MODIFICACION DE PLANES --\n"
+										+ "Ingrese el DNI del paciente a asignar el Plan.");
 						gestionPlanesDeControl(ScannerSingleton.getInstance().nextLine());
 					}
 					case 2 -> controlRegistrosDePacientes();
 					case 3 -> {
-						System.out.println("Ingrese el DNI del paciente a finalizar el Plan.\n");
+						System.out.println("Ingrese el DNI del paciente a finalizar el Plan.");
 						finalizacionPlanesDeControl(ScannerSingleton.getInstance().nextLine());
 					}
 				}
 			}
 			catch(InputMismatchException e){
-				System.out.println("Ingrese una opcion valida.\n");
+				System.out.println("Ingrese una opcion valida.");
 			}
 		} while (choice!=0);
 
@@ -74,7 +75,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		if (p!=null){
 			List<Tratamiento> tratamientosPaciente = listarTratamientosPaciente(p);
 			mostrarTratamientosPaciente(tratamientosPaciente);
-			System.out.println("Seleccione el numero del tratamiento a asignar/modificar.\n");
+			System.out.println("\nSeleccione el numero del tratamiento a asignar/modificar.");
 			Tratamiento auxT = tratamientosPaciente.get(Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1);
 			if (auxT.getEstado().equals(EstadoDelTratamiento.SIN_ASIGNAR)){
 				asignacionTratamientos(auxT);
@@ -84,7 +85,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			}
 		}
 		else{
-			System.out.println("No se encuentra al paciente DNI: " + dniPaciente + " en la lista de pacientes asignados.\n");
+			System.out.println("No se encontro al paciente DNI: " + dniPaciente + " en la lista de pacientes asignados.");
 		}
 		
 	}
@@ -94,9 +95,10 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 
 		do {
 			try {
-				System.out.println("Ingrese una opcion.\n"
-						+ "1. Asignar Plan preestablecido para la enfermedad \"" + t.getPlan().getEnfermedad() + "\".\n"
-						+ "2. Crear nuevo Plan.\n");
+				System.out.println("\n-- ASIGNACION DE PLANES DE CONTROL --\n"
+									+ "Tratamiento: " + t.getPlan().getEnfermedad().getName() + "\n"
+									+ "1. Asignar Plan preestablecido para la enfermedad\n"
+									+ "2. Crear nuevo Plan.\n");
 				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 				switch (choice) {
 					case 1:
@@ -110,9 +112,9 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 						}
 						if(p!=null) {
 							System.out.println(p);
-							System.out.println("Desea asignar este plan preestablecido?" +
-									"\n1. Si" +
-									"\n2. No");
+							System.out.println("Desea asignar este plan preestablecido?\n"
+												+ "1. Si\n"
+												+ "2. No");
 							if (Integer.parseInt(ScannerSingleton.getInstance().nextLine()) == 1) {
 								t.setPlan(p);
 							} else {
@@ -120,7 +122,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 							}
 						}
 						else{
-							System.out.println("No hay planes preestablecidos para esta enfermedad.\n");
+							System.out.println("No hay planes preestablecidos para esta enfermedad.");
 							t.setPlan(crearNuevoPlan(t.getPlan().getEnfermedad()));
 						}
 						break;
@@ -128,13 +130,13 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 						t.setPlan(crearNuevoPlan(t.getPlan().getEnfermedad()));
 						break;
 					default:
-						System.out.println("Ingrese una opcion valida.\n");
+						System.out.println("Ingrese una opcion valida.");
 				}
 				t.setInicio(LocalDate.now().toString());
 				t.setFin();
 				t.setEstado(EstadoDelTratamiento.EN_CURSO);
 			} catch (InputMismatchException e) {
-				System.out.println("Ingrese una opcion valida.\n");
+				System.out.println("Ingrese una opcion valida.");
 			}
 		}while (choice!=1 && choice!=2);
 
@@ -151,12 +153,13 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 		int choice = -1;	
 		
 		do {
-			System.out.println(
-					"1. Ver lista de pacientes\n" 
-				  + "2. Ver historial de un paciente\n" 
-				  + "3. Ver tareas incompletas del dia anterior.\n"
-				  + "4. Ver pacientes con planes Sin Asignar.\n"
-				  + "0. Salir\n");
+			System.out.println("\n-- CONTROL REGISTROS DE PACIENTES --\n"
+								+ "1. Ver lista de pacientes\n"
+								+ "2. Ver historial de un paciente\n"
+								+ "3. Ver tareas incompletas del dia anterior.\n"
+								+ "4. Ver pacientes con planes Sin Asignar.\n"
+								+ "0. Salir\n"
+								+ "----");
 			try {
 				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 			} catch (InputMismatchException e) {
@@ -172,7 +175,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 					}
 				}
 				else{
-					System.out.println("No hay pacientes asignados.\n");
+					System.out.println("No hay pacientes asignados.");
 				}
 				break;
 			case 2:
@@ -183,7 +186,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 					historialClinico(p);
 				}
 				else {
-					System.out.println("No hay pacientes asignados con ese DNI.\n");
+					System.out.println("No hay pacientes asignados con ese DNI.");
 				}
 				break;
 			case 3:
@@ -200,12 +203,11 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			
 	}
 	
-	private void tareasIncompletas()
-	{
+	private void tareasIncompletas() {
 		Sistema.userDate.forEach((k,v) -> {
 			boolean flag = false;
-			System.out.println("Tareas incompletas del dia anterior:");
-			System.out.println("-------------------------------------------------------------------------");
+			StringBuilder sb = new StringBuilder();
+			sb.append("Tareas incompletas del dia anterior:\n");
 			if(k.isEqual(LocalDate.now().minusDays(1))){
 				for(Paciente p : v) {
 					if (pacientes.contains(p.getUserDni())) {
@@ -219,22 +221,23 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 									}
 								}
 								if (!listaT.isEmpty()) {
-									System.out.println("Paciente: " + p.getUserName() + " | DNI: " + p.getUserDni() +
-											" | Tratamiento: " + t.getPlan().getEnfermedad().getName() +
-											"\nTareas incompletas:");
+									sb.append("Paciente: " + p.getUserName() + " | DNI: " + p.getUserDni()
+											+ " | Tratamiento: " + t.getPlan().getEnfermedad().getName()
+											+ "\nTareas incompletas:");
 									for (Tarea tarea : listaT) {
-										System.out.println("\t" + tarea);
+										sb.append("\t" + tarea);
 									}
-									System.out.println("-------------------------------------------------------------------------");
 								}
 							}
 						}
 					}
 				}
 			}
-			if(!flag){
-				System.out.println("No hubo pacientes con tareas sin realizar.");
-				System.out.println("-------------------------------------------------------------------------");
+			if(flag){
+				System.out.println(sb);
+			}
+			else{
+				System.out.println("No hubo pacientes con tareas sin realizar el dia anterior.");
 			}
 		});
 	}
@@ -266,17 +269,17 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 						i++;
 					}
 					if(i < tratamientosPaciente.size()){
-						System.out.println("El paciente DNI:" + auxP.getUserDni() + " tiene tratamientos Sin Asignar.\n");
+						System.out.println("El paciente DNI:" + auxP.getUserDni() + " tiene tratamientos Sin Asignar.");
 						flag = true;
 					}
 				}
 			}
 			if(!flag){
-				System.out.println("Todos los pacientes tienen asignados sus planes.\n");
+				System.out.println("Todos los pacientes tienen asignados sus planes.");
 			}
 		}
 		else{
-			System.out.println("No hay pacientes asignados.\n");
+			System.out.println("No hay pacientes asignados.");
 		}
 	}
 
@@ -286,17 +289,17 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			List<Tratamiento> tratamientosPaciente = listarTratamientosPaciente(p);
 			if(!tratamientosPaciente.isEmpty()) {
 				mostrarTratamientosPaciente(tratamientosPaciente);
-				System.out.println("Seleccione el numero del tratamiento a finalizar.\n");
+				System.out.println("Seleccione el numero del tratamiento a finalizar.");
 				tratamientosPaciente.get(Integer.parseInt(ScannerSingleton.getInstance().nextLine())-1).setEstado(EstadoDelTratamiento.FINALIZADO);
-				System.out.println("Tratamiento finalizado.\n");
+				System.out.println("Tratamiento finalizado.");
 				chequearTratamientosPendientes(tratamientosPaciente, dniPaciente);
 			}
 			else{
-				System.out.println("No hay tratamientos con este paciente.\n");
+				System.out.println("No hay tratamientos con este paciente.");
 			}
 		}
 		else{
-			System.out.println("No se encuentra al paciente DNI: " + dniPaciente + " en la lista de pacientes asignados.\n");
+			System.out.println("No se encuentra al paciente DNI: " + dniPaciente + " en la lista de pacientes asignados.");
 		}
 	}
 
@@ -351,20 +354,22 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 
 	public void mostrarTratamientosPaciente(List<Tratamiento> tratamientosPaciente){
 		if(!tratamientosPaciente.isEmpty()){
-			System.out.println("Lista de Tratamientos con este paciente:\n");
+			System.out.println("\nLista de Tratamientos con este paciente\n"
+							 + "---------------------------------------");
 			for(int i=0; i<tratamientosPaciente.size(); i++){
 				System.out.println((i+1) + ". " + tratamientosPaciente.get(i));
 			}
 		}
 		else{
-			System.out.println("No tiene tratamientos en curso con este paciente.\n");
+			System.out.println("No tiene tratamientos en curso con este paciente.");
 		}
 	}
 
 	@Override
 	public Plan crearNuevoPlan(Enfermedad e) {
 		Plan p= new Plan(e);
-		System.out.println("Ingrese la duracion del Plan:");
+		System.out.println("\n-- CREAR NUEVO PLAN --\n"
+							+ "Ingrese la duracion del Plan:");
 		p.setDuracion(Integer.parseInt(ScannerSingleton.getInstance().nextLine()));
 		int rta =2;
 		do {
@@ -376,7 +381,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 				rta=Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 
 			}catch (InputMismatchException exception){
-				System.out.println("Ingrese una opcion valida.\n");
+				System.out.println("Ingrese una opcion valida.");
 			}
 		}while (rta == 1);
 		
@@ -389,10 +394,12 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 
 		do{
 			try{
-				System.out.println("1. Modificar duracion.\n"
-								+ "2. Agregar tarea.\n"
-								+ "3. Borrar tarea.\n"
-								+ "0. Salir.\n");
+				System.out.println("-- MODIFICACION DE PLANES --"
+									+ "1. Modificar duracion.\n"
+									+ "2. Agregar tarea.\n"
+									+ "3. Borrar tarea.\n"
+									+ "0. Salir.\n"
+									+ "----");
 				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 				switch (choice) {
 					case 1 :
@@ -410,7 +417,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 				}
 			}
 			catch(InputMismatchException e){
-				System.out.println("Ingrese una opcion valida.\n");
+				System.out.println("Ingrese una opcion valida.");
 			}
 		} while (choice!=0);
 

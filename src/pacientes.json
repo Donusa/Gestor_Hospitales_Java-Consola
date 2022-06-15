@@ -32,15 +32,26 @@
             {
               "taskName": "Tomar pastillas para el dolor de garganta",
               "taskDone": false
-            },
-            {
-              "taskName": "prueba",
-              "taskDone": false
             }
           ],
           "duracion": 5
         },
         "estado": "FINALIZADO"
+      },
+      {
+        "profesionalEncargado": "Cecilia Abrego",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Mucosidad",
+              "Tos"
+            ],
+            "name": "Bronquitis"
+          },
+          "tasks": [],
+          "duracion": 0
+        },
+        "estado": "SIN_ASIGNAR"
       }
     ],
     "userName": "Ana Paz",
@@ -76,6 +87,8 @@
   {
     "tratamientos": [
       {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-15",
         "profesionalEncargado": "Mariana Lopez",
         "plan": {
           "enfermedad": {
@@ -86,10 +99,27 @@
             ],
             "name": "Tendinitis"
           },
-          "tasks": [],
-          "duracion": 0
+          "tasks": [
+            {
+              "taskName": "Aplicar frio en la zona afectada para desinflamarla",
+              "taskDone": false
+            },
+            {
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar antiflamatorios cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Controlar si sigue teniendo dolor.",
+              "taskDone": false
+            }
+          ],
+          "duracion": 10
         },
-        "estado": "SIN_ASIGNAR"
+        "estado": "EN_CURSO"
       }
     ],
     "userName": "Julieta Galvan",
@@ -117,6 +147,8 @@
   {
     "tratamientos": [
       {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-15",
         "profesionalEncargado": "Diego Acosta",
         "plan": {
           "enfermedad": {
@@ -166,6 +198,8 @@
   {
     "tratamientos": [
       {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-15",
         "profesionalEncargado": "Mariana Lopez",
         "plan": {
           "enfermedad": {
@@ -176,10 +210,66 @@
             ],
             "name": "Hipertension"
           },
-          "tasks": [],
-          "duracion": 0
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": true
+            },
+            {
+              "taskName": "Medirse la presion. Ingresar el resultado de minima y maxima",
+              "taskDone": true
+            },
+            {
+              "taskName": "Controlar el peso. Ingresar el resultado en Kg.",
+              "taskDone": true
+            },
+            {
+              "taskName": "Hacer dieta saludable",
+              "taskDone": true
+            },
+            {
+              "taskName": "Tomar pastillas para el corazon",
+              "taskDone": true
+            }
+          ],
+          "duracion": 30
         },
-        "estado": "SIN_ASIGNAR"
+        "estado": "EN_CURSO"
+      },
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-15",
+        "profesionalEncargado": "Mariana Lopez",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Dolor en la articulacion",
+              "Incapacidad de movimiento",
+              "Inflamacion"
+            ],
+            "name": "Tendinitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Aplicar frio en la zona afectada para desinflamarla",
+              "taskDone": false
+            },
+            {
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar antiflamatorios cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Controlar si sigue teniendo dolor.",
+              "taskDone": false
+            }
+          ],
+          "duracion": 10
+        },
+        "estado": "EN_CURSO"
       }
     ],
     "userName": "Facundo Ariel",

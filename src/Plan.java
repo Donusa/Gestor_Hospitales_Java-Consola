@@ -48,9 +48,10 @@ public class Plan {
 
 	//---Metodos--------------------------------------------------------------------------------------------------------
 	public void mostrarTareas(){
+		System.out.println("\nLISTA DE TAREAS DEL PLAN\n"
+						 + "------------------------");
 		for(int i=0; i<tasks.size(); i++){
-			System.out.println("Tarea N°"+(i+1)+":\n"+
-					"   Nombre: "+ tasks.get(i).getTaskName());
+			System.out.println((i+1) + ". " + tasks.get(i).getTaskName());
 		}
 	}
 

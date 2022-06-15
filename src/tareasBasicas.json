@@ -1,6 +1,10 @@
 [
   {
-    "taskName": "Cantaruwu",
+    "taskName": "Cantar",
+    "taskDone": false
+  },
+  {
+    "taskName": "Bailar",
     "taskDone": false
   },
   {

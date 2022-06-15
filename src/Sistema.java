@@ -126,40 +126,39 @@ public class Sistema extends Thread{
 	public static Enfermedad seleccionarEnfermedad() {
 		List<Enfermedad> listaEnfermedades = verListaEnfermedades();
 		Enfermedad retorno = null;
-		int choice = -1;
+		int choice;
 		System.out.println("Seleccione una enfermedad");
 		for(int i = 0 ; i < listaEnfermedades.size() ; i++)
 		{
 			System.out.println((i+1)+"."+listaEnfermedades.get(i).getName());
 		}
-		System.out.println("0. Salir");
 		
 			do {
 				try {
 					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
 					retorno = listaEnfermedades.get(choice);
-				} catch (InputMismatchException e) {
+				} catch (InputMismatchException | NumberFormatException | IndexOutOfBoundsException e) {
 					System.out.println("Ingrese un valor numerico valido");
 				} 
-			} while (retorno == null || choice == -1);
+			} while (retorno == null);
 		return retorno;
 	}
 	
 	public static Plan seleccionarPlan()
 	{
 		List<Plan> listaPlanes = listarPlanes();
-		int choice = -1;
+		int choice;
 		Plan retorno = null;
 		for(int i = 0 ; i < listaPlanes.size() ; i++)
 		{
-			System.out.println("Plan "+(i+1)+"\n"+listaPlanes.get(i));
+			System.out.println((i+1)+". " + listaPlanes.get(i));
 		}
 		
 		do {
 			try {
 				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
-				if(choice>=0)retorno = listaPlanes.get(choice);
-			} catch (InputMismatchException e) {
+				retorno = listaPlanes.get(choice);
+			} catch (InputMismatchException | NumberFormatException | IndexOutOfBoundsException e) {
 				System.out.println("Ingrese un valor numerico valido");
 			} 
 		} while (retorno == null);
