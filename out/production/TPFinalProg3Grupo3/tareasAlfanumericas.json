@@ -1,0 +1,27 @@
+[
+  {
+    "info": "",
+    "taskName": "prueba tarea alfanumerica 111",
+    "taskDone": false
+  },
+  {
+    "info": "",
+    "taskName": "pruebita alfanumerica",
+    "taskDone": false
+  },
+  {
+    "info": "",
+    "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+    "taskDone": false
+  },
+  {
+    "info": "",
+    "taskName": "Medirse la presion. Ingresar el resultado de minima y maxima",
+    "taskDone": false
+  },
+  {
+    "info": "",
+    "taskName": "Controlar si sigue teniendo dolor.",
+    "taskDone": false
+  }
+]

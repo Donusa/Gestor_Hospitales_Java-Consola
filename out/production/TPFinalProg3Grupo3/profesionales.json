@@ -1,0 +1,67 @@
+[
+  {
+    "pacientes": [
+      "38487299",
+      "40520338",
+      "28934564"
+    ],
+    "userName": "Diego Acosta",
+    "email": "diegoacosta@gmail.com",
+    "password": "1234",
+    "userDni": "25300401",
+    "userCel": "2234203488"
+  },
+  {
+    "pacientes": [],
+    "userName": "Cecilia Abrego",
+    "email": "ceciliaabrego@gmail.com",
+    "password": "1234",
+    "userDni": "29430287",
+    "userCel": "2234563701"
+  },
+  {
+    "pacientes": [],
+    "userName": "Matias Alvarez",
+    "email": "matiasalvarez@gmail.com",
+    "password": "1234",
+    "userDni": "31000403",
+    "userCel": "2235331675"
+  },
+  {
+    "pacientes": [],
+    "userName": "Silvina Garcia",
+    "email": "silvinagarcia@gmail.com",
+    "password": "1234",
+    "userDni": "26547332",
+    "userCel": "2235554312"
+  },
+  {
+    "pacientes": [
+      "40520335",
+      "10232454"
+    ],
+    "userName": "Mariana Lopez",
+    "email": "marianalopez@gmail.com",
+    "password": "1234",
+    "userDni": "32876554",
+    "userCel": "2234386598"
+  },
+  {
+    "pacientes": [],
+    "userName": "Pablo Ledesma",
+    "email": "pabloledesma@gmail.com",
+    "password": "1234",
+    "userDni": "28443605",
+    "userCel": "2235463765"
+  },
+  {
+    "pacientes": [
+      "34774899"
+    ],
+    "userName": "Gustavo Perez",
+    "email": "gustavoperez@gmail.com",
+    "password": "1234",
+    "userDni": "20448796",
+    "userCel": "2235677892"
+  }
+]
