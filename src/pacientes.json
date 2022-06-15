@@ -147,8 +147,6 @@
   {
     "tratamientos": [
       {
-        "inicio": "2022-06-15",
-        "fin": "2022-06-15",
         "profesionalEncargado": "Diego Acosta",
         "plan": {
           "enfermedad": {
@@ -170,14 +168,6 @@
     "password": "1234",
     "userDni": "40520338",
     "userCel": "2236958479"
-  },
-  {
-    "tratamientos": [],
-    "userName": "Pedro Luro",
-    "email": "PedroLuro@gmail.com",
-    "password": "1234",
-    "userDni": "41548798",
-    "userCel": "2236029100"
   },
   {
     "tratamientos": [],
