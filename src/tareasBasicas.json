@@ -1,5 +1,13 @@
 [
   {
+    "taskName": "Cantar",
+    "taskDone": false
+  },
+  {
+    "taskName": "Bailar",
+    "taskDone": false
+  },
+  {
     "taskName": "Tomar agua",
     "taskDone": false
   },

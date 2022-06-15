@@ -299,5 +299,68 @@
       }
     ],
     "duracion": 5
+  },
+  {
+    "enfermedad": {
+      "sintomas": [
+        "Mucosidad",
+        "Tos"
+      ],
+      "name": "Bronquitis"
+    },
+    "tasks": [
+      {
+        "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+        "taskDone": false
+      }
+    ],
+    "duracion": 5
+  },
+  {
+    "enfermedad": {
+      "sintomas": [
+        "Dolor de oído",
+        "Fiebre"
+      ],
+      "name": "Infección de oído"
+    },
+    "tasks": [
+      {
+        "taskName": "Aplicar frio en la zona afectada para desinflamarla",
+        "taskDone": false
+      }
+    ],
+    "duracion": 4
+  },
+  {
+    "enfermedad": {
+      "sintomas": [
+        "Dolor abdominal",
+        "Diarrea",
+        "Nauseas",
+        "Vomitos"
+      ],
+      "name": "Gastroenteritis"
+    },
+    "tasks": [
+      {
+        "taskName": "Bailar",
+        "taskDone": false
+      }
+    ],
+    "duracion": 10
+  },
+  {
+    "enfermedad": {
+      "sintomas": [
+        "Dolor abdominal",
+        "Diarrea",
+        "Nauseas",
+        "Vomitos"
+      ],
+      "name": "Gastroenteritis"
+    },
+    "tasks": [],
+    "duracion": 20
   }
 ]
