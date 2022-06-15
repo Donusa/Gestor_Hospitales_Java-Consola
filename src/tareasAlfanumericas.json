@@ -1,6 +1,11 @@
 [
   {
     "info": "",
+    "taskName": "pruebita alfanumerica",
+    "taskDone": false
+  },
+  {
+    "info": "",
     "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
     "taskDone": false
   },

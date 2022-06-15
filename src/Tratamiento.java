@@ -36,8 +36,7 @@ public class Tratamiento {
 
 	public void setFin() {
 		LocalDate localDate= LocalDate.parse(this.inicio);
-		localDate.plusDays(plan.getDuracion());
-		this.fin = localDate.toString();
+		this.fin = localDate.plusDays(plan.getDuracion()).toString();
 	}
 
 	public String getProfesionalEncargado() {

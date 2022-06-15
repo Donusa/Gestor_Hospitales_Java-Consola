@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Cambios archivos json">
+    <list default="true" id="9a75b61d-7ba5-4e07-a63d-88759b41e7b2" name="Changes" comment="Pull general">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paciente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Plan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Profesional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profesional.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tarea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tarea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tratamiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tratamiento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pacientes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacientes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/planes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/planes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profesionales.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/profesionales.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tareasAlfanumericas.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tareasAlfanumericas.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tareasBasicas.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tareasBasicas.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tareasNumericas.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tareasNumericas.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655285403062</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Pull general">
+      <created>1655286451767</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1655286451767</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -376,6 +394,7 @@
     <MESSAGE value="Debug Administrador" />
     <MESSAGE value="Debug / Cambios visuales" />
     <MESSAGE value="Cambios archivos json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambios archivos json" />
+    <MESSAGE value="Pull general" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pull general" />
   </component>
 </project>

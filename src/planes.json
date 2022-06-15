@@ -295,5 +295,29 @@
       }
     ],
     "duracion": 5
+  },
+  {
+    "enfermedad": {
+      "sintomas": [
+        "Fiebre",
+        "Tos",
+        "Dolor de garganta",
+        "Congestion nasal",
+        "Dolores corporales"
+      ],
+      "name": "Gripe"
+    },
+    "tasks": [
+      {
+        "numero": 0,
+        "taskName": "pruebita numerica",
+        "taskDone": false
+      },
+      {
+        "taskName": "prueba tarea agregada al plan",
+        "taskDone": false
+      }
+    ],
+    "duracion": 10
   }
 ]

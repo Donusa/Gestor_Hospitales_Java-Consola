@@ -34,12 +34,7 @@ public class Paciente extends Usuario implements Menu{
 	@Override
 	public void menu() {
 		int choice;
-		for(Tratamiento t : tratamientos)
-		{
-			for(Tarea tarea : t.getPlan().getTasks()) {
-				System.out.println(tarea.getClass());
-			}
-		}
+
 		System.out.println("******************************\n"
 							+ "\t\tNOTIFICACIONES\n"
 							+ "******************************");
@@ -113,7 +108,6 @@ public class Paciente extends Usuario implements Menu{
 				System.out.println("Tratamiento: " + tratEnCurso.get(0).getPlan().getEnfermedad().getName());
 				marcarTareasDeUnPlan(tratEnCurso.get(0).getPlan());
 			} catch (IndexOutOfBoundsException e) {
-				// TODO Auto-generated catch block
 				System.out.println("Todos sus tratamientos estan finalizados o en curso");
 			}
 		}
@@ -125,7 +119,7 @@ public class Paciente extends Usuario implements Menu{
 		do{
 			if(choice==1){
 				System.out.println("Seleccione una tarea para marcar o modificar.");
-				p.mostrarTareas();
+				p.mostrarTareasDelPlan();
 				do {
 					try {
 						numTarea = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
@@ -201,7 +195,7 @@ public class Paciente extends Usuario implements Menu{
 		do{
 			if(choice==1){
 				System.out.println("Seleccione una tarea para desmarcarla.");
-				p.mostrarTareas();
+				p.mostrarTareasDelPlan();
 				do {
 					try {
 						numTarea = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
