@@ -18,19 +18,20 @@
           },
           "tasks": [
             {
-              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
-              "taskDone": true
-            },
-            {
-              "taskName": "Tomar ibuprofeno cada 8hs",
-              "taskDone": false
-            },
-            {
               "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
               "taskDone": false
             },
             {
               "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
               "taskDone": false
             }
           ],
@@ -101,16 +102,17 @@
           },
           "tasks": [
             {
-              "taskName": "Controlar si sigue teniendo dolor.",
-              "taskDone": false
-            },
-            {
               "taskName": "Tomar antiflamatorios cada 8hs",
               "taskDone": false
             },
             {
               "info": "",
               "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue teniendo dolor.",
               "taskDone": false
             },
             {
@@ -149,7 +151,7 @@
     "tratamientos": [
       {
         "inicio": "2022-06-15",
-        "fin": "2022-06-15",
+        "fin": "2022-06-20",
         "profesionalEncargado": "Diego Acosta",
         "plan": {
           "enfermedad": {
@@ -162,11 +164,16 @@
           },
           "tasks": [
             {
-              "taskName": "tomar ibuprofeno cada 8hs",
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Ver tele",
               "taskDone": false
             }
           ],
-          "duracion": 7
+          "duracion": 5
         },
         "estado": "EN_CURSO"
       }
@@ -180,6 +187,8 @@
   {
     "tratamientos": [
       {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-15",
         "profesionalEncargado": "Diego Acosta",
         "plan": {
           "enfermedad": {
@@ -192,10 +201,37 @@
             ],
             "name": "Gripe"
           },
-          "tasks": [],
-          "duracion": 0
+          "tasks": [
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "pruebita numerica",
+              "taskDone": false
+            },
+            {
+              "taskName": "pruebita prof modificar plan",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 99
         },
-        "estado": "SIN_ASIGNAR"
+        "estado": "EN_CURSO"
       }
     ],
     "userName": "Florencia Herondale",
@@ -229,15 +265,16 @@
           },
           "tasks": [
             {
-              "taskName": "Controlar el peso. Ingresar el resultado en Kg.",
-              "taskDone": true
-            },
-            {
-              "taskName": "Tomar pastillas para el corazon",
-              "taskDone": true
+              "taskName": "Hacer dieta saludable",
+              "taskDone": false
             },
             {
               "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Controlar el peso. Ingresar el resultado en Kg.",
               "taskDone": false
             },
             {
@@ -246,7 +283,7 @@
               "taskDone": false
             },
             {
-              "taskName": "Hacer dieta saludable",
+              "taskName": "Tomar pastillas para el corazon",
               "taskDone": false
             }
           ],
@@ -273,6 +310,7 @@
               "taskDone": false
             },
             {
+              "info": "",
               "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
               "taskDone": false
             },
@@ -281,6 +319,7 @@
               "taskDone": false
             },
             {
+              "info": "",
               "taskName": "Controlar si sigue teniendo dolor.",
               "taskDone": false
             }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 
 public class Plan {
@@ -47,59 +48,39 @@ public class Plan {
 
 
 	//---Metodos--------------------------------------------------------------------------------------------------------
-	public void mostrarTareas(){
-		System.out.println("\nLISTA DE TAREAS DEL PLAN\n"
-						 + "------------------------");
-		for(int i=0; i<tasks.size(); i++){
-			System.out.println((i+1) + ". " + tasks.get(i).getTaskName());
+	public void mostrarTareasDelPlan(){
+		System.out.println("LISTA DE TAREAS\n"
+						 + "---------------");
+		for(int i = 0; i < this.getTasks().size(); i++){
+			System.out.println((i+1) + ". " + this.getTasks().get(i));
 		}
 	}
 
-	public void agregarTarea() {
-		TipoDeTarea tipo = null;
-		String nombre;
-		int flag=1;
-		do {
+	public void agregarTareaAlPlan(){
+		int numTarea=-2;
+		boolean repeat;
 
-			System.out.println("Escribe el tipo de tarea que desea agregar:\n" +
-								"-NUMERICA\n" +
-								"-ALFANUMERICA\n" +
-								"-SOLOMARCAR");
-			try{
-				tipo = Enum.valueOf(TipoDeTarea.class, ScannerSingleton.getInstance().nextLine().toUpperCase());
+		System.out.println("\nSeleccione un numero de tarea para agregarla al nuevo Plan:\n");
+		List<Tarea> listaTareas = Sistema.verListaTareas();
+		Tarea.mostrarListaTareas();
+		System.out.println("0. Crear nueva tarea.");
+		do {
+			repeat = false;
+			try {
+				numTarea = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
+				if (numTarea == -1) {
+					this.getTasks().add(Tarea.nuevaTarea());
+				} else {
+					this.getTasks().add(listaTareas.get(numTarea));
+				}
+			} catch (InputMismatchException | NumberFormatException | IndexOutOfBoundsException e) {
+				System.out.println("Error. Ingrese una opcion valida:");
+				repeat = true;
 			}
-			catch (IllegalArgumentException e) {
-				System.out.println("NOMBRE EN LETRAS");
-			}
-			if(tipo!=null)
-			{
-				switch (tipo) {
-				case NUMERICA:
-					System.out.println("Ingrese el nombre de la tarea:");
-					nombre = ScannerSingleton.getInstance().nextLine();
-					TareaNumerica tareaNumerica = new TareaNumerica(nombre);
-					this.tasks.add(tareaNumerica);
-					break;
-				case ALFANUMERICA:
-					System.out.println("Ingrese el nombre de la tarea:");
-					nombre = ScannerSingleton.getInstance().nextLine();
-					TareaAlfanumerica tareaAlfanumerica = new TareaAlfanumerica(nombre);
-					this.tasks.add(tareaAlfanumerica);
-					break;
-				case SOLOMARCAR:
-					System.out.println("Ingrese el nombre de la tarea:");
-					nombre = ScannerSingleton.getInstance().nextLine();
-					Tarea tareaSoloMarcar = new Tarea(nombre);
-					this.tasks.add(tareaSoloMarcar);
-					break;
-				default:
-					System.out.println("Tipo de tarea no valido, vuelva a ingresar");
-					flag = 2;
-					break;
-			}
-			}
-		}while (flag == 2 );
-		
+		} while(repeat);
+		if(numTarea!=-1) {
+			System.out.println("Tarea agregada.");
+		}
 	}
 	//------------------------------------------------------------------------------------------------------------------
 
@@ -110,9 +91,9 @@ public class Plan {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Plan de Control:\n" + enfermedad +
 				"Duracion: " + duracion + " dias.\n" +
-				"Tareas a realizar:\n");
+				"Tareas:\n");
 		for (int i=0; i<tasks.size(); i++) {
-			sb.append("\t" + i+1 + ". " + tasks.get(i) + "\n");
+			sb.append("\t" + (i+1) + ". " + tasks.get(i) + "\n");
 		}
 		return sb.toString();
 	}
