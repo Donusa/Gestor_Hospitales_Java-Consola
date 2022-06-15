@@ -35,6 +35,8 @@ public class Tarea {
 	public void setTaskDone(boolean taskDone) {
 		this.taskDone = taskDone;
 	}
+	
+	
 	//------------------------------------------------------------------------------------------------------------------
 
 	public static Tarea nuevaTarea() {

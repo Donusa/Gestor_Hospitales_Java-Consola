@@ -3,7 +3,7 @@
     "tratamientos": [
       {
         "inicio": "2022-06-10",
-        "fin": "2022-06-10",
+        "fin": "2022-06-17",
         "profesionalEncargado": "Diego Acosta",
         "plan": {
           "enfermedad": {
@@ -32,6 +32,10 @@
             },
             {
               "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": true
+            },
+            {
+              "taskName": "probando numeros",
               "taskDone": false
             }
           ],
@@ -122,7 +126,7 @@
           ],
           "duracion": 8
         },
-        "estado": "EN_CURSO"
+        "estado": "ESPERANDO_ALTA"
       }
     ],
     "userName": "Julieta Galvan",
@@ -223,7 +227,7 @@
             },
             {
               "taskName": "Tomar ibuprofeno cada 8hs",
-              "taskDone": false
+              "taskDone": true
             },
             {
               "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
@@ -236,7 +240,7 @@
           ],
           "duracion": 99
         },
-        "estado": "EN_CURSO"
+        "estado": "ESPERANDO_ALTA"
       }
     ],
     "userName": "Florencia Herondale",
@@ -294,7 +298,7 @@
           ],
           "duracion": 30
         },
-        "estado": "EN_CURSO"
+        "estado": "ESPERANDO_ALTA"
       },
       {
         "inicio": "2022-06-15",
@@ -331,7 +335,7 @@
           ],
           "duracion": 10
         },
-        "estado": "EN_CURSO"
+        "estado": "ESPERANDO_ALTA"
       }
     ],
     "userName": "Facundo Ariel",
@@ -343,7 +347,9 @@
   {
     "tratamientos": [
       {
-        "profesionalEncargado": "Gustavo Perez",
+        "inicio": "2022-06-15",
+        "fin": "2022-06-18",
+        "profesionalEncargado": "Diego Acosta",
         "plan": {
           "enfermedad": {
             "sintomas": [
@@ -355,16 +361,30 @@
             ],
             "name": "Resfriado"
           },
-          "tasks": [],
-          "duracion": 0
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": true
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Bailar",
+              "taskDone": true
+            }
+          ],
+          "duracion": 3
         },
-        "estado": "SIN_ASIGNAR"
+        "estado": "EN_CURSO"
       }
     ],
-    "userName": "lucas perez",
-    "email": "lucasperez@gmail.com",
+    "userName": "Victor Hugo",
+    "email": "vhugo@gmail.com",
     "password": "1234",
-    "userDni": "34774899",
-    "userCel": "2235678811"
+    "userDni": "31132323",
+    "userCel": "2239658475"
   }
 ]
