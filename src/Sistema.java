@@ -50,6 +50,15 @@ public class Sistema extends Thread{
 		users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.ADMINISTRADORES.getName(), new Administrador()));
 		users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.PACIENTES.getName(), new Paciente()));
 		users.addAll(SerializacionGuardado.deserializacion(nombreArchivos.PROFESIONALES.getName(), new Profesional()));
+		
+		for(Usuario u : users)
+		{
+			if(u instanceof Paciente)
+			{
+				Sistema.typeFixer(((Paciente) u).getTratamientos());
+			}
+		}
+		
 	}
 
 	private void separacionGuardadoListas()
@@ -171,6 +180,26 @@ public class Sistema extends Thread{
 			} 
 		} while (retorno == null);
 		return retorno;
+	}
+	
+	public static void typeFixer(List<Tratamiento> listaPreFix)
+	{
+		List<Tarea> lista = verListaTareas();
+		int j = 0;
+		for(Tratamiento t : listaPreFix)
+		{
+			for(int i = 0 ; i < t.getPlan().getTasks().size() ; i++)
+			{
+				while(j<lista.size() &&!t.getPlan().getTasks().get(i).getTaskName().equals(lista.get(j).getTaskName()))
+				{
+					j++;
+				}
+				if(j<lista.size()){
+					t.getPlan().getTasks().remove(i);
+					t.getPlan().getTasks().add(lista.get(j));
+				}
+			}
+		}
 	}
 	//------------------------------------------------------------------------------------------------------------------
 }
