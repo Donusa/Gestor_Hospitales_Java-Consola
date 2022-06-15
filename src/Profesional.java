@@ -415,7 +415,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 
 		do{
 			try{
-				System.out.println("-- MODIFICACION DE PLANES --"
+				System.out.println("-- MODIFICACION DE PLANES --\n"
 									+ "1. Modificar duracion.\n"
 									+ "2. Agregar tarea.\n"
 									+ "3. Borrar tarea.\n"

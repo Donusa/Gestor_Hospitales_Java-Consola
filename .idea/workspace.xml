@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a00d71c9-6a10-475f-8390-28ddea14d6f4" name="Changes" comment="Arreglo en asignar profesional">
+    <list default="true" id="a00d71c9-6a10-475f-8390-28ddea14d6f4" name="Changes" comment="act">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Profesional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profesional.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tratamiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tratamiento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pacientes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/pacientes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profesionales.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/profesionales.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +30,14 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -207,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655252666070</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="act">
+      <created>1655312871503</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1655312871503</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -231,8 +249,8 @@
     <MESSAGE value="Administracion de enfermedades" />
     <MESSAGE value="Merge con luca" />
     <MESSAGE value="aa" />
-    <MESSAGE value="act" />
     <MESSAGE value="Arreglo en asignar profesional" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arreglo en asignar profesional" />
+    <MESSAGE value="act" />
+    <option name="LAST_COMMIT_MESSAGE" value="act" />
   </component>
 </project>
