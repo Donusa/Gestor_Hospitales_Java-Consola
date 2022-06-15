@@ -16,20 +16,31 @@ public class Sistema extends Thread{
 	@Override
 	public void run() {
 		levantarListaUsers();
-		Usuario currentUser = verificacionIdentidad();
-		JsonMapper.mapLoad();
-		if(currentUser instanceof Administrador)
-		{
-			((Administrador) currentUser).menu();
-		}
-		else if(currentUser instanceof Paciente)
-		{
-			((Paciente) currentUser).menu();
-		}
-		else if(currentUser instanceof Profesional)
-		{
-			((Profesional) currentUser).menu();
-		}
+		int choice;
+		do {
+			System.out.println("\n************************************************\n"
+								+ "\tSistema de Control de Enfermedades\n"
+								+ "************************************************\n"
+								+ "1. Iniciar Sesion.\n"
+								+ "0. Salir del programa.");
+			try {
+				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
+			} catch (Exception e) {
+				choice = -1;
+			}
+			if (choice == 1) {
+				Usuario currentUser = verificacionIdentidad();
+				JsonMapper.mapLoad();
+				if (currentUser instanceof Administrador) {
+					((Administrador) currentUser).menu();
+				} else if (currentUser instanceof Paciente) {
+					((Paciente) currentUser).menu();
+				} else if (currentUser instanceof Profesional) {
+					((Profesional) currentUser).menu();
+				} 
+			} 
+			else if(choice!=0 ){ System.out.println("Opcion no valida");}
+		} while (choice!=0);
 		JsonMapper.mapSave();
 		TimeControl.setLoop(false);
 		separacionGuardadoListas();
@@ -68,13 +79,14 @@ public class Sistema extends Thread{
 	
 	private Usuario verificacionIdentidad()
 	{
-		Boolean flag = false;
+		boolean flag = false;
 		String userName;
 		String userPass;
 		Usuario currentLog = new Usuario();
-			
+
 		do
 		{
+			System.out.println("\n-- INICIAR SESION --");
 			System.out.println("Ingrese nombre de usuario");
 			userName = ScannerSingleton.getInstance().nextLine();
 			for(Usuario u : users)
@@ -83,6 +95,7 @@ public class Sistema extends Thread{
 				{
 					System.out.println("Ingrese Contraseña");
 					userPass = ScannerSingleton.getInstance().nextLine();
+					System.out.println("----");
 					if(u.getPassword().equals(userPass))
 					{
 						flag = true;
@@ -92,7 +105,7 @@ public class Sistema extends Thread{
 			}
 			if(!flag)
 			{
-				System.out.println("Datos no validos");
+				System.out.println("Datos no validos.");
 			}
 		}while(!flag);
 		return currentLog;
@@ -121,40 +134,39 @@ public class Sistema extends Thread{
 	public static Enfermedad seleccionarEnfermedad() {
 		List<Enfermedad> listaEnfermedades = verListaEnfermedades();
 		Enfermedad retorno = null;
-		int choice = -1;
+		int choice;
 		System.out.println("Seleccione una enfermedad");
 		for(int i = 0 ; i < listaEnfermedades.size() ; i++)
 		{
 			System.out.println((i+1)+"."+listaEnfermedades.get(i).getName());
 		}
-		System.out.println("0. Salir");
 		
 			do {
 				try {
 					choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
 					retorno = listaEnfermedades.get(choice);
-				} catch (InputMismatchException e) {
+				} catch (InputMismatchException | NumberFormatException | IndexOutOfBoundsException e) {
 					System.out.println("Ingrese un valor numerico valido");
 				} 
-			} while (retorno == null || choice == -1);
+			} while (retorno == null);
 		return retorno;
 	}
 	
 	public static Plan seleccionarPlan()
 	{
 		List<Plan> listaPlanes = listarPlanes();
-		int choice = -1;
+		int choice;
 		Plan retorno = null;
 		for(int i = 0 ; i < listaPlanes.size() ; i++)
 		{
-			System.out.println("Plan "+(i+1)+"\n"+listaPlanes.get(i));
+			System.out.println((i+1)+". " + listaPlanes.get(i));
 		}
 		
 		do {
 			try {
 				choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine()) - 1;
-				if(choice>=0)retorno = listaPlanes.get(choice);
-			} catch (InputMismatchException e) {
+				retorno = listaPlanes.get(choice);
+			} catch (InputMismatchException | NumberFormatException | IndexOutOfBoundsException e) {
 				System.out.println("Ingrese un valor numerico valido");
 			} 
 		} while (retorno == null);
