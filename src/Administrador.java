@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.List;
 
@@ -63,6 +64,9 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 		if(Usuario.crearUser(p)) {		//Envia paciente vacio a funcion, solo carga datos comunes de usuario(padre)
 			Sistema.users.add(p);    	//agrega a la lista general, esta se guarda al finalizar el programa y persiste los cambios
 			System.out.println("Paciente registrado correctamente.");
+			List<Paciente> aux = Sistema.userDate.get(LocalDate.now());
+			aux.add(p);
+			Sistema.userDate.put(LocalDate.now(), aux);
 		}
 		
 	}

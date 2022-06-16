@@ -298,7 +298,7 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 					if (pacientes.contains(p.getUserDni())) {
 						for (Tratamiento t : p.getTratamientos()) { //ciclos para llegar a las listas contenidas en listas.
 							if (t.getProfesionalEncargado().equals(this.userName)
-									&& !t.getEstado().equals(EstadoDelTratamiento.ESPERANDO_ALTA))
+									&& t.getEstado().equals(EstadoDelTratamiento.EN_CURSO))
 							 	{						//Obtiene el profesional encargado de dicha tarea y compara
 								List<Tarea> listaT = new ArrayList<>();					// con el profesional logueado
 								for (Tarea tarea : t.getPlan().getTasks()) {
@@ -319,11 +319,11 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 						}
 					}
 				}
-			}
-			if(flag){
-				System.out.println(sb);
-			}else if(!flag){
-					System.out.println("No hubo pacientes con tareas sin realizar el dia anterior.");
+				if(flag){
+					System.out.println(sb);
+				}else if(!flag){
+						System.out.println("No hubo pacientes con tareas sin realizar el dia anterior.");
+				}	
 			}
 		});
 	}

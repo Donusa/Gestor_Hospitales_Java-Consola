@@ -40,6 +40,8 @@ public class Sistema extends Thread{
 			} 
 			else if(choice!=0 ){ System.out.println("Opcion no valida");}
 		} while (choice!=0);
+
+		JsonMapper.mapSave();
 		TimeControl.setLoop(false);
 		separacionGuardadoListas();
 	}
@@ -72,7 +74,6 @@ public class Sistema extends Thread{
 			} 
 		}
     }
-
 	public static List<Plan> listarPlanes(){
 		List<Plan> retorno = SerializacionGuardado.deserializacion(nombreArchivos.PLANES.getName(), new Plan());
 		planFixer(retorno);
