@@ -53,7 +53,7 @@ public class Sistema extends Thread{
 		typeFixer();
 	}
 
-	public static void typeFixer()
+	private static void typeFixer()
     {
         List<Tarea> lista = verListaTareas();
         int j = 0;
@@ -74,6 +74,29 @@ public class Sistema extends Thread{
 			} 
 		}
     }
+	public static List<Plan> listarPlanes(){
+		List<Plan> retorno = SerializacionGuardado.deserializacion(nombreArchivos.PLANES.getName(), new Plan());
+		planFixer(retorno);
+		return retorno;
+	}
+
+	private static void planFixer(List<Plan> listaPlanes)
+	{
+		int j = 0;
+		List<Tarea> tareas = verListaTareas();
+		for(Plan p : listaPlanes){
+			for(int i = 0 ; i < p.getTasks().size() ; i++) {
+				while(j< tareas.size()
+						&& !p.getTasks().get(i).getTaskName().equals(tareas.get(j).getTaskName())) {
+					j++;
+				}
+				if(j<tareas.size()) {
+					p.getTasks().set(i, tareas.get(j));
+				}
+				j = 0;
+			}
+		}
+	}
 	
 	private void separacionGuardadoListas()
 	{
@@ -133,32 +156,6 @@ public class Sistema extends Thread{
 		}while(!flag);
 		return currentLog;
 	}
-
-	public static List<Plan> listarPlanes(){
-		List<Plan> retorno = SerializacionGuardado.deserializacion(nombreArchivos.PLANES.getName(), new Plan());
-		
-		planFixer(retorno);
-		
-		return retorno;
-	}
-	
-	public static void planFixer(List<Plan> listaPlanes)
-    {
-        int j = 0;
-        List<Tarea> tareas = verListaTareas();
-        for(Plan p : listaPlanes){
-        	for(int i = 0 ; i < p.getTasks().size() ; i++) {
-        		while(j< tareas.size() 
-        				&& !p.getTasks().get(i).getTaskName().equals(tareas.get(j).getTaskName())) {
-        			j++;
-        		}
-        		if(j<tareas.size()) {
-        			p.getTasks().set(i, tareas.get(j));
-        		}
-        		j = 0;
-        	}
-        }
-    }
 
 	public static List<Tarea> verListaTareas()
 	{

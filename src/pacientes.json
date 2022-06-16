@@ -94,5 +94,56 @@
     "password": "1234",
     "userDni": "10232454",
     "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-18",
+        "fin": "2022-06-25",
+        "profesionalEncargado": "Alejandro Aquindo",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Irritacion de garganta",
+              "Voz ronca",
+              "Fiebre",
+              "Ganglios linfaticos del cuello inflamados"
+            ],
+            "name": "Laringitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Hacer nebulizacion",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Martina Flores",
+    "email": "martinaflores@gmail.com",
+    "password": "1234",
+    "userDni": "34777802",
+    "userCel": "2234557477"
   }
 ]

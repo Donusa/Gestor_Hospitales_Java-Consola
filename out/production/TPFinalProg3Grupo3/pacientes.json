@@ -114,7 +114,7 @@
           "tasks": [
             {
               "taskName": "Tomar agua",
-              "taskDone": true
+              "taskDone": false
             },
             {
               "numero": 0,

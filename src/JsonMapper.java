@@ -10,9 +10,9 @@ public class JsonMapper {
 	public static void mapSave()
 	{
 		List<JsonMapper> mapaAux = new ArrayList<>();
-		JsonMapper aux = new JsonMapper();
-		Sistema.userDate.forEach((k,v)-> 
+		Sistema.userDate.forEach((k,v)->
 		{
+			JsonMapper aux = new JsonMapper();
 			aux.setFecha(k.toString());
 			aux.setLista(v);
 			mapaAux.add(aux);
@@ -43,7 +43,7 @@ public class JsonMapper {
 	}
 
 	public void setLista(List<Paciente> v) {
-		this.lista = v;
+		this.lista=v;
 	}
 
 
