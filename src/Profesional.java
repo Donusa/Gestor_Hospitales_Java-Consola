@@ -354,12 +354,15 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 	private void historialTratamientoEspecifico(Paciente p){
 		LocalDate fecha;
 		Tratamiento t = seleccionarTratamiento(p);
+		int i=0;
 		if(t!=null){
 			System.out.println("\n--HISTORIAL DEL TRATAMIENTO--\n"
 								+ "Tratamiento: " + t.getPlan().getEnfermedad().getName() + "\n");
 			fecha = LocalDate.parse(t.getInicio());
-			for(int i=0; i < t.getPlan().getDuracion(); i++){
-				historialTratamientoDiaEspecifico(fecha.plusDays(i), p, t);
+			while(i<t.getPlan().getDuracion() && (fecha.isBefore(LocalDate.now()))){
+				historialTratamientoDiaEspecifico(fecha, p, t);
+				fecha = fecha.plusDays(1);
+				i++;
 			}
 		}
 	}
@@ -377,22 +380,26 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 					int j = 0;
 					listaFechaTratamiento = listaFechaPacientes.get(i).getTratamientos();
 					if(!listaFechaTratamiento.isEmpty()) {
-						while (j < listaFechaTratamiento.size() && listaFechaTratamiento.get(j).getPlan().getEnfermedad().getName().equals(t.getPlan().getEnfermedad().getName())) {
+						while (j < listaFechaTratamiento.size() && !(t.getPlan().getEnfermedad().getName().equals(listaFechaTratamiento.get(j).getPlan().getEnfermedad().getName()))) {
 							j++;
 						}
 						if (j < listaFechaTratamiento.size()) {        //si encontre el tratamiento, lo muestro
-							System.out.println("Fecha: " + fecha.toString() + "\n"
-									+ "Paciente: " + p.getUserName() + " | Dni: " + p.getUserDni() + "\n"
-									+ listaFechaTratamiento.get(j));
+							System.out.println("FECHA: " + fecha + "\n"
+												+ "------------------\n"
+												+ "Paciente: " + p.getUserName() + " | Dni: " + p.getUserDni() + "\n"
+												+ listaFechaTratamiento.get(j));
+						}
+						else{
+							System.out.println("Fecha " + fecha + ": No hay datos disponibles.");
 						}
 					}
 					else{
-						System.out.println("Fecha " + fecha.toString() + ": No hay datos disponibles.");
+						System.out.println("Fecha " + fecha + ": No hay datos disponibles.");
 					}
 				}
 			}
 			else{
-				System.out.println("Fecha " + fecha.toString() + ": No hay datos disponibles.");
+				System.out.println("Fecha " + fecha + ": No hay datos disponibles.");
 			}
 		}
 		else{

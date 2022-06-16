@@ -1,6 +1,6 @@
 [
   {
-    "fecha": "2022-06-19",
+    "fecha": "2022-06-14",
     "lista": [
       {
         "tratamientos": [],
@@ -101,8 +101,8 @@
       {
         "tratamientos": [
           {
-            "inicio": "2022-06-18",
-            "fin": "2022-06-25",
+            "inicio": "2022-06-13",
+            "fin": "2022-06-20",
             "profesionalEncargado": "Alejandro Aquindo",
             "plan": {
               "enfermedad": {
@@ -152,7 +152,7 @@
     ]
   },
   {
-    "fecha": "2022-06-18",
+    "fecha": "2022-06-13",
     "lista": [
       {
         "tratamientos": [],
@@ -245,8 +245,8 @@
       {
         "tratamientos": [
           {
-            "inicio": "2022-06-18",
-            "fin": "2022-06-25",
+            "inicio": "2022-06-13",
+            "fin": "2022-06-20",
             "profesionalEncargado": "Alejandro Aquindo",
             "plan": {
               "enfermedad": {
