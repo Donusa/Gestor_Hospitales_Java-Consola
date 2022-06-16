@@ -1,6 +1,8 @@
 [
   {
-    "pacientes": [],
+    "pacientes": [
+      "12345678"
+    ],
     "userName": "Diego Acosta",
     "email": "diegoacosta@gmail.com",
     "password": "1234",

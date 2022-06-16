@@ -1,6 +1,6 @@
 [
   {
-    "fecha": "2022-06-19",
+    "fecha": "2022-06-14",
     "lista": [
       {
         "tratamientos": [],
@@ -101,8 +101,8 @@
       {
         "tratamientos": [
           {
-            "inicio": "2022-06-18",
-            "fin": "2022-06-25",
+            "inicio": "2022-06-13",
+            "fin": "2022-06-20",
             "profesionalEncargado": "Alejandro Aquindo",
             "plan": {
               "enfermedad": {
@@ -120,7 +120,6 @@
                   "taskDone": true
                 },
                 {
-                  "numero": 39,
                   "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
                   "taskDone": true
                 },
@@ -133,7 +132,6 @@
                   "taskDone": false
                 },
                 {
-                  "info": "",
                   "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
                   "taskDone": false
                 }
@@ -152,7 +150,7 @@
     ]
   },
   {
-    "fecha": "2022-06-18",
+    "fecha": "2022-06-13",
     "lista": [
       {
         "tratamientos": [],
@@ -245,8 +243,8 @@
       {
         "tratamientos": [
           {
-            "inicio": "2022-06-18",
-            "fin": "2022-06-25",
+            "inicio": "2022-06-13",
+            "fin": "2022-06-20",
             "profesionalEncargado": "Alejandro Aquindo",
             "plan": {
               "enfermedad": {

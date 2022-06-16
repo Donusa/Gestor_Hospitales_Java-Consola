@@ -120,7 +120,6 @@
                   "taskDone": true
                 },
                 {
-                  "numero": 39,
                   "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
                   "taskDone": true
                 },
@@ -133,7 +132,6 @@
                   "taskDone": false
                 },
                 {
-                  "info": "",
                   "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
                   "taskDone": false
                 }
