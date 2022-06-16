@@ -18,7 +18,6 @@ public class Sistema extends Thread{
 		int choice;
 		levantarListaUsers();
 		do {
-			JsonMapper.mapLoad();
 			System.out.println("\n************************************************\n"
 								+ "\tSistema de Control de Enfermedades\n"
 								+ "************************************************\n"
@@ -31,7 +30,6 @@ public class Sistema extends Thread{
 			}
 			if (choice == 1) {
 				Usuario currentUser = verificacionIdentidad();
-				JsonMapper.mapLoad();
 				if (currentUser instanceof Administrador) {
 					((Administrador) currentUser).menu();
 				} else if (currentUser instanceof Paciente) {
@@ -41,8 +39,9 @@ public class Sistema extends Thread{
 				} 
 			} 
 			else if(choice!=0 ){ System.out.println("Opcion no valida");}
-			JsonMapper.mapSave();
 		} while (choice!=0);
+
+		JsonMapper.mapSave();
 		TimeControl.setLoop(false);
 		separacionGuardadoListas();
 	}
@@ -136,9 +135,30 @@ public class Sistema extends Thread{
 	}
 
 	public static List<Plan> listarPlanes(){
-		return SerializacionGuardado.deserializacion(nombreArchivos.PLANES.getName(), new Plan());
+		List<Plan> retorno = SerializacionGuardado.deserializacion(nombreArchivos.PLANES.getName(), new Plan());
+		
+		planFixer(retorno);
+		
+		return retorno;
 	}
 	
+	public static void planFixer(List<Plan> listaPlanes)
+    {
+        int j = 0;
+        List<Tarea> tareas = verListaTareas();
+        for(Plan p : listaPlanes){
+        	for(int i = 0 ; i < p.getTasks().size() ; i++) {
+        		while(j< tareas.size() 
+        				&& !p.getTasks().get(i).getTaskName().equals(tareas.get(j).getTaskName())) {
+        			j++;
+        		}
+        		if(j<tareas.size()) {
+        			p.getTasks().set(i, tareas.get(j));
+        		}
+        		j = 0;
+        	}
+        }
+    }
 
 	public static List<Tarea> verListaTareas()
 	{

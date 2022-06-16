@@ -94,5 +94,52 @@
     "password": "1234",
     "userDni": "10232454",
     "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "pruebaprofesional",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Dolores corporales"
+            ],
+            "name": "Gripe"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": true
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "numero": 23,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": true
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "jorgelin jorgelan",
+    "email": "jorjor@gmail.com",
+    "password": "1234",
+    "userDni": "232323232",
+    "userCel": "2232232232"
   }
 ]

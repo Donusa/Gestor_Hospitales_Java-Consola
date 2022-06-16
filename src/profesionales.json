@@ -62,5 +62,15 @@
     "password": "1234",
     "userDni": "20343506",
     "userCel": "2235467892"
+  },
+  {
+    "pacientes": [
+      "232323232"
+    ],
+    "userName": "pruebaprofesional",
+    "email": "email@email",
+    "password": "1234",
+    "userDni": "dnipureba",
+    "userCel": "223"
   }
 ]
