@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 import java.util.List;
 
 
@@ -61,29 +62,31 @@ public class TimeControl extends Thread{
 	  
 	private void setTasksPacientes()
 	{
-		for(Usuario u: Sistema.users)
-		{
-			if(u instanceof Paciente)
-			{
-				for(Tratamiento t: ((Paciente) u).getTratamientos())
-				{
-					if(t.getFin()!=null && t.getFin().equals(LocalDate.now().toString()))
-					{
-						t.setEstado(EstadoDelTratamiento.ESPERANDO_ALTA);
-					}
-					for(Tarea tareas: t.getPlan().getTasks())
-					{
-						tareas.setTaskDone(false);
-						if(tareas instanceof TareaAlfanumerica) {
-							((TareaAlfanumerica) tareas).setInfo("");
-						}
-						else if(tareas instanceof TareaNumerica) {
-							((TareaNumerica) tareas).setNumero(0);
+		Boolean flag = false;
+		do {
+			try {
+				for (Usuario u : Sistema.users) {
+					if (u instanceof Paciente) {
+						for (Tratamiento t : ((Paciente) u).getTratamientos()) {
+							if (t.getFin() != null && t.getFin().equals(LocalDate.now().toString())) {
+								t.setEstado(EstadoDelTratamiento.ESPERANDO_ALTA);
+							}
+							for (Tarea tareas : t.getPlan().getTasks()) {
+								tareas.setTaskDone(false);
+								if (tareas instanceof TareaAlfanumerica) {
+									((TareaAlfanumerica) tareas).setInfo("");
+								} else if (tareas instanceof TareaNumerica) {
+									((TareaNumerica) tareas).setNumero(0);
+								}
+							}
 						}
 					}
 				}
-			}
-		}
+				flag = true;
+			} catch (ConcurrentModificationException e) {
+				System.out.println("Esperando carga de datos");
+			} 
+		} while (!flag);
 	}
 	//------------------------------------------------------------------------------------------------------------------
 }
