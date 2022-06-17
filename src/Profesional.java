@@ -308,11 +308,11 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 									}
 								}
 								if (!listaT.isEmpty()) {
-									sb.append("Paciente: " + p.getUserName() + " | DNI: " + p.getUserDni()
+									sb.append("\nPaciente: " + p.getUserName() + " | DNI: " + p.getUserDni()
 											+ " | Tratamiento: " + t.getPlan().getEnfermedad().getName()
-											+ "\nTareas incompletas:");
+											+ "\nTareas incompletas:\n");
 									for (Tarea tarea : listaT) {
-										sb.append("\t" + tarea);
+										sb.append("-" + tarea + "\n");
 									}
 								}
 							}
@@ -322,20 +322,20 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			}
 			if(flag){
 				System.out.println(sb);
+			}else if(!flag){
+					System.out.println("No hubo pacientes con tareas sin realizar el dia anterior.");
+				}
 			}
-			else{
-				System.out.println("No hubo pacientes con tareas sin realizar el dia anterior.");
-			}
-		});
-	}
+		);
+}
 
 	private void historialClinico(Paciente paciente)
 	{
 		int choice = -1;
 		
-		System.out.println("1. Ver historial completo del paciente"
-				+ "2. Ver historial de un tratamiento especifico"
-				+ "0. Salir");
+		System.out.println("1. Ver historial completo del paciente\n"
+						 + "2. Ver historial de un tratamiento especifico\n"
+						 + "0. Salir");
 		
 		choice = Integer.parseInt(ScannerSingleton.getInstance().nextLine());
 		

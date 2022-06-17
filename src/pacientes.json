@@ -3,7 +3,7 @@
     "tratamientos": [
       {
         "inicio": "2022-06-10",
-        "fin": "2022-06-17",
+        "fin": "2022-06-10",
         "profesionalEncargado": "Diego Acosta",
         "plan": {
           "enfermedad": {
@@ -32,10 +32,6 @@
             },
             {
               "taskName": "Tomar ibuprofeno cada 8hs",
-              "taskDone": true
-            },
-            {
-              "taskName": "probando numeros",
               "taskDone": false
             }
           ],
@@ -227,7 +223,7 @@
             },
             {
               "taskName": "Tomar ibuprofeno cada 8hs",
-              "taskDone": true
+              "taskDone": false
             },
             {
               "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
@@ -347,9 +343,7 @@
   {
     "tratamientos": [
       {
-        "inicio": "2022-06-15",
-        "fin": "2022-06-18",
-        "profesionalEncargado": "Diego Acosta",
+        "profesionalEncargado": "Gustavo Perez",
         "plan": {
           "enfermedad": {
             "sintomas": [
@@ -361,30 +355,16 @@
             ],
             "name": "Resfriado"
           },
-          "tasks": [
-            {
-              "taskName": "Tomar ibuprofeno cada 8hs",
-              "taskDone": true
-            },
-            {
-              "numero": 0,
-              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
-              "taskDone": false
-            },
-            {
-              "taskName": "Bailar",
-              "taskDone": true
-            }
-          ],
-          "duracion": 3
+          "tasks": [],
+          "duracion": 0
         },
-        "estado": "EN_CURSO"
+        "estado": "SIN_ASIGNAR"
       }
     ],
-    "userName": "Victor Hugo",
-    "email": "vhugo@gmail.com",
+    "userName": "lucas perez",
+    "email": "lucasperez@gmail.com",
     "password": "1234",
-    "userDni": "31132323",
-    "userCel": "2239658475"
+    "userDni": "34774899",
+    "userCel": "2235678811"
   }
 ]
