@@ -133,5 +133,2846 @@
     "password": "1234",
     "userDni": "10232454",
     "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Alejandro Aquindo",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Irritacion de garganta",
+              "Voz ronca",
+              "Fiebre",
+              "Ganglios linfaticos del cuello inflamados"
+            ],
+            "name": "Laringitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Hacer nebulizacion",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Martina Flores",
+    "email": "martinaflores@gmail.com",
+    "password": "1234",
+    "userDni": "45687001",
+    "userCel": "2234544333"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Diego Acosta",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Dolores corporales"
+            ],
+            "name": "Gripe"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Ana Paz",
+    "email": "anapaz@gmail.com",
+    "password": "1234",
+    "userDni": "38487299",
+    "userCel": "2234756570"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Jorge Suarez",
+    "email": "jorgesuarez@gmail.com",
+    "password": "1234",
+    "userDni": "30947628",
+    "userCel": "2236958473"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Bruno Diaz",
+    "email": "brunodiaz@gmail.com",
+    "password": "1234",
+    "userDni": "40520333",
+    "userCel": "2236958474"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Di Mauro",
+    "email": "florenciadimauro@gmail.com",
+    "password": "1234",
+    "userDni": "40520334",
+    "userCel": "2236958475"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Julieta Galvan",
+    "email": "julietagalvan@gmail.com",
+    "password": "1234",
+    "userDni": "40520335",
+    "userCel": "2236958476"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Juan Gonzalez",
+    "email": "juangonzalez@gmail.com",
+    "password": "1234",
+    "userDni": "40520336",
+    "userCel": "2236958477"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Rodolfo Carlos",
+    "email": "rodolfocarlos@gmail.com",
+    "password": "1234",
+    "userDni": "40520337",
+    "userCel": "2236958478"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Alex Zapata",
+    "email": "alexzapata@gmail.com",
+    "password": "1234",
+    "userDni": "40520338",
+    "userCel": "2236958479"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Pedro Luro",
+    "email": "PedroLuro@gmail.com",
+    "password": "1234",
+    "userDni": "41548798",
+    "userCel": "2236029100"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Herondale",
+    "email": "florenciaherondale@gmail.com",
+    "password": "1234",
+    "userDni": "28934564",
+    "userCel": "2234387456"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Marcos Perez",
+    "email": "marcosperez@gmail.com",
+    "password": "1234",
+    "userDni": "25467895",
+    "userCel": "2234397086"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Facundo Ariel",
+    "email": "facundoariel@gmail.com",
+    "password": "1234",
+    "userDni": "10232454",
+    "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Alejandro Aquindo",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Irritacion de garganta",
+              "Voz ronca",
+              "Fiebre",
+              "Ganglios linfaticos del cuello inflamados"
+            ],
+            "name": "Laringitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Hacer nebulizacion",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Martina Flores",
+    "email": "martinaflores@gmail.com",
+    "password": "1234",
+    "userDni": "45687001",
+    "userCel": "2234544333"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Diego Acosta",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Dolores corporales"
+            ],
+            "name": "Gripe"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Ana Paz",
+    "email": "anapaz@gmail.com",
+    "password": "1234",
+    "userDni": "38487299",
+    "userCel": "2234756570"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Jorge Suarez",
+    "email": "jorgesuarez@gmail.com",
+    "password": "1234",
+    "userDni": "30947628",
+    "userCel": "2236958473"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Bruno Diaz",
+    "email": "brunodiaz@gmail.com",
+    "password": "1234",
+    "userDni": "40520333",
+    "userCel": "2236958474"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Di Mauro",
+    "email": "florenciadimauro@gmail.com",
+    "password": "1234",
+    "userDni": "40520334",
+    "userCel": "2236958475"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Julieta Galvan",
+    "email": "julietagalvan@gmail.com",
+    "password": "1234",
+    "userDni": "40520335",
+    "userCel": "2236958476"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Juan Gonzalez",
+    "email": "juangonzalez@gmail.com",
+    "password": "1234",
+    "userDni": "40520336",
+    "userCel": "2236958477"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Rodolfo Carlos",
+    "email": "rodolfocarlos@gmail.com",
+    "password": "1234",
+    "userDni": "40520337",
+    "userCel": "2236958478"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Alex Zapata",
+    "email": "alexzapata@gmail.com",
+    "password": "1234",
+    "userDni": "40520338",
+    "userCel": "2236958479"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Pedro Luro",
+    "email": "PedroLuro@gmail.com",
+    "password": "1234",
+    "userDni": "41548798",
+    "userCel": "2236029100"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Herondale",
+    "email": "florenciaherondale@gmail.com",
+    "password": "1234",
+    "userDni": "28934564",
+    "userCel": "2234387456"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Marcos Perez",
+    "email": "marcosperez@gmail.com",
+    "password": "1234",
+    "userDni": "25467895",
+    "userCel": "2234397086"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Facundo Ariel",
+    "email": "facundoariel@gmail.com",
+    "password": "1234",
+    "userDni": "10232454",
+    "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Alejandro Aquindo",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Irritacion de garganta",
+              "Voz ronca",
+              "Fiebre",
+              "Ganglios linfaticos del cuello inflamados"
+            ],
+            "name": "Laringitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Hacer nebulizacion",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Martina Flores",
+    "email": "martinaflores@gmail.com",
+    "password": "1234",
+    "userDni": "45687001",
+    "userCel": "2234544333"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Diego Acosta",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Dolores corporales"
+            ],
+            "name": "Gripe"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Ana Paz",
+    "email": "anapaz@gmail.com",
+    "password": "1234",
+    "userDni": "38487299",
+    "userCel": "2234756570"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Jorge Suarez",
+    "email": "jorgesuarez@gmail.com",
+    "password": "1234",
+    "userDni": "30947628",
+    "userCel": "2236958473"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Bruno Diaz",
+    "email": "brunodiaz@gmail.com",
+    "password": "1234",
+    "userDni": "40520333",
+    "userCel": "2236958474"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Di Mauro",
+    "email": "florenciadimauro@gmail.com",
+    "password": "1234",
+    "userDni": "40520334",
+    "userCel": "2236958475"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Julieta Galvan",
+    "email": "julietagalvan@gmail.com",
+    "password": "1234",
+    "userDni": "40520335",
+    "userCel": "2236958476"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Juan Gonzalez",
+    "email": "juangonzalez@gmail.com",
+    "password": "1234",
+    "userDni": "40520336",
+    "userCel": "2236958477"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Rodolfo Carlos",
+    "email": "rodolfocarlos@gmail.com",
+    "password": "1234",
+    "userDni": "40520337",
+    "userCel": "2236958478"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Alex Zapata",
+    "email": "alexzapata@gmail.com",
+    "password": "1234",
+    "userDni": "40520338",
+    "userCel": "2236958479"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Pedro Luro",
+    "email": "PedroLuro@gmail.com",
+    "password": "1234",
+    "userDni": "41548798",
+    "userCel": "2236029100"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Herondale",
+    "email": "florenciaherondale@gmail.com",
+    "password": "1234",
+    "userDni": "28934564",
+    "userCel": "2234387456"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Marcos Perez",
+    "email": "marcosperez@gmail.com",
+    "password": "1234",
+    "userDni": "25467895",
+    "userCel": "2234397086"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Facundo Ariel",
+    "email": "facundoariel@gmail.com",
+    "password": "1234",
+    "userDni": "10232454",
+    "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Alejandro Aquindo",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Irritacion de garganta",
+              "Voz ronca",
+              "Fiebre",
+              "Ganglios linfaticos del cuello inflamados"
+            ],
+            "name": "Laringitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Hacer nebulizacion",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Martina Flores",
+    "email": "martinaflores@gmail.com",
+    "password": "1234",
+    "userDni": "45687001",
+    "userCel": "2234544333"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Diego Acosta",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Dolores corporales"
+            ],
+            "name": "Gripe"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Ana Paz",
+    "email": "anapaz@gmail.com",
+    "password": "1234",
+    "userDni": "38487299",
+    "userCel": "2234756570"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Jorge Suarez",
+    "email": "jorgesuarez@gmail.com",
+    "password": "1234",
+    "userDni": "30947628",
+    "userCel": "2236958473"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Bruno Diaz",
+    "email": "brunodiaz@gmail.com",
+    "password": "1234",
+    "userDni": "40520333",
+    "userCel": "2236958474"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Di Mauro",
+    "email": "florenciadimauro@gmail.com",
+    "password": "1234",
+    "userDni": "40520334",
+    "userCel": "2236958475"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Julieta Galvan",
+    "email": "julietagalvan@gmail.com",
+    "password": "1234",
+    "userDni": "40520335",
+    "userCel": "2236958476"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Juan Gonzalez",
+    "email": "juangonzalez@gmail.com",
+    "password": "1234",
+    "userDni": "40520336",
+    "userCel": "2236958477"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Rodolfo Carlos",
+    "email": "rodolfocarlos@gmail.com",
+    "password": "1234",
+    "userDni": "40520337",
+    "userCel": "2236958478"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Alex Zapata",
+    "email": "alexzapata@gmail.com",
+    "password": "1234",
+    "userDni": "40520338",
+    "userCel": "2236958479"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Pedro Luro",
+    "email": "PedroLuro@gmail.com",
+    "password": "1234",
+    "userDni": "41548798",
+    "userCel": "2236029100"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Herondale",
+    "email": "florenciaherondale@gmail.com",
+    "password": "1234",
+    "userDni": "28934564",
+    "userCel": "2234387456"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Marcos Perez",
+    "email": "marcosperez@gmail.com",
+    "password": "1234",
+    "userDni": "25467895",
+    "userCel": "2234397086"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Facundo Ariel",
+    "email": "facundoariel@gmail.com",
+    "password": "1234",
+    "userDni": "10232454",
+    "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Alejandro Aquindo",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Irritacion de garganta",
+              "Voz ronca",
+              "Fiebre",
+              "Ganglios linfaticos del cuello inflamados"
+            ],
+            "name": "Laringitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Hacer nebulizacion",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Martina Flores",
+    "email": "martinaflores@gmail.com",
+    "password": "1234",
+    "userDni": "45687001",
+    "userCel": "2234544333"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Diego Acosta",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Dolores corporales"
+            ],
+            "name": "Gripe"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Ana Paz",
+    "email": "anapaz@gmail.com",
+    "password": "1234",
+    "userDni": "38487299",
+    "userCel": "2234756570"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Jorge Suarez",
+    "email": "jorgesuarez@gmail.com",
+    "password": "1234",
+    "userDni": "30947628",
+    "userCel": "2236958473"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Bruno Diaz",
+    "email": "brunodiaz@gmail.com",
+    "password": "1234",
+    "userDni": "40520333",
+    "userCel": "2236958474"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Di Mauro",
+    "email": "florenciadimauro@gmail.com",
+    "password": "1234",
+    "userDni": "40520334",
+    "userCel": "2236958475"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Julieta Galvan",
+    "email": "julietagalvan@gmail.com",
+    "password": "1234",
+    "userDni": "40520335",
+    "userCel": "2236958476"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Juan Gonzalez",
+    "email": "juangonzalez@gmail.com",
+    "password": "1234",
+    "userDni": "40520336",
+    "userCel": "2236958477"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Rodolfo Carlos",
+    "email": "rodolfocarlos@gmail.com",
+    "password": "1234",
+    "userDni": "40520337",
+    "userCel": "2236958478"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Alex Zapata",
+    "email": "alexzapata@gmail.com",
+    "password": "1234",
+    "userDni": "40520338",
+    "userCel": "2236958479"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Pedro Luro",
+    "email": "PedroLuro@gmail.com",
+    "password": "1234",
+    "userDni": "41548798",
+    "userCel": "2236029100"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Herondale",
+    "email": "florenciaherondale@gmail.com",
+    "password": "1234",
+    "userDni": "28934564",
+    "userCel": "2234387456"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Marcos Perez",
+    "email": "marcosperez@gmail.com",
+    "password": "1234",
+    "userDni": "25467895",
+    "userCel": "2234397086"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Facundo Ariel",
+    "email": "facundoariel@gmail.com",
+    "password": "1234",
+    "userDni": "10232454",
+    "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Alejandro Aquindo",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Irritacion de garganta",
+              "Voz ronca",
+              "Fiebre",
+              "Ganglios linfaticos del cuello inflamados"
+            ],
+            "name": "Laringitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Hacer nebulizacion",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Martina Flores",
+    "email": "martinaflores@gmail.com",
+    "password": "1234",
+    "userDni": "45687001",
+    "userCel": "2234544333"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Diego Acosta",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Dolores corporales"
+            ],
+            "name": "Gripe"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Ana Paz",
+    "email": "anapaz@gmail.com",
+    "password": "1234",
+    "userDni": "38487299",
+    "userCel": "2234756570"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Jorge Suarez",
+    "email": "jorgesuarez@gmail.com",
+    "password": "1234",
+    "userDni": "30947628",
+    "userCel": "2236958473"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Bruno Diaz",
+    "email": "brunodiaz@gmail.com",
+    "password": "1234",
+    "userDni": "40520333",
+    "userCel": "2236958474"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Di Mauro",
+    "email": "florenciadimauro@gmail.com",
+    "password": "1234",
+    "userDni": "40520334",
+    "userCel": "2236958475"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Julieta Galvan",
+    "email": "julietagalvan@gmail.com",
+    "password": "1234",
+    "userDni": "40520335",
+    "userCel": "2236958476"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Juan Gonzalez",
+    "email": "juangonzalez@gmail.com",
+    "password": "1234",
+    "userDni": "40520336",
+    "userCel": "2236958477"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Rodolfo Carlos",
+    "email": "rodolfocarlos@gmail.com",
+    "password": "1234",
+    "userDni": "40520337",
+    "userCel": "2236958478"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Alex Zapata",
+    "email": "alexzapata@gmail.com",
+    "password": "1234",
+    "userDni": "40520338",
+    "userCel": "2236958479"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Pedro Luro",
+    "email": "PedroLuro@gmail.com",
+    "password": "1234",
+    "userDni": "41548798",
+    "userCel": "2236029100"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Herondale",
+    "email": "florenciaherondale@gmail.com",
+    "password": "1234",
+    "userDni": "28934564",
+    "userCel": "2234387456"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Marcos Perez",
+    "email": "marcosperez@gmail.com",
+    "password": "1234",
+    "userDni": "25467895",
+    "userCel": "2234397086"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Facundo Ariel",
+    "email": "facundoariel@gmail.com",
+    "password": "1234",
+    "userDni": "10232454",
+    "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Alejandro Aquindo",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Irritacion de garganta",
+              "Voz ronca",
+              "Fiebre",
+              "Ganglios linfaticos del cuello inflamados"
+            ],
+            "name": "Laringitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Hacer nebulizacion",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Martina Flores",
+    "email": "martinaflores@gmail.com",
+    "password": "1234",
+    "userDni": "45687001",
+    "userCel": "2234544333"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Diego Acosta",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Dolores corporales"
+            ],
+            "name": "Gripe"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Ana Paz",
+    "email": "anapaz@gmail.com",
+    "password": "1234",
+    "userDni": "38487299",
+    "userCel": "2234756570"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Jorge Suarez",
+    "email": "jorgesuarez@gmail.com",
+    "password": "1234",
+    "userDni": "30947628",
+    "userCel": "2236958473"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Bruno Diaz",
+    "email": "brunodiaz@gmail.com",
+    "password": "1234",
+    "userDni": "40520333",
+    "userCel": "2236958474"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Di Mauro",
+    "email": "florenciadimauro@gmail.com",
+    "password": "1234",
+    "userDni": "40520334",
+    "userCel": "2236958475"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Julieta Galvan",
+    "email": "julietagalvan@gmail.com",
+    "password": "1234",
+    "userDni": "40520335",
+    "userCel": "2236958476"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Juan Gonzalez",
+    "email": "juangonzalez@gmail.com",
+    "password": "1234",
+    "userDni": "40520336",
+    "userCel": "2236958477"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Rodolfo Carlos",
+    "email": "rodolfocarlos@gmail.com",
+    "password": "1234",
+    "userDni": "40520337",
+    "userCel": "2236958478"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Alex Zapata",
+    "email": "alexzapata@gmail.com",
+    "password": "1234",
+    "userDni": "40520338",
+    "userCel": "2236958479"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Pedro Luro",
+    "email": "PedroLuro@gmail.com",
+    "password": "1234",
+    "userDni": "41548798",
+    "userCel": "2236029100"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Herondale",
+    "email": "florenciaherondale@gmail.com",
+    "password": "1234",
+    "userDni": "28934564",
+    "userCel": "2234387456"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Marcos Perez",
+    "email": "marcosperez@gmail.com",
+    "password": "1234",
+    "userDni": "25467895",
+    "userCel": "2234397086"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Facundo Ariel",
+    "email": "facundoariel@gmail.com",
+    "password": "1234",
+    "userDni": "10232454",
+    "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Alejandro Aquindo",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Irritacion de garganta",
+              "Voz ronca",
+              "Fiebre",
+              "Ganglios linfaticos del cuello inflamados"
+            ],
+            "name": "Laringitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Hacer nebulizacion",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Martina Flores",
+    "email": "martinaflores@gmail.com",
+    "password": "1234",
+    "userDni": "45687001",
+    "userCel": "2234544333"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Diego Acosta",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Dolores corporales"
+            ],
+            "name": "Gripe"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Ana Paz",
+    "email": "anapaz@gmail.com",
+    "password": "1234",
+    "userDni": "38487299",
+    "userCel": "2234756570"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Jorge Suarez",
+    "email": "jorgesuarez@gmail.com",
+    "password": "1234",
+    "userDni": "30947628",
+    "userCel": "2236958473"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Bruno Diaz",
+    "email": "brunodiaz@gmail.com",
+    "password": "1234",
+    "userDni": "40520333",
+    "userCel": "2236958474"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Di Mauro",
+    "email": "florenciadimauro@gmail.com",
+    "password": "1234",
+    "userDni": "40520334",
+    "userCel": "2236958475"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Julieta Galvan",
+    "email": "julietagalvan@gmail.com",
+    "password": "1234",
+    "userDni": "40520335",
+    "userCel": "2236958476"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Juan Gonzalez",
+    "email": "juangonzalez@gmail.com",
+    "password": "1234",
+    "userDni": "40520336",
+    "userCel": "2236958477"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Rodolfo Carlos",
+    "email": "rodolfocarlos@gmail.com",
+    "password": "1234",
+    "userDni": "40520337",
+    "userCel": "2236958478"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Alex Zapata",
+    "email": "alexzapata@gmail.com",
+    "password": "1234",
+    "userDni": "40520338",
+    "userCel": "2236958479"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Pedro Luro",
+    "email": "PedroLuro@gmail.com",
+    "password": "1234",
+    "userDni": "41548798",
+    "userCel": "2236029100"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Herondale",
+    "email": "florenciaherondale@gmail.com",
+    "password": "1234",
+    "userDni": "28934564",
+    "userCel": "2234387456"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Marcos Perez",
+    "email": "marcosperez@gmail.com",
+    "password": "1234",
+    "userDni": "25467895",
+    "userCel": "2234397086"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Facundo Ariel",
+    "email": "facundoariel@gmail.com",
+    "password": "1234",
+    "userDni": "10232454",
+    "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Alejandro Aquindo",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Irritacion de garganta",
+              "Voz ronca",
+              "Fiebre",
+              "Ganglios linfaticos del cuello inflamados"
+            ],
+            "name": "Laringitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Hacer nebulizacion",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Martina Flores",
+    "email": "martinaflores@gmail.com",
+    "password": "1234",
+    "userDni": "45687001",
+    "userCel": "2234544333"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Diego Acosta",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Dolores corporales"
+            ],
+            "name": "Gripe"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Ana Paz",
+    "email": "anapaz@gmail.com",
+    "password": "1234",
+    "userDni": "38487299",
+    "userCel": "2234756570"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Jorge Suarez",
+    "email": "jorgesuarez@gmail.com",
+    "password": "1234",
+    "userDni": "30947628",
+    "userCel": "2236958473"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Bruno Diaz",
+    "email": "brunodiaz@gmail.com",
+    "password": "1234",
+    "userDni": "40520333",
+    "userCel": "2236958474"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Di Mauro",
+    "email": "florenciadimauro@gmail.com",
+    "password": "1234",
+    "userDni": "40520334",
+    "userCel": "2236958475"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Julieta Galvan",
+    "email": "julietagalvan@gmail.com",
+    "password": "1234",
+    "userDni": "40520335",
+    "userCel": "2236958476"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Juan Gonzalez",
+    "email": "juangonzalez@gmail.com",
+    "password": "1234",
+    "userDni": "40520336",
+    "userCel": "2236958477"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Rodolfo Carlos",
+    "email": "rodolfocarlos@gmail.com",
+    "password": "1234",
+    "userDni": "40520337",
+    "userCel": "2236958478"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Alex Zapata",
+    "email": "alexzapata@gmail.com",
+    "password": "1234",
+    "userDni": "40520338",
+    "userCel": "2236958479"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Pedro Luro",
+    "email": "PedroLuro@gmail.com",
+    "password": "1234",
+    "userDni": "41548798",
+    "userCel": "2236029100"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Herondale",
+    "email": "florenciaherondale@gmail.com",
+    "password": "1234",
+    "userDni": "28934564",
+    "userCel": "2234387456"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Marcos Perez",
+    "email": "marcosperez@gmail.com",
+    "password": "1234",
+    "userDni": "25467895",
+    "userCel": "2234397086"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Facundo Ariel",
+    "email": "facundoariel@gmail.com",
+    "password": "1234",
+    "userDni": "10232454",
+    "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Alejandro Aquindo",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Irritacion de garganta",
+              "Voz ronca",
+              "Fiebre",
+              "Ganglios linfaticos del cuello inflamados"
+            ],
+            "name": "Laringitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Hacer nebulizacion",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Martina Flores",
+    "email": "martinaflores@gmail.com",
+    "password": "1234",
+    "userDni": "45687001",
+    "userCel": "2234544333"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Diego Acosta",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Dolores corporales"
+            ],
+            "name": "Gripe"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Ana Paz",
+    "email": "anapaz@gmail.com",
+    "password": "1234",
+    "userDni": "38487299",
+    "userCel": "2234756570"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Jorge Suarez",
+    "email": "jorgesuarez@gmail.com",
+    "password": "1234",
+    "userDni": "30947628",
+    "userCel": "2236958473"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Bruno Diaz",
+    "email": "brunodiaz@gmail.com",
+    "password": "1234",
+    "userDni": "40520333",
+    "userCel": "2236958474"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Di Mauro",
+    "email": "florenciadimauro@gmail.com",
+    "password": "1234",
+    "userDni": "40520334",
+    "userCel": "2236958475"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Julieta Galvan",
+    "email": "julietagalvan@gmail.com",
+    "password": "1234",
+    "userDni": "40520335",
+    "userCel": "2236958476"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Juan Gonzalez",
+    "email": "juangonzalez@gmail.com",
+    "password": "1234",
+    "userDni": "40520336",
+    "userCel": "2236958477"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Rodolfo Carlos",
+    "email": "rodolfocarlos@gmail.com",
+    "password": "1234",
+    "userDni": "40520337",
+    "userCel": "2236958478"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Alex Zapata",
+    "email": "alexzapata@gmail.com",
+    "password": "1234",
+    "userDni": "40520338",
+    "userCel": "2236958479"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Pedro Luro",
+    "email": "PedroLuro@gmail.com",
+    "password": "1234",
+    "userDni": "41548798",
+    "userCel": "2236029100"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Herondale",
+    "email": "florenciaherondale@gmail.com",
+    "password": "1234",
+    "userDni": "28934564",
+    "userCel": "2234387456"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Marcos Perez",
+    "email": "marcosperez@gmail.com",
+    "password": "1234",
+    "userDni": "25467895",
+    "userCel": "2234397086"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Facundo Ariel",
+    "email": "facundoariel@gmail.com",
+    "password": "1234",
+    "userDni": "10232454",
+    "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Alejandro Aquindo",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Irritacion de garganta",
+              "Voz ronca",
+              "Fiebre",
+              "Ganglios linfaticos del cuello inflamados"
+            ],
+            "name": "Laringitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Hacer nebulizacion",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Martina Flores",
+    "email": "martinaflores@gmail.com",
+    "password": "1234",
+    "userDni": "45687001",
+    "userCel": "2234544333"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Diego Acosta",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Dolores corporales"
+            ],
+            "name": "Gripe"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Ana Paz",
+    "email": "anapaz@gmail.com",
+    "password": "1234",
+    "userDni": "38487299",
+    "userCel": "2234756570"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Jorge Suarez",
+    "email": "jorgesuarez@gmail.com",
+    "password": "1234",
+    "userDni": "30947628",
+    "userCel": "2236958473"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Bruno Diaz",
+    "email": "brunodiaz@gmail.com",
+    "password": "1234",
+    "userDni": "40520333",
+    "userCel": "2236958474"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Di Mauro",
+    "email": "florenciadimauro@gmail.com",
+    "password": "1234",
+    "userDni": "40520334",
+    "userCel": "2236958475"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Julieta Galvan",
+    "email": "julietagalvan@gmail.com",
+    "password": "1234",
+    "userDni": "40520335",
+    "userCel": "2236958476"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Juan Gonzalez",
+    "email": "juangonzalez@gmail.com",
+    "password": "1234",
+    "userDni": "40520336",
+    "userCel": "2236958477"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Rodolfo Carlos",
+    "email": "rodolfocarlos@gmail.com",
+    "password": "1234",
+    "userDni": "40520337",
+    "userCel": "2236958478"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Alex Zapata",
+    "email": "alexzapata@gmail.com",
+    "password": "1234",
+    "userDni": "40520338",
+    "userCel": "2236958479"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Pedro Luro",
+    "email": "PedroLuro@gmail.com",
+    "password": "1234",
+    "userDni": "41548798",
+    "userCel": "2236029100"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Herondale",
+    "email": "florenciaherondale@gmail.com",
+    "password": "1234",
+    "userDni": "28934564",
+    "userCel": "2234387456"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Marcos Perez",
+    "email": "marcosperez@gmail.com",
+    "password": "1234",
+    "userDni": "25467895",
+    "userCel": "2234397086"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Facundo Ariel",
+    "email": "facundoariel@gmail.com",
+    "password": "1234",
+    "userDni": "10232454",
+    "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Alejandro Aquindo",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Irritacion de garganta",
+              "Voz ronca",
+              "Fiebre",
+              "Ganglios linfaticos del cuello inflamados"
+            ],
+            "name": "Laringitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Hacer nebulizacion",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Martina Flores",
+    "email": "martinaflores@gmail.com",
+    "password": "1234",
+    "userDni": "45687001",
+    "userCel": "2234544333"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Diego Acosta",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Dolores corporales"
+            ],
+            "name": "Gripe"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Ana Paz",
+    "email": "anapaz@gmail.com",
+    "password": "1234",
+    "userDni": "38487299",
+    "userCel": "2234756570"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Jorge Suarez",
+    "email": "jorgesuarez@gmail.com",
+    "password": "1234",
+    "userDni": "30947628",
+    "userCel": "2236958473"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Bruno Diaz",
+    "email": "brunodiaz@gmail.com",
+    "password": "1234",
+    "userDni": "40520333",
+    "userCel": "2236958474"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Di Mauro",
+    "email": "florenciadimauro@gmail.com",
+    "password": "1234",
+    "userDni": "40520334",
+    "userCel": "2236958475"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Julieta Galvan",
+    "email": "julietagalvan@gmail.com",
+    "password": "1234",
+    "userDni": "40520335",
+    "userCel": "2236958476"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Juan Gonzalez",
+    "email": "juangonzalez@gmail.com",
+    "password": "1234",
+    "userDni": "40520336",
+    "userCel": "2236958477"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Rodolfo Carlos",
+    "email": "rodolfocarlos@gmail.com",
+    "password": "1234",
+    "userDni": "40520337",
+    "userCel": "2236958478"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Alex Zapata",
+    "email": "alexzapata@gmail.com",
+    "password": "1234",
+    "userDni": "40520338",
+    "userCel": "2236958479"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Pedro Luro",
+    "email": "PedroLuro@gmail.com",
+    "password": "1234",
+    "userDni": "41548798",
+    "userCel": "2236029100"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Herondale",
+    "email": "florenciaherondale@gmail.com",
+    "password": "1234",
+    "userDni": "28934564",
+    "userCel": "2234387456"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Marcos Perez",
+    "email": "marcosperez@gmail.com",
+    "password": "1234",
+    "userDni": "25467895",
+    "userCel": "2234397086"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Facundo Ariel",
+    "email": "facundoariel@gmail.com",
+    "password": "1234",
+    "userDni": "10232454",
+    "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Alejandro Aquindo",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Irritacion de garganta",
+              "Voz ronca",
+              "Fiebre",
+              "Ganglios linfaticos del cuello inflamados"
+            ],
+            "name": "Laringitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Hacer nebulizacion",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Martina Flores",
+    "email": "martinaflores@gmail.com",
+    "password": "1234",
+    "userDni": "45687001",
+    "userCel": "2234544333"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Diego Acosta",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Dolores corporales"
+            ],
+            "name": "Gripe"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Ana Paz",
+    "email": "anapaz@gmail.com",
+    "password": "1234",
+    "userDni": "38487299",
+    "userCel": "2234756570"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Jorge Suarez",
+    "email": "jorgesuarez@gmail.com",
+    "password": "1234",
+    "userDni": "30947628",
+    "userCel": "2236958473"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Bruno Diaz",
+    "email": "brunodiaz@gmail.com",
+    "password": "1234",
+    "userDni": "40520333",
+    "userCel": "2236958474"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Di Mauro",
+    "email": "florenciadimauro@gmail.com",
+    "password": "1234",
+    "userDni": "40520334",
+    "userCel": "2236958475"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Julieta Galvan",
+    "email": "julietagalvan@gmail.com",
+    "password": "1234",
+    "userDni": "40520335",
+    "userCel": "2236958476"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Juan Gonzalez",
+    "email": "juangonzalez@gmail.com",
+    "password": "1234",
+    "userDni": "40520336",
+    "userCel": "2236958477"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Rodolfo Carlos",
+    "email": "rodolfocarlos@gmail.com",
+    "password": "1234",
+    "userDni": "40520337",
+    "userCel": "2236958478"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Alex Zapata",
+    "email": "alexzapata@gmail.com",
+    "password": "1234",
+    "userDni": "40520338",
+    "userCel": "2236958479"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Pedro Luro",
+    "email": "PedroLuro@gmail.com",
+    "password": "1234",
+    "userDni": "41548798",
+    "userCel": "2236029100"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Herondale",
+    "email": "florenciaherondale@gmail.com",
+    "password": "1234",
+    "userDni": "28934564",
+    "userCel": "2234387456"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Marcos Perez",
+    "email": "marcosperez@gmail.com",
+    "password": "1234",
+    "userDni": "25467895",
+    "userCel": "2234397086"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Facundo Ariel",
+    "email": "facundoariel@gmail.com",
+    "password": "1234",
+    "userDni": "10232454",
+    "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Alejandro Aquindo",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Irritacion de garganta",
+              "Voz ronca",
+              "Fiebre",
+              "Ganglios linfaticos del cuello inflamados"
+            ],
+            "name": "Laringitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Hacer nebulizacion",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Martina Flores",
+    "email": "martinaflores@gmail.com",
+    "password": "1234",
+    "userDni": "45687001",
+    "userCel": "2234544333"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Diego Acosta",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Dolores corporales"
+            ],
+            "name": "Gripe"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Ana Paz",
+    "email": "anapaz@gmail.com",
+    "password": "1234",
+    "userDni": "38487299",
+    "userCel": "2234756570"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Jorge Suarez",
+    "email": "jorgesuarez@gmail.com",
+    "password": "1234",
+    "userDni": "30947628",
+    "userCel": "2236958473"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Bruno Diaz",
+    "email": "brunodiaz@gmail.com",
+    "password": "1234",
+    "userDni": "40520333",
+    "userCel": "2236958474"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Di Mauro",
+    "email": "florenciadimauro@gmail.com",
+    "password": "1234",
+    "userDni": "40520334",
+    "userCel": "2236958475"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Julieta Galvan",
+    "email": "julietagalvan@gmail.com",
+    "password": "1234",
+    "userDni": "40520335",
+    "userCel": "2236958476"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Juan Gonzalez",
+    "email": "juangonzalez@gmail.com",
+    "password": "1234",
+    "userDni": "40520336",
+    "userCel": "2236958477"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Rodolfo Carlos",
+    "email": "rodolfocarlos@gmail.com",
+    "password": "1234",
+    "userDni": "40520337",
+    "userCel": "2236958478"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Alex Zapata",
+    "email": "alexzapata@gmail.com",
+    "password": "1234",
+    "userDni": "40520338",
+    "userCel": "2236958479"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Pedro Luro",
+    "email": "PedroLuro@gmail.com",
+    "password": "1234",
+    "userDni": "41548798",
+    "userCel": "2236029100"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Herondale",
+    "email": "florenciaherondale@gmail.com",
+    "password": "1234",
+    "userDni": "28934564",
+    "userCel": "2234387456"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Marcos Perez",
+    "email": "marcosperez@gmail.com",
+    "password": "1234",
+    "userDni": "25467895",
+    "userCel": "2234397086"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Facundo Ariel",
+    "email": "facundoariel@gmail.com",
+    "password": "1234",
+    "userDni": "10232454",
+    "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Alejandro Aquindo",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Irritacion de garganta",
+              "Voz ronca",
+              "Fiebre",
+              "Ganglios linfaticos del cuello inflamados"
+            ],
+            "name": "Laringitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Hacer nebulizacion",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Martina Flores",
+    "email": "martinaflores@gmail.com",
+    "password": "1234",
+    "userDni": "45687001",
+    "userCel": "2234544333"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Diego Acosta",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Fiebre",
+              "Tos",
+              "Dolor de garganta",
+              "Congestion nasal",
+              "Dolores corporales"
+            ],
+            "name": "Gripe"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar ibuprofeno cada 8hs",
+              "taskDone": false
+            },
+            {
+              "taskName": "Utilizar solucion salina nasal para aliviar la congestion nasal",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Ana Paz",
+    "email": "anapaz@gmail.com",
+    "password": "1234",
+    "userDni": "38487299",
+    "userCel": "2234756570"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Jorge Suarez",
+    "email": "jorgesuarez@gmail.com",
+    "password": "1234",
+    "userDni": "30947628",
+    "userCel": "2236958473"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Bruno Diaz",
+    "email": "brunodiaz@gmail.com",
+    "password": "1234",
+    "userDni": "40520333",
+    "userCel": "2236958474"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Di Mauro",
+    "email": "florenciadimauro@gmail.com",
+    "password": "1234",
+    "userDni": "40520334",
+    "userCel": "2236958475"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Julieta Galvan",
+    "email": "julietagalvan@gmail.com",
+    "password": "1234",
+    "userDni": "40520335",
+    "userCel": "2236958476"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Juan Gonzalez",
+    "email": "juangonzalez@gmail.com",
+    "password": "1234",
+    "userDni": "40520336",
+    "userCel": "2236958477"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Rodolfo Carlos",
+    "email": "rodolfocarlos@gmail.com",
+    "password": "1234",
+    "userDni": "40520337",
+    "userCel": "2236958478"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Alex Zapata",
+    "email": "alexzapata@gmail.com",
+    "password": "1234",
+    "userDni": "40520338",
+    "userCel": "2236958479"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Pedro Luro",
+    "email": "PedroLuro@gmail.com",
+    "password": "1234",
+    "userDni": "41548798",
+    "userCel": "2236029100"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Florencia Herondale",
+    "email": "florenciaherondale@gmail.com",
+    "password": "1234",
+    "userDni": "28934564",
+    "userCel": "2234387456"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Marcos Perez",
+    "email": "marcosperez@gmail.com",
+    "password": "1234",
+    "userDni": "25467895",
+    "userCel": "2234397086"
+  },
+  {
+    "tratamientos": [],
+    "userName": "Facundo Ariel",
+    "email": "facundoariel@gmail.com",
+    "password": "1234",
+    "userDni": "10232454",
+    "userCel": "2234556453"
+  },
+  {
+    "tratamientos": [
+      {
+        "inicio": "2022-06-15",
+        "fin": "2022-06-22",
+        "profesionalEncargado": "Alejandro Aquindo",
+        "plan": {
+          "enfermedad": {
+            "sintomas": [
+              "Irritacion de garganta",
+              "Voz ronca",
+              "Fiebre",
+              "Ganglios linfaticos del cuello inflamados"
+            ],
+            "name": "Laringitis"
+          },
+          "tasks": [
+            {
+              "taskName": "Tomar agua",
+              "taskDone": false
+            },
+            {
+              "numero": 0,
+              "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+              "taskDone": false
+            },
+            {
+              "taskName": "Hacer nebulizacion",
+              "taskDone": false
+            },
+            {
+              "taskName": "Tomar pastillas para el dolor de garganta",
+              "taskDone": false
+            },
+            {
+              "info": "",
+              "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+              "taskDone": false
+            }
+          ],
+          "duracion": 7
+        },
+        "estado": "EN_CURSO"
+      }
+    ],
+    "userName": "Martina Flores",
+    "email": "martinaflores@gmail.com",
+    "password": "1234",
+    "userDni": "45687001",
+    "userCel": "2234544333"
   }
 ]

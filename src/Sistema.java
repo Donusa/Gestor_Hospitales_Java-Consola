@@ -15,10 +15,10 @@ public class Sistema extends Thread{
 	//---Metodos--------------------------------------------------------------------------------------------------------
 	@Override
 	public void run() {
-		levantarListaUsers();
-		JsonMapper.mapLoad();
 		int choice;
 		do {
+			levantarListaUsers();
+			JsonMapper.mapLoad();
 			System.out.println("\n************************************************\n"
 								+ "\tSistema de Control de Enfermedades\n"
 								+ "************************************************\n"
@@ -41,10 +41,10 @@ public class Sistema extends Thread{
 				} 
 			} 
 			else if(choice!=0 ){ System.out.println("Opcion no valida");}
+			JsonMapper.mapSave();
+			TimeControl.setLoop(false);
+			separacionGuardadoListas();
 		} while (choice!=0);
-		JsonMapper.mapSave();
-		TimeControl.setLoop(false);
-		separacionGuardadoListas();
 	}
 
 	private void levantarListaUsers(){
