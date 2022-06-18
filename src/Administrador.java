@@ -284,7 +284,7 @@ public class Administrador extends Usuario implements CrearPlan, Menu{
 					for(int i = 0 ; i < save.size(); i ++){
 						if (save.get(i).getEnfermedad().getName().equals(plan.getEnfermedad().getName())
 								&& save.get(i).getTasks().toString().equals(plan.getTasks().toString())) {
-							System.out.println("Ingrese numero de plan \n");
+							System.out.println("Ingrese numero de plan: \n");
 							plan = modificarPlan(plan);
 							save.set(i, plan);
 						}

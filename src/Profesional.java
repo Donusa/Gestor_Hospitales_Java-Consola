@@ -1,5 +1,3 @@
-import jdk.jfr.TransitionTo;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -310,11 +308,11 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 									}
 								}
 								if (!listaT.isEmpty()) {
-									sb.append("Paciente: " + p.getUserName() + " | DNI: " + p.getUserDni()
+									sb.append("\nPaciente: " + p.getUserName() + " | DNI: " + p.getUserDni()
 											+ " | Tratamiento: " + t.getPlan().getEnfermedad().getName()
-											+ "\nTareas incompletas:");
+											+ "\nTareas incompletas:\n");
 									for (Tarea tarea : listaT) {
-										sb.append("\t" + tarea);
+										sb.append("-" + tarea + " \n");
 									}
 								}
 							}
@@ -324,9 +322,8 @@ public class Profesional extends Usuario implements CrearPlan, Menu{
 			}
 			if(flag){
 				System.out.println(sb);
-			}
-			else{
-				System.out.println("No hubo pacientes con tareas sin realizar el dia anterior.");
+			}else if(!flag){
+					System.out.println("No hubo pacientes con tareas sin realizar el dia anterior.");
 			}
 		});
 	}

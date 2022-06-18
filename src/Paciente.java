@@ -277,7 +277,7 @@ public class Paciente extends Usuario implements Menu{
 				"\nTratamientos del Paciente:\n");
 		sb.append("---------------------------------------------------------------------------------------\n");
 		for (int i = 0; i < tratamientos.size(); i++) {
-			sb.append((i+1) + ") " + tratamientos.get(i));
+			sb.append((i+1) + ") " + tratamientos.get(i)+ "\n");
 		}
 		return sb.toString();
 	}
