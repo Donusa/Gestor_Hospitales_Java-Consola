@@ -21,6 +21,13 @@
   },
   {
     "sintomas": [
+      "Dolor de oído",
+      "Fiebre"
+    ],
+    "name": "Infección de oído"
+  },
+  {
+    "sintomas": [
       "Mucosidad",
       "Tos"
     ],

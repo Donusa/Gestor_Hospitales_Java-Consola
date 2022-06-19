@@ -1,10 +1,6 @@
 [
   {
-    "pacientes": [
-      "38487299",
-      "40520338",
-      "28934564"
-    ],
+    "pacientes": [],
     "userName": "Diego Acosta",
     "email": "diegoacosta@gmail.com",
     "password": "1234",
@@ -36,10 +32,7 @@
     "userCel": "2235554312"
   },
   {
-    "pacientes": [
-      "40520335",
-      "10232454"
-    ],
+    "pacientes": [],
     "userName": "Mariana Lopez",
     "email": "marianalopez@gmail.com",
     "password": "1234",
@@ -55,13 +48,19 @@
     "userCel": "2235463765"
   },
   {
-    "pacientes": [
-      "34774899"
-    ],
+    "pacientes": [],
     "userName": "Gustavo Perez",
     "email": "gustavoperez@gmail.com",
     "password": "1234",
     "userDni": "20448796",
     "userCel": "2235677892"
+  },
+  {
+    "pacientes": [],
+    "userName": "Juan Jose Echeverry",
+    "email": "juanjoseecheverry@gmail.com",
+    "password": "1234",
+    "userDni": "20343506",
+    "userCel": "2235467892"
   }
 ]
