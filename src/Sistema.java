@@ -51,7 +51,7 @@ public class Sistema extends Thread{
 		typeFixer();
 	}
 
-	public static void typeFixer()
+	private static void typeFixer()
     {
         List<Tarea> lista = verListaTareas();
         int j = 0;
@@ -75,13 +75,11 @@ public class Sistema extends Thread{
 
 	public static List<Plan> listarPlanes(){
 		List<Plan> retorno = SerializacionGuardado.deserializacion(nombreArchivos.PLANES.getName(), new Plan());
-
 		planFixer(retorno);
-
 		return retorno;
 	}
 
-	public static void planFixer(List<Plan> listaPlanes)
+	private static void planFixer(List<Plan> listaPlanes)
 	{
 		int j = 0;
 		List<Tarea> tareas = verListaTareas();

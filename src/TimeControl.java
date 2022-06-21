@@ -25,8 +25,7 @@ public class TimeControl extends Thread{
 			{
 				localDate = LocalDate.now();
 				setPacientesMapFinDelDia();
-				saves.remove(0);
-				saves.add(localDate.toString());
+				saves.set(0, localDate.toString());
 				setTasksPacientes();
 				SerializacionGuardado.serializacion(nombreArchivos.BACKUPFECHA.getName(), saves);
 			}

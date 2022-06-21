@@ -123,7 +123,7 @@
             },
             {
               "taskName": "Hacer nebulizacion",
-              "taskDone": true
+              "taskDone": false
             },
             {
               "taskName": "Tomar pastillas para el dolor de garganta",
