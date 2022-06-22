@@ -18,17 +18,17 @@ public class TimeControl extends Thread{
 		List<String> saves = new ArrayList<>();
 		saves = SerializacionGuardado.deserializacion(nombreArchivos.BACKUPFECHA.getName(), new String());
 		localDate = LocalDate.parse(saves.get(0));
+		JsonMapper.mapLoad();
 		do
 		{
 			if(!(localDate.equals(LocalDate.now())))
 			{
-				setPacientesMapFinDelDia();
 				localDate = LocalDate.now();
+				setPacientesMapFinDelDia();
 				saves.remove(0);
 				saves.add(localDate.toString());
 				setTasksPacientes();
 				SerializacionGuardado.serializacion(nombreArchivos.BACKUPFECHA.getName(), saves);
-				setPacientesMapFinDelDia();
 			}
 		}while(loop == true);
 	}
@@ -40,6 +40,7 @@ public class TimeControl extends Thread{
 	private void setPacientesMapFinDelDia()
 	{
 		List<Paciente> listaPacientes = new ArrayList<>();
+		JsonMapper.mapSave();
 		for(Usuario u : Sistema.users)
 		{
 			if(u instanceof Paciente)

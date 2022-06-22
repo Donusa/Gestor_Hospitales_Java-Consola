@@ -1,6 +1,6 @@
 [
   {
-    "fecha": "2022-06-15",
+    "fecha": "2022-06-18",
     "lista": [
       {
         "tratamientos": [],
@@ -68,6 +68,14 @@
       },
       {
         "tratamientos": [],
+        "userName": "Pedro Luro",
+        "email": "PedroLuro@gmail.com",
+        "password": "1234",
+        "userDni": "41548798",
+        "userCel": "2236029100"
+      },
+      {
+        "tratamientos": [],
         "userName": "Florencia Herondale",
         "email": "florenciaherondale@gmail.com",
         "password": "1234",
@@ -89,6 +97,55 @@
         "password": "1234",
         "userDni": "10232454",
         "userCel": "2234556453"
+      },
+      {
+        "tratamientos": [
+          {
+            "inicio": "2022-06-18",
+            "fin": "2022-06-25",
+            "profesionalEncargado": "Alejandro Aquindo",
+            "plan": {
+              "enfermedad": {
+                "sintomas": [
+                  "Irritacion de garganta",
+                  "Voz ronca",
+                  "Fiebre",
+                  "Ganglios linfaticos del cuello inflamados"
+                ],
+                "name": "Laringitis"
+              },
+              "tasks": [
+                {
+                  "taskName": "Tomar agua",
+                  "taskDone": true
+                },
+                {
+                  "taskName": "Tomarse la fiebre. Ingresar el resultado en grados centigrados",
+                  "taskDone": true
+                },
+                {
+                  "taskName": "Hacer nebulizacion",
+                  "taskDone": false
+                },
+                {
+                  "taskName": "Tomar pastillas para el dolor de garganta",
+                  "taskDone": false
+                },
+                {
+                  "taskName": "Controlar si sigue habiendo inflamacion. Responda Si o No",
+                  "taskDone": false
+                }
+              ],
+              "duracion": 7
+            },
+            "estado": "EN_CURSO"
+          }
+        ],
+        "userName": "Martina Flores",
+        "email": "martinaflores@gmail.com",
+        "password": "1234",
+        "userDni": "34777802",
+        "userCel": "2234557477"
       }
     ]
   }
